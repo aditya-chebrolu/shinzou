@@ -8,7 +8,7 @@ import {
 } from "./components/experience-summary-strip/styles";
 import { useState } from "react";
 import { Dialog } from "@mui/material";
-import { Card, SvgContainer } from "@styles/index";
+import { Card, Spacer, SvgContainer } from "@styles/index";
 import PlanetIcon from "@assets/planet.svg";
 import { sectionStyles } from "./styles";
 
@@ -43,7 +43,7 @@ const Content = ({ exp }: { exp: (typeof experience)[number] }) => {
     <>
       <ExperienceSummaryStrip summary={summary} />
       <Card css={techStackRowStyles}>
-        <div className="title">Tech stack</div>
+        <div className="title">TECHNOLOGIES</div>
         <div className="content">
           {techStack.map(({ text, Icon }, idx) => (
             <div className="capsule">

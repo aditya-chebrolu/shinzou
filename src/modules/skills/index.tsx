@@ -8,14 +8,65 @@ import ReactIcon from "@assets/tech/reactjs.svg";
 import HTMLIcon from "@assets/tech/html5.svg";
 import CSSIcon from "@assets/tech/css3.svg";
 import NodeIcon from "@assets/tech/nodejs.svg";
+import TailwindIcon from "@assets/tech/tailwindcss.svg";
+import MongoIcon from "@assets/tech/mongo.svg";
 import { Card } from "@styles/index";
+
+const sections = [
+  {
+    pos: [1, 1, 2, 4],
+    icons: [<HTMLIcon />, <CSSIcon />, <TailwindIcon />],
+  },
+  {
+    pos: [1, 4, 2, 5],
+    icons: [],
+  },
+  {
+    pos: [2, 1, 5, 2],
+    icons: [<JSIcon />, <TSIcon />, <JavaIcon />],
+    vertical: true,
+  },
+  {
+    pos: [2, 2, 4, 3],
+    icons: [],
+  },
+  {
+    pos: [2, 3, 3, 5],
+    icons: [<NextIcon />, <NestIcon />],
+  },
+  {
+    pos: [3, 3, 4, 4],
+    icons: [<ReactIcon />],
+  },
+  {
+    pos: [4, 2, 5, 3],
+    icons: [<NodeIcon />],
+  },
+  {
+    pos: [3, 4, 4, 5],
+    icons: [],
+  },
+  {
+    pos: [4, 3, 5, 4],
+    icons: [],
+  },
+  {
+    pos: [4, 4, 5, 5],
+    icons: [<MongoIcon />],
+  },
+];
 
 const SkillsSectionStyles = () => {
   return (
     <div css={sectionStyles}>
       <div className="title">SKILLS</div>
       <div className="content">
-        <Card css={techSetStyles(1, 1, 2, 3)}>
+        {sections.map((section) => (
+          <Card css={techSetStyles(section.pos, section.vertical)}>
+            {section.icons.map((e) => e)}
+          </Card>
+        ))}
+        {/* <Card css={techSetStyles()}>
           <NextIcon />
           <NestIcon />
         </Card>
@@ -33,7 +84,7 @@ const SkillsSectionStyles = () => {
         <Card css={techSetStyles(3, 2, 4, 4)}>
           <HTMLIcon />
           <CSSIcon />
-        </Card>
+        </Card> */}
       </div>
     </div>
   );

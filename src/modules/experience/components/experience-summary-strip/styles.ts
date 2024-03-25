@@ -59,7 +59,8 @@ export const dialogStyles = css`
 
 export const techStackRowStyles = css`
   > .title {
-    color: ${colors.white};
+    color: ${colors.brown};
+    font-weight: bold;
     font-size: 14px;
     ${lgScreen} {
       font-size: 16px;
@@ -75,10 +76,10 @@ export const techStackRowStyles = css`
       border: solid 1px ${black[1]};
       background-color: ${black[2]};
       padding: 3px 6px;
-      border-radius: 8px;
+      /* border-radius: 8px; */
 
       ${lgScreen} {
-        border-radius: 8px;
+        /* border-radius: 8px; */
       }
     }
   }
@@ -91,22 +92,53 @@ to {
 `;
 
 export const positionsContainerStyles = css`
+  ${flex({ gap: 15, column: true })}
   height: 400px;
   overflow: scroll;
   ${noScrollbar};
+
+  &::after {
+    content: "";
+    height: 40px;
+    width: calc(100% - 2px);
+    position: absolute;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0),
+      rgba(0, 0, 0, 1)
+    );
+    backdrop-filter: blur(0.5px);
+    bottom: 1px;
+    left: 1px;
+  }
 `;
 
 export const positionSectionStyles = css`
   ${flex({ column: true })};
   color: ${colors.white};
+
+  &:not(:last-child) {
+    border-bottom: dashed 1px ${black[1]};
+    padding-bottom: 15px;
+  }
+
+  &:last-child {
+    padding-bottom: 30px;
+  }
+
   > .header {
     ${flex({ align: "center", justify: "space-between" })};
     margin-bottom: 10px;
     color: ${colors.white};
     font-size: 14px;
 
+    > .left {
+      font-weight: bold;
+      color: ${colors.orange};
+    }
+
     > .right {
-      color: ${black[0]};
+      color: ${colors.brown};
     }
 
     ${lgScreen} {
@@ -119,7 +151,10 @@ export const positionSectionStyles = css`
     &:not(:last-of-type) {
       > .left > .line {
         flex: 1;
-        border-right: dashed 1px #f0f8ff;
+        border-right: dashed 1px ${colors.brown};
+      }
+      > .right {
+        padding-bottom: 15px;
       }
     }
 
@@ -130,14 +165,13 @@ export const positionSectionStyles = css`
         margin-top: 1px;
         animation: ${anim} 2s infinite;
         > svg {
-          stroke: #f0f8ff;
+          stroke: ${colors.brown};
         }
       }
     }
 
     > .right {
       font-size: 14px;
-      padding-bottom: 15px;
       text-align: justify;
     }
   }

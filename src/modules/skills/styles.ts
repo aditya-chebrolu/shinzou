@@ -1,4 +1,5 @@
 import { css } from "@emotion/react";
+import { colors } from "@styles/colors";
 import { flex } from "@styles/index";
 
 export const sectionStyles = css`
@@ -13,8 +14,8 @@ export const sectionStyles = css`
     align-self: center;
     display: grid;
     gap: 5px;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
 
     svg {
       height: 40px;
@@ -23,13 +24,16 @@ export const sectionStyles = css`
   }
 `;
 
-export const techSetStyles = (
-  rs: number,
-  cs: number,
-  re: number,
-  ce: number
-) => css`
-  grid-area: ${rs} / ${cs} / ${re} / ${ce};
-  ${flex({ gap: 10, align: "center", justify: "space-around" })};
-  /* align-self: flex-start; */
+export const techSetStyles = (res: number[], column = false) => css`
+  grid-area: ${res.join("/")};
+  ${flex({ gap: 10, align: "center", justify: "space-around", column })};
+
+  &:empty {
+    border-color: ${colors.brown};
+    background-color: ${colors.brown}20;
+    transition-duration: 200ms;
+    &:hover {
+      scale: 0.95;
+    }
+  }
 `;

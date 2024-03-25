@@ -2,7 +2,8 @@ import { css } from "@emotion/react";
 import { flex } from "@styles/index";
 
 export const sectionStyles = css`
-  ${flex({ column: true, gap: 20, align: "center" })}
+  ${flex({ column: true, gap: 20, align: "center" })};
+  padding-inline: 10px;
 
   > .title {
     /* align-self: flex-start; */
