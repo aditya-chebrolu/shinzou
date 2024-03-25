@@ -1,15 +1,23 @@
-'use client';
-import Head from 'next/head';
-import Image from 'next/image';
-import styles from '@/styles/Home.module.css';
-import Name from '@/components/name';
-import { pageStyles } from '@/styles/home';
+import GradientDivider from "@components/gradient-divider";
+import ContactMeSection from "@modules/contact-me";
+import ExperienceSection from "@modules/experience";
+import IntroSection from "@modules/intro";
+import SkillsSectionStyles from "@modules/skills";
+import { Divider, pageStyles, Spacer } from "@styles/index";
 
-export default function Home() {
+const index = () => {
   return (
-    <div className={pageStyles}>
-      <Name />
-      <div style={{ border: 'solid 1px white' }}></div>
+    <div css={pageStyles}>
+      <IntroSection />
+      <GradientDivider fullBleed />
+      <ExperienceSection />
+      <GradientDivider fullBleed />
+      <SkillsSectionStyles />
+      <GradientDivider fullBleed />
+      <ContactMeSection />
+      <Spacer gap={120} />
     </div>
   );
-}
+};
+
+export default index;

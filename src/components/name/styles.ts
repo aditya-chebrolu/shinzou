@@ -1,11 +1,13 @@
-import { css, keyframes } from '@emotion/css';
+import { css, keyframes } from "@emotion/react";
+import { black, colors } from "@styles/colors";
+import { flex, lgScreen } from "@styles/index";
 
 export const containerStyles = css`
-  font-family: 'ARS', sans-serif;
-  /* position: absolute; */
-  /* left: 5%; */
-  /* top: 10%; */
-  border: solid 1px white;
+  user-select: none;
+  overflow: hidden;
+  ${lgScreen} {
+    padding-inline: 100px;
+  }
 `;
 
 const letterAnim = keyframes`
@@ -27,16 +29,13 @@ const letterAnim = keyframes`
 `;
 
 export const introContainerStyles = css`
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  font-size: 4rem;
+  ${flex({ align: "center", gap: 15 })};
+  font-size: 30px;
 
   .letter {
     display: inline-block;
     font-weight: bold;
-    line-height: 5rem;
-    color: var(--primary);
+    color: ${colors.orange};
     opacity: 0%;
     animation: ${letterAnim} 1500ms forwards;
     scale: 0;
@@ -45,8 +44,43 @@ export const introContainerStyles = css`
   }
 
   .intro {
-    display: block;
-    color: white;
+    font-weight: bold;
+  }
+  ${lgScreen} {
+    font-size: 60px;
+  }
+`;
+
+const desAnim = keyframes`
+50% {
+  scale:1.1;
+}
+  to {
+    opacity: 1;
+    translate: 0;
+    scale:1;
+  }
+`;
+
+export const designationContainerStyles = css`
+  color: ${black[0]};
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 0.8px;
+
+  > span {
+    display: inline-block;
+    opacity: 0;
+    scale: 0;
+    animation: ${desAnim} 2000ms forwards;
+
+    &:empty {
+      min-width: 10px;
+    }
+  }
+
+  ${lgScreen} {
+    font-size: 45px;
   }
 `;
 
@@ -65,56 +99,17 @@ const dotAnim = keyframes`
 
 export const dotStyles = css`
   display: inline-block;
-  color: var(--primary);
+  color: ${colors.orange};
   animation: ${dotAnim} 1500ms forwards;
-  translate: 40rem 0;
   transform-origin: bottom left;
   margin-left: 2px;
-`;
+  height: 5px;
+  background-color: ${colors.orange};
+  aspect-ratio: 1;
+  translate: 10rem 0;
 
-const desAnim = keyframes`
-  0% {
-    opacity: 0;
+  ${lgScreen} {
+    translate: 10rem 0;
+    height: 10px;
   }
-
-  100% {
-    opacity: 1;
-    translate: 0;
-  }
-`;
-
-const lineAnim = keyframes`
-
-  to {
-    width:100%
-  }
-`;
-
-export const designationContainerStyles = css`
-  font-size: 4.35rem;
-  color: white;
-  opacity: 0;
-  translate: 0 50px;
-  animation: ${desAnim} 1000ms forwards;
-  position: relative;
-
-  /* > span:nth-child(odd) {
-    position: relative;
-    z-index: 2;
-  }
-  > span:nth-child(even) {
-    color: #b2b2b2;
-  } */
-
-  /* &::before {
-    content: '';
-    top: 50%;
-    position: absolute;
-    height: 12px;
-    background-color: var(--primary);
-    display: block;
-    width: 0;
-    animation: ${lineAnim} 2s forwards ease-out;
-    animation-delay: 4.5s;
-  } */
 `;

@@ -1,27 +1,25 @@
-'use client';
-import React from 'react';
 import {
   introContainerStyles,
   dotStyles,
-  containerStyles,
   designationContainerStyles,
-} from './styles';
-// testing github desktop
+  containerStyles,
+} from "./styles";
+import { designation } from "@constants/data";
+
 const Name = () => {
-  const PRE = "Hi, I'm".split('');
-  const NAME = 'Aditya Chebrolu';
-  const DESIGNATION = 'SOFTWARE ENGINEER';
-  const [fn, ln] = NAME.split(' ');
+  const PRE = "Hi, I'm".split("");
+  const NAME = "Aditya Chebrolu";
+  const [fn, ln] = NAME.split(" ");
 
   return (
-    <div className={containerStyles}>
-      <div className={introContainerStyles}>
-        <div className='intro'>{PRE}</div>
+    <div css={containerStyles}>
+      <div css={introContainerStyles}>
+        <div className="intro">{PRE}</div>
         <div>
-          {fn.split('').map((l, idx) => (
+          {fn.split("").map((l, idx) => (
             <div
-              className='letter'
-              style={{ animationDelay: `${idx * 200}ms` }}
+              className="letter"
+              style={{ animationDelay: `${1000 + idx * 150}ms` }}
               key={idx}
             >
               {l}
@@ -29,31 +27,35 @@ const Name = () => {
           ))}
         </div>
         <div>
-          {ln.split('').map((l, idx) => (
+          {ln.split("").map((l, idx) => (
             <span
               key={idx}
-              className='letter'
+              className="letter"
               style={{
-                animationDelay: `${(idx + fn.length) * 200}ms`,
+                animationDelay: `${1000 + (idx + fn.length) * 150}ms`,
               }}
             >
               {l}
             </span>
           ))}
-          <span
-            className={dotStyles}
-            style={{ animationDelay: `${(NAME.length + 2) * 200}ms` }}
-          >
-            .
-          </span>
+          <div
+            css={dotStyles}
+            style={{ animationDelay: `${1000 + (NAME.length + 2) * 150}ms` }}
+          />
         </div>
       </div>
-      <div
-        className={designationContainerStyles}
-        style={{ animationDelay: `${(NAME.length + 2) * 200}ms` }}
-      >
-        {DESIGNATION.split('').map((l, idx) => (
-          <span key={idx}>{l}</span>
+      <div css={designationContainerStyles}>
+        {designation.map(({ letter, delay }, idx) => (
+          <span
+            key={idx}
+            style={{
+              animationDelay: `${
+                1000 + (NAME.length + 2) * 150 + delay * 80
+              }ms`,
+            }}
+          >
+            {letter}
+          </span>
         ))}
       </div>
     </div>

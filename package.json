@@ -2,6 +2,7 @@
   "name": "shinzou",
   "version": "0.1.0",
   "private": true,
+  "author": "aditya chebrolu",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,14 +10,20 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@types/node": "20.6.2",
-    "@types/react": "18.2.21",
-    "@types/react-dom": "18.2.7",
-    "eslint": "8.49.0",
-    "eslint-config-next": "13.4.19",
-    "next": "13.4.19",
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.15.7",
+    "classnames": "^2.5.1",
+    "next": "14.1.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "typescript": "5.2.2"
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
+    "@types/node": "^20.11.16",
+    "@types/react": "^18.2.51",
+    "@types/react-dom": "^18.2.19",
+    "eslint-config-next": "14.1.0",
+    "typescript": "^5.3.3"
   }
 }
