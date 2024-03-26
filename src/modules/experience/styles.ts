@@ -1,18 +1,6 @@
 import { css } from "@emotion/react";
 import { flex } from "@styles/index";
 
-export const sectionStyles = css`
-  ${flex({ column: true, gap: 20, align: "center" })};
-  padding-inline: 10px;
-
-  > .title {
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 24px;
-    letter-spacing: 1px;
-  }
-
-  > .content {
-    gap: 10px;
-  }
+export const containerStyles = css`
+  width: min(350px, 100%);
 `;

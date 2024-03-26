@@ -10,7 +10,7 @@ import { useState } from "react";
 import { Dialog } from "@mui/material";
 import { Card, Spacer, SvgContainer } from "@styles/index";
 import PlanetIcon from "@assets/planet.svg";
-import { sectionStyles } from "./styles";
+import { containerStyles } from "./styles";
 import SectionWrapper from "@components/section-wrapper";
 
 const ExperienceSection = () => {
@@ -19,13 +19,15 @@ const ExperienceSection = () => {
   return (
     <>
       <SectionWrapper title="EXPERIENCE">
-        {experience.map((exp, idx) => (
-          <ExperienceSummaryStrip
-            summary={exp.summary}
-            onClick={() => setIdx(idx)}
-            key={idx}
-          />
-        ))}
+        <div css={containerStyles}>
+          {experience.map((exp, idx) => (
+            <ExperienceSummaryStrip
+              summary={exp.summary}
+              onClick={() => setIdx(idx)}
+              key={idx}
+            />
+          ))}
+        </div>
       </SectionWrapper>
       <Dialog open={isDialogOpen} css={dialogStyles} onClose={() => setIdx(-1)}>
         <Content exp={experience[idx]} />
