@@ -6,7 +6,6 @@ export const sectionStyles = css`
   padding-inline: 10px;
 
   > .title {
-    /* align-self: flex-start; */
     font-weight: bold;
     font-size: 24px;
     line-height: 24px;
@@ -15,6 +14,5 @@ export const sectionStyles = css`
 
   > .content {
     gap: 10px;
-    width: min(100%, 500px);
   }
 `;

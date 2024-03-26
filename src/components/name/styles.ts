@@ -73,7 +73,6 @@ export const designationContainerStyles = css`
     opacity: 0;
     scale: 0;
     animation: ${desAnim} 2000ms forwards;
-
     &:empty {
       min-width: 10px;
     }

@@ -82,12 +82,16 @@ export const SvgContainer = styled.div<{
   ratio?: string;
   w?: { dweb?: number; mweb?: number; default?: number };
   h?: { dweb?: number; mweb?: number; default?: number };
+  fill?: string;
+  stroke?: string;
 }>`
   font-size: 0;
   > svg {
     ${({ w }) => (w ? `width:${w.mweb || w.default}px` : "")};
     ${({ h }) => (h ? `height:${h.mweb || h.default}px` : "")};
     ${({ ratio }) => (ratio ? `aspect-ratio:${ratio || 1}` : "")};
+    ${({ fill }) => (fill ? `fill:${fill}` : "")};
+    ${({ stroke }) => (stroke ? `stroke:${stroke}` : "")};
   }
   @media (min-width: 500px) {
     > svg {

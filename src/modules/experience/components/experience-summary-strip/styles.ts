@@ -3,6 +3,7 @@ import { black, colors } from "@styles/colors";
 import { center, flex, lgScreen, noScrollbar } from "@styles/index";
 
 export const containerStyles = css`
+  width: min(100%, 350px);
   display: grid;
   grid-template-columns: auto 1fr;
   column-gap: 10px;

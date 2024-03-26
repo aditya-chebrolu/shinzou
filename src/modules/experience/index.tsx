@@ -11,23 +11,22 @@ import { Dialog } from "@mui/material";
 import { Card, Spacer, SvgContainer } from "@styles/index";
 import PlanetIcon from "@assets/planet.svg";
 import { sectionStyles } from "./styles";
+import SectionWrapper from "@components/section-wrapper";
 
 const ExperienceSection = () => {
   const [idx, setIdx] = useState<number>(-1);
   const isDialogOpen = idx >= 0;
   return (
     <>
-      <div css={sectionStyles}>
-        <div className="title">EXPERIENCE</div>
-        <div className="content">
-          {experience.map((exp, idx) => (
-            <ExperienceSummaryStrip
-              summary={exp.summary}
-              onClick={() => setIdx(idx)}
-            />
-          ))}
-        </div>
-      </div>
+      <SectionWrapper title="EXPERIENCE">
+        {experience.map((exp, idx) => (
+          <ExperienceSummaryStrip
+            summary={exp.summary}
+            onClick={() => setIdx(idx)}
+            key={idx}
+          />
+        ))}
+      </SectionWrapper>
       <Dialog open={isDialogOpen} css={dialogStyles} onClose={() => setIdx(-1)}>
         <Content exp={experience[idx]} />
       </Dialog>
@@ -46,7 +45,7 @@ const Content = ({ exp }: { exp: (typeof experience)[number] }) => {
         <div className="title">TECHNOLOGIES</div>
         <div className="content">
           {techStack.map(({ text, Icon }, idx) => (
-            <div className="capsule">
+            <div className="capsule" key={idx}>
               <SvgContainer h={{ dweb: 12, mweb: 15 }}>
                 <Icon />
               </SvgContainer>
@@ -63,7 +62,7 @@ const Content = ({ exp }: { exp: (typeof experience)[number] }) => {
               <span className="right">{pos.duration}</span>
             </div>
             {pos.points.map((point, idx) => (
-              <div className="point">
+              <div className="point" key={idx}>
                 <div className="left">
                   <SvgContainer
                     h={{ dweb: 14, mweb: 12 }}
