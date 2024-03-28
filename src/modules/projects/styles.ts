@@ -33,11 +33,45 @@ export const projectCardStyles = css`
       color: ${colors.orange};
       font-weight: bold;
     }
+
+    > a {
+      transition-duration: 300ms;
+      cursor: pointer;
+      &:hover {
+        rotate: z 180deg;
+      }
+    }
   }
 
   > .content {
-    color: ${colors.white};
     font-size: 14px;
-    text-align: justify;
+    line-height: 20px;
+    word-wrap: break-word;
+
+    > .chip {
+      display: inline-flex;
+      line-height: normal;
+      gap: 6px;
+      margin-right: 5px;
+      border: solid 1px ${black[1]};
+      background: ${black[2]};
+      padding: 3px 6px;
+      border-radius: 8px;
+      vertical-align: middle;
+      > .label {
+        font-size: 13px;
+        line-height: 13px;
+      }
+
+      > div {
+        transition-duration: 500ms;
+      }
+
+      &:hover {
+        > div:not(.label) {
+          rotate: 360deg;
+        }
+      }
+    }
   }
 `;

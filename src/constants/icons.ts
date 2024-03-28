@@ -9,6 +9,7 @@ import CSSIcon from "@assets/tech/css3.svg";
 import NodeIcon from "@assets/tech/nodejs.svg";
 import TailwindIcon from "@assets/tech/tailwindcss.svg";
 import MongoIcon from "@assets/tech/mongo.svg";
+import Ec2Icon from "@assets/tech/ec2.svg";
 
 export const icons = {
   next: { Icon: NextIcon, text: "Next JS" },
@@ -22,4 +23,5 @@ export const icons = {
   node: { Icon: NodeIcon, text: "Node.js" },
   tailwond: { Icon: TailwindIcon, text: "Tailwind CSS" },
   mongo: { Icon: MongoIcon, text: "MongoDB" },
+  ec2: { Icon: Ec2Icon, text: "Amazon EC2" },
 };

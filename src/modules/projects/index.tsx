@@ -18,19 +18,29 @@ const ProjectsSection = () => {
 };
 
 const ProjectCard = ({ project }: { project: (typeof projects)[number] }) => {
+  const { tech, title, url, description } = project;
   return (
     <Card css={projectCardStyles}>
       <div className="header">
-        <div className="title">{project.title}</div>
-        <SvgContainer h={{ default: 18 }} stroke={colors.brown}>
-          <LinkIcon />
-        </SvgContainer>
+        <div className="title">{title}</div>
+        <a href={url}>
+          <SvgContainer h={{ default: 18 }} stroke={colors.brown}>
+            <LinkIcon />
+          </SvgContainer>
+        </a>
       </div>
       <div className="content">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae nulla
-        commodi ipsa nihil tempore. Fugiat, pariatur cum. Nam exercitationem at
-        corrupti error voluptates modi officia accusamus rem unde ullam.
-        Asperiores.
+        {description[0].map((e, idx) => {
+          if (typeof e === "string") return e;
+          return (
+            <div key={idx} className="chip">
+              <SvgContainer h={{ default: 13 }} stroke={colors.brown}>
+                <e.Icon />
+              </SvgContainer>
+              <div className="label">{e.text}</div>
+            </div>
+          );
+        })}
       </div>
     </Card>
   );
