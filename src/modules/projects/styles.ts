@@ -1,19 +1,13 @@
 import { css } from "@emotion/react";
-import { black, colors } from "@styles/colors";
+import { black, colors, gradients, redGradient } from "@styles/colors";
 import { flex, lgScreen } from "@styles/index";
 
 export const containerStyles = css`
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(2, min(100%, 400px));
-  &:has(> *:only-child) {
-    align-self: stretch;
-    justify-items: center;
-    grid-template-columns: 1fr;
-  }
+  ${flex({ gap: 10, column: true, align: "center", justify: "center" })};
+  height: 100%;
 
   ${lgScreen} {
-    padding: 0;
+    flex-direction: row;
   }
 `;
 
@@ -73,5 +67,9 @@ export const projectCardStyles = css`
         }
       }
     }
+  }
+
+  ${lgScreen} {
+    width: 350px;
   }
 `;

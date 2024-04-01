@@ -13,3 +13,11 @@ export const redGradient = css`
   background: -webkit-linear-gradient(to bottom, #ea384d, #d31027);
   background: linear-gradient(to bottom, #ea384d, #d31027);
 `;
+
+export const gradients = {
+  none_black: `linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(0, 0, 0, 1)
+  );`,
+};

@@ -15,7 +15,11 @@ import { Card } from "@styles/index";
 const sections = [
   {
     pos: [1, 1, 2, 4],
-    icons: [<HTMLIcon />, <CSSIcon />, <TailwindIcon />],
+    icons: [
+      <HTMLIcon key={1} />,
+      <CSSIcon key={2} />,
+      <TailwindIcon key={3} />,
+    ],
   },
   {
     pos: [1, 4, 2, 5],
@@ -23,7 +27,7 @@ const sections = [
   },
   {
     pos: [2, 1, 5, 2],
-    icons: [<JSIcon />, <TSIcon />, <JavaIcon />],
+    icons: [<JSIcon key={1} />, <TSIcon key={2} />, <JavaIcon key={3} />],
     vertical: true,
   },
   {
@@ -32,15 +36,15 @@ const sections = [
   },
   {
     pos: [2, 3, 3, 5],
-    icons: [<NextIcon />, <NestIcon />],
+    icons: [<NextIcon key={1} />, <NestIcon key={2} />],
   },
   {
     pos: [3, 3, 4, 4],
-    icons: [<ReactIcon />],
+    icons: [<ReactIcon key={1} />],
   },
   {
     pos: [4, 2, 5, 3],
-    icons: [<NodeIcon />],
+    icons: [<NodeIcon key={1} />],
   },
   {
     pos: [3, 4, 4, 5],
@@ -52,7 +56,7 @@ const sections = [
   },
   {
     pos: [4, 4, 5, 5],
-    icons: [<MongoIcon />],
+    icons: [<MongoIcon key={1} />],
   },
 ];
 
@@ -61,30 +65,11 @@ const SkillsSectionStyles = () => {
     <div css={sectionStyles}>
       <div className="title">SKILLS</div>
       <div className="content">
-        {sections.map((section) => (
-          <Card css={techSetStyles(section.pos, section.vertical)}>
+        {sections.map((section, idx) => (
+          <Card css={techSetStyles(section.pos, section.vertical)} key={idx}>
             {section.icons.map((e) => e)}
           </Card>
         ))}
-        {/* <Card css={techSetStyles()}>
-          <NextIcon />
-          <NestIcon />
-        </Card>
-        <Card css={techSetStyles(1, 3, 2, 4)}>
-          <ReactIcon />
-        </Card>
-        <Card css={techSetStyles(2, 1, 3, 4)}>
-          <JSIcon />
-          <TSIcon />
-          <JavaIcon />
-        </Card>
-        <Card css={techSetStyles(3, 1, 4, 2)}>
-          <NodeIcon />
-        </Card>
-        <Card css={techSetStyles(3, 2, 4, 4)}>
-          <HTMLIcon />
-          <CSSIcon />
-        </Card> */}
       </div>
     </div>
   );

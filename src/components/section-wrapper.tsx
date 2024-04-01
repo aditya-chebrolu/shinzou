@@ -1,4 +1,4 @@
-import { css } from "@emotion/react";
+import { css, SerializedStyles } from "@emotion/react";
 import { flex } from "@styles/index";
 import { ReactNode } from "react";
 import cn from "classnames";
@@ -12,21 +12,23 @@ const styles = css`
     line-height: 24px;
     letter-spacing: 1px;
   }
+`;
 
-  > .content {
-    color: red;
-  }
+const x = css`
+  min-height: 50vh;
 `;
 
 const SectionWrapper = ({
   title,
   children,
+  customCss,
 }: {
   title: string;
   children: ReactNode;
+  customCss?: SerializedStyles;
 }) => {
   return (
-    <div css={styles}>
+    <div css={[styles, customCss]}>
       <div className="title">{title}</div>
       {children}
     </div>

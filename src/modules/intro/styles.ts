@@ -1,5 +1,5 @@
 import { css, keyframes } from "@emotion/react";
-import { center, flex, lgScreen } from "@styles/index";
+import { flex } from "@styles/index";
 
 export const sectionStyles = css`
   ${flex({ align: "center", justify: "center", column: true })};

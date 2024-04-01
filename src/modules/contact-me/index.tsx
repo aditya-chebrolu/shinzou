@@ -8,8 +8,8 @@ const ContactMeSection = () => {
       <div className="title">CONTACT ME</div>
       <div className="content">
         {socials.map(({ href, Icon }, idx) => (
-          <a href={href} css={socialIconStyles}>
-            <SvgContainer h={{ default: 40 }} key={idx}>
+          <a href={href} css={socialIconStyles} key={idx}>
+            <SvgContainer h={{ default: 40 }}>
               <Icon />
             </SvgContainer>
           </a>

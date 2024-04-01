@@ -18,7 +18,7 @@ const ProjectsSection = () => {
 };
 
 const ProjectCard = ({ project }: { project: (typeof projects)[number] }) => {
-  const { tech, title, url, description } = project;
+  const { title, url, description } = project;
   return (
     <Card css={projectCardStyles}>
       <div className="header">
