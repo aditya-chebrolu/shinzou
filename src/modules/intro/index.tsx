@@ -21,16 +21,18 @@ const IntroSection = () => {
       <div css={bgStyles}>
         <div className="mask" />
       </div>
-      <div css={imageStyles(b)}>
-        <Image
-          src={mypic}
-          alt="adityachebrolu"
-          objectFit="cover"
-          layout="fill"
-          objectPosition="0 0.2px"
-        />
+      <div className="content">
+        <div css={imageStyles(b)}>
+          <Image
+            src={mypic}
+            alt="adityachebrolu"
+            objectFit="cover"
+            layout="fill"
+            objectPosition="0 0.2px"
+          />
+        </div>
+        <Name />
       </div>
-      <Name />
     </div>
   );
 };

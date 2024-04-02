@@ -1,12 +1,26 @@
 import { css, keyframes } from "@emotion/react";
-import { flex } from "@styles/index";
+import { flex, lgScreen } from "@styles/index";
 
 export const sectionStyles = css`
   ${flex({ align: "center", justify: "center", column: true })};
-  gap: 40px;
+  align-self: center;
   min-height: 100dvh;
+  flex-shrink: 0;
   position: relative;
-  overflow: hidden;
+
+  > .content {
+    ${flex({ align: "center", column: true })};
+    /* border: solid 1px; */
+    > * {
+      /* border: solid 1px; */
+    }
+    width: min(100%, 1000px);
+    padding-inline: 15px;
+    ${lgScreen} {
+      align-items: flex-start;
+      padding-inline: 60px;
+    }
+  }
 `;
 
 export const bgStyles = css`
@@ -19,6 +33,7 @@ export const bgStyles = css`
   background-image: url("bg2.png");
   background-repeat: repeat;
   background-size: contain;
+  z-index: -1;
 
   .mask {
     z-index: 1;
@@ -63,11 +78,13 @@ export const imageStyles = (animationCompleted = false) => css`
   position: relative;
   z-index: 1;
   border-radius: 50%;
-  height: 180px;
+  height: 150px;
   aspect-ratio: 1;
   overflow: hidden;
   outline: solid 5px white;
   box-shadow: 0px -10px 10px 2px rgba(0, 0, 0, 0.75);
+  margin-bottom: 40px;
+
   ${animationCompleted
     ? css`
         transition: outline-offset 400ms;
@@ -80,4 +97,9 @@ export const imageStyles = (animationCompleted = false) => css`
         rotate: 0;
         animation: ${kf} 1.5s forwards ease-in-out;
       `}
+
+  ${lgScreen} {
+    margin: 24px 0;
+    height: 180px;
+  }
 `;

@@ -1,10 +1,13 @@
+import { description, designation, name } from "@constants/data/name";
 import {
   introContainerStyles,
   dotStyles,
   designationContainerStyles,
   containerStyles,
+  letterStyle1,
+  letterStyle2,
+  descriptionStyles,
 } from "./styles";
-import { designation } from "@constants/data";
 
 const Name = () => {
   const PRE = "Hi, I'm".split("");
@@ -13,51 +16,61 @@ const Name = () => {
 
   return (
     <div css={containerStyles}>
-      <div css={introContainerStyles}>
-        <div className="intro">{PRE}</div>
-        <div>
-          {fn.split("").map((l, idx) => (
+      <LineOne />
+      <LineTwo />
+      <div css={descriptionStyles}>{description}</div>
+    </div>
+  );
+};
+
+const LineOne = () => {
+  const [fn, ln] = name.split(" ").map((l) => l.split(""));
+  const initDelay = 1;
+  const letterInterval = 0.1;
+  const fnDelay = initDelay + fn.length * letterInterval;
+  const lnDelay = fnDelay + ln.length * letterInterval;
+  return (
+    <div css={introContainerStyles}>
+      <div className="intro">Hi, I'm</div>
+      <div>
+        {fn.map((letter, idx) => (
+          <div
+            key={idx}
+            css={letterStyle1(1, initDelay + idx * letterInterval)}
+          >
+            {letter}
+          </div>
+        ))}
+      </div>
+      <div>
+        {ln.map((letter, idx) => (
+          <div key={idx} css={letterStyle1(1, fnDelay + idx * letterInterval)}>
+            {letter}
+          </div>
+        ))}
+        <div css={dotStyles(lnDelay)} />
+      </div>
+    </div>
+  );
+};
+
+const LineTwo = () => {
+  const letterInterval = 0.1;
+  const initDelay = 1 + name.length * letterInterval;
+  return (
+    <div css={designationContainerStyles}>
+      {designation.map((word, idx) => (
+        <div key={idx}>
+          {word.map((obj, idx) => (
             <div
-              className="letter"
-              style={{ animationDelay: `${1000 + idx * 150}ms` }}
               key={idx}
+              css={letterStyle2(1, initDelay + obj.delay * letterInterval)}
             >
-              {l}
+              {obj.letter}
             </div>
           ))}
         </div>
-        <div>
-          {ln.split("").map((l, idx) => (
-            <span
-              key={idx}
-              className="letter"
-              style={{
-                animationDelay: `${1000 + (idx + fn.length) * 150}ms`,
-              }}
-            >
-              {l}
-            </span>
-          ))}
-          <div
-            css={dotStyles}
-            style={{ animationDelay: `${1000 + (NAME.length + 2) * 150}ms` }}
-          />
-        </div>
-      </div>
-      <div css={designationContainerStyles}>
-        {designation.map(({ letter, delay }, idx) => (
-          <span
-            key={idx}
-            style={{
-              animationDelay: `${
-                1000 + (NAME.length + 2) * 150 + delay * 80
-              }ms`,
-            }}
-          >
-            {letter}
-          </span>
-        ))}
-      </div>
+      ))}
     </div>
   );
 };
