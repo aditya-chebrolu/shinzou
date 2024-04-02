@@ -1,10 +1,14 @@
 import { css, keyframes } from "@emotion/react";
 import { black, colors } from "@styles/colors";
-import { flex, lgScreen } from "@styles/index";
+import { flex, lgScreen, smScreen } from "@styles/index";
 
 export const containerStyles = css`
   user-select: none;
   overflow: hidden;
+
+  ${smScreen} {
+    ${flex({ column: true, align: "center" })};
+  }
 `;
 
 export const introContainerStyles = css`
@@ -52,15 +56,14 @@ export const letterStyle1 = (duration: number, delay: number) => css`
 `;
 
 const dotAnim = keyframes`
- 25% {
-    border-radius: 0;
-  }
   50% {
-    translate: -1px 0;
-    rotate: -20deg;
-  }
-  100% {
+    background-color: #FFFACD;
+    rotate: -25deg;
     translate: 0;
+  }
+  to {
+    translate: 0;
+    background-color: #89cff0;
   }
 `;
 
@@ -72,15 +75,15 @@ export const dotStyles = (delay: number) => css`
   transform-origin: bottom left;
   margin-left: 2px;
   height: 5px;
-  background-color: ${colors.orange};
-  background-color: #89cff0;
+  width: 5px;
+  background-color: #fffacd;
 
-  aspect-ratio: 1;
-  translate: 10rem 0;
+  translate: 5rem 0;
 
   ${lgScreen} {
-    translate: 10rem 0;
+    translate: 15rem 0;
     height: 10px;
+    width: 10px;
   }
 `;
 
@@ -147,7 +150,9 @@ export const descriptionStyles = css`
   opacity: 0;
   animation: ${descAnimation} 1s forwards;
   animation-delay: 4s;
+  padding-inline: 28px;
   ${lgScreen} {
+    padding: 0;
     margin-top: 40px;
     width: 80%;
     font-size: 18px;

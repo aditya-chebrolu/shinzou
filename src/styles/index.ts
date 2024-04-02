@@ -3,6 +3,7 @@ import { black } from "./colors";
 import styled from "@emotion/styled";
 
 export const lgScreen = `@media (min-width: 900px)`;
+export const smScreen = `@media (max-width: 900px)`;
 
 export const flex = ({
   column = false,

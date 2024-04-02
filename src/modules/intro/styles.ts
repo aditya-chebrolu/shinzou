@@ -3,19 +3,13 @@ import { flex, lgScreen } from "@styles/index";
 
 export const sectionStyles = css`
   ${flex({ align: "center", justify: "center", column: true })};
-  align-self: center;
   min-height: 100dvh;
   flex-shrink: 0;
   position: relative;
 
   > .content {
     ${flex({ align: "center", column: true })};
-    /* border: solid 1px; */
-    > * {
-      /* border: solid 1px; */
-    }
     width: min(100%, 1000px);
-    padding-inline: 15px;
     ${lgScreen} {
       align-items: flex-start;
       padding-inline: 60px;
@@ -81,7 +75,7 @@ export const imageStyles = (animationCompleted = false) => css`
   height: 150px;
   aspect-ratio: 1;
   overflow: hidden;
-  outline: solid 5px white;
+  outline: solid 5px #fff;
   box-shadow: 0px -10px 10px 2px rgba(0, 0, 0, 0.75);
   margin-bottom: 40px;
 
