@@ -21,6 +21,10 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:type" content="website" />
+        {/* ios */}
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-title" content="AC Portfolio" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="#000000" />
       </Head>
       <Component {...pageProps} />
     </>
