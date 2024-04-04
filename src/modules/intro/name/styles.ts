@@ -75,15 +75,16 @@ export const dotStyles = (delay: number) => css`
   transform-origin: bottom left;
   margin-left: 2px;
   height: 5px;
-  width: 5px;
+  aspect-ratio: 1;
   background-color: #fffacd;
 
   translate: 5rem 0;
 
+  border-radius: 1px;
   ${lgScreen} {
+    border-radius: 1.5px;
     translate: 15rem 0;
     height: 10px;
-    width: 10px;
   }
 `;
 
@@ -97,7 +98,6 @@ const desAnim = keyframes`
   to {
     color: #FFFACD;
     opacity: 1;
-    translate: 0;
     scale:1;
   }
 `;

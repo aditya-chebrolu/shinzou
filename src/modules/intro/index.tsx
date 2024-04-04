@@ -1,5 +1,5 @@
 import { bgStyles, imageStyles, sectionStyles } from "./styles";
-import Name from "@components/name";
+import Name from "@modules/intro/name";
 import mypic from "@assets/aditya.jpg";
 import Image from "next/image";
 import { useEffect, useState } from "react";

@@ -1,8 +1,8 @@
 import "@styles/globals.css";
 import type { AppProps } from "next/app";
-import "../styles/fonts.css";
 import Head from "next/head";
 import { description, keywords, title } from "@constants/data/meta";
+import { rubikFont } from "@styles/fonts";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -26,7 +26,9 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="apple-mobile-web-app-title" content="AC Portfolio" />
         <meta name="apple-mobile-web-app-status-bar-style" content="#000000" />
       </Head>
-      <Component {...pageProps} />
+      <main className={rubikFont.className}>
+        <Component {...pageProps} />
+      </main>
     </>
   );
 }

@@ -1,4 +1,4 @@
-import { description, designation, name } from "@constants/data/name";
+import { description, designation, name } from "../data";
 import {
   introContainerStyles,
   dotStyles,
