@@ -10,10 +10,6 @@ import {
 } from "./styles";
 
 const Name = () => {
-  const PRE = "Hi, I'm".split("");
-  const NAME = "Aditya Chebrolu";
-  const [fn, ln] = NAME.split(" ");
-
   return (
     <div css={containerStyles}>
       <LineOne />

@@ -1,4 +1,4 @@
-import { sectionStyles, techSetStyles } from "./styles";
+import { contentStyles, techSetStyles } from "./styles";
 import NextIcon from "@assets/tech/nextjs2.svg";
 import NestIcon from "@assets/tech/nestjs.svg";
 import JSIcon from "@assets/tech/js.svg";
@@ -11,6 +11,7 @@ import NodeIcon from "@assets/tech/nodejs.svg";
 import TailwindIcon from "@assets/tech/tailwindcss.svg";
 import MongoIcon from "@assets/tech/mongo.svg";
 import { Card } from "@styles/index";
+import SectionWrapper from "@components/section-wrapper";
 
 const sections = [
   {
@@ -62,16 +63,15 @@ const sections = [
 
 const SkillsSectionStyles = () => {
   return (
-    <div css={sectionStyles}>
-      <div className="title">SKILLS</div>
-      <div className="content">
+    <SectionWrapper title="SKILLS">
+      <div css={contentStyles}>
         {sections.map((section, idx) => (
           <Card css={techSetStyles(section.pos, section.vertical)} key={idx}>
             {section.icons.map((e) => e)}
           </Card>
         ))}
       </div>
-    </div>
+    </SectionWrapper>
   );
 };
 

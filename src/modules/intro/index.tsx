@@ -1,8 +1,9 @@
-import { bgStyles, imageStyles, sectionStyles } from "./styles";
+import { containerStyles, imageStyles } from "./styles";
 import Name from "@modules/intro/name";
 import mypic from "@assets/aditya.jpg";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import SectionWrapper from "@components/section-wrapper";
 
 const IntroSection = () => {
   const [b, setB] = useState(false);
@@ -17,23 +18,18 @@ const IntroSection = () => {
     };
   }, []);
   return (
-    <div css={sectionStyles}>
-      <div css={bgStyles}>
-        <div className="mask" />
+    <SectionWrapper customCss={containerStyles}>
+      <div css={imageStyles(b)}>
+        <Image
+          src={mypic}
+          alt="adityachebrolu"
+          objectFit="cover"
+          layout="fill"
+          objectPosition="0 0.2px"
+        />
       </div>
-      <div className="content">
-        <div css={imageStyles(b)}>
-          <Image
-            src={mypic}
-            alt="adityachebrolu"
-            objectFit="cover"
-            layout="fill"
-            objectPosition="0 0.2px"
-          />
-        </div>
-        <Name />
-      </div>
-    </div>
+      <Name />
+    </SectionWrapper>
   );
 };
 

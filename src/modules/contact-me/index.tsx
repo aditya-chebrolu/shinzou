@@ -1,12 +1,12 @@
+import SectionWrapper from "@components/section-wrapper";
 import { socials } from "./data";
-import { sectionStyles, socialIconStyles } from "./styles";
-import { Card, SvgContainer } from "@styles/index";
+import { socialIconStyles } from "./styles";
+import { flex, SvgContainer } from "@styles/index";
 
 const ContactMeSection = () => {
   return (
-    <div css={sectionStyles}>
-      <div className="title">CONTACT ME</div>
-      <div className="content">
+    <SectionWrapper title="CONTACT ME">
+      <div css={flex({ gap: 20 })}>
         {socials.map(({ href, Icon }, idx) => (
           <a href={href} css={socialIconStyles} key={idx}>
             <SvgContainer h={{ default: 40 }}>
@@ -15,7 +15,7 @@ const ContactMeSection = () => {
           </a>
         ))}
       </div>
-    </div>
+    </SectionWrapper>
   );
 };
 

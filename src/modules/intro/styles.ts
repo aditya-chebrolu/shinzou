@@ -1,46 +1,9 @@
 import { css, keyframes } from "@emotion/react";
 import { flex, lgScreen } from "@styles/index";
 
-export const sectionStyles = css`
-  ${flex({ align: "center", justify: "center", column: true })};
-  min-height: 100dvh;
-  flex-shrink: 0;
-  position: relative;
-
-  > .content {
-    ${flex({ align: "center", column: true })};
-    width: min(100%, 1000px);
-    ${lgScreen} {
-      align-items: flex-start;
-      padding-inline: 60px;
-    }
-  }
-`;
-
-export const bgStyles = css`
-  top: 0;
-  left: 0;
-  height: 400px;
-  width: 100%;
-  position: absolute;
-  overflow: hidden;
-  background-image: url("bg2.png");
-  background-repeat: repeat;
-  background-size: contain;
-  z-index: -1;
-
-  .mask {
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 0),
-      rgba(0, 0, 0, 1)
-    );
-    position: absolute;
-    top: 0;
-  }
+export const containerStyles = css`
+  height: 100vh;
+  ${flex({ column: true, justify: "center" })};
 `;
 
 const kf = keyframes`
@@ -77,7 +40,6 @@ export const imageStyles = (animationCompleted = false) => css`
   overflow: hidden;
   outline: solid 5px #fff;
   box-shadow: 0px -10px 10px 2px rgba(0, 0, 0, 0.75);
-  margin-bottom: 40px;
 
   ${animationCompleted
     ? css`
@@ -92,8 +54,12 @@ export const imageStyles = (animationCompleted = false) => css`
         animation: ${kf} 1.5s forwards ease-in-out;
       `}
 
+  margin-bottom:40px;
+  align-self: center;
+
   ${lgScreen} {
-    margin: 24px 0;
+    align-self: flex-start;
+    margin: 20px 0 40px 5px;
     height: 180px;
   }
 `;

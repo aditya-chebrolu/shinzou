@@ -150,7 +150,7 @@ export const descriptionStyles = css`
   opacity: 0;
   animation: ${descAnimation} 1s forwards;
   animation-delay: 4s;
-  padding-inline: 28px;
+  padding-inline: 10px;
   ${lgScreen} {
     padding: 0;
     margin-top: 40px;

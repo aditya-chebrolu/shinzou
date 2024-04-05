@@ -42,9 +42,7 @@ export const noScrollbar = css`
 
 export const pageStyles = css`
   ${flex({ column: true, gap: 20 })};
-  ${noScrollbar};
-  height: 100dvh;
-  overflow: hidden scroll;
+  max-width: min(100%, 1000px);
 
   ${lgScreen} {
     margin-inline: auto;
@@ -107,4 +105,30 @@ export const Card = styled.div`
   background: ${black[3]};
   padding: 10px;
   border: solid 1px ${black[1]};
+`;
+
+export const bgStyles = css`
+  top: 0;
+  left: 0;
+  height: 400px;
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+  background-image: url("bg2.png");
+  background-repeat: repeat;
+  background-size: contain;
+  z-index: -1;
+
+  .mask {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0),
+      rgba(0, 0, 0, 1)
+    );
+    position: absolute;
+    top: 0;
+  }
 `;

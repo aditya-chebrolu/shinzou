@@ -1,21 +1,22 @@
 import { css, SerializedStyles } from "@emotion/react";
-import { flex } from "@styles/index";
+import { flex, lgScreen } from "@styles/index";
 import { ReactNode } from "react";
-import cn from "classnames";
+
 const styles = css`
   ${flex({ column: true, gap: 20, align: "center" })};
   padding-inline: 10px;
 
   > .title {
     font-weight: bold;
-    font-size: 24px;
-    line-height: 24px;
+    font-size: 44px;
     letter-spacing: 1px;
+    font-family: var(--oswald-font);
   }
-`;
 
-const x = css`
-  min-height: 50vh;
+  ${lgScreen} {
+    align-items: start;
+    padding: 0;
+  }
 `;
 
 const SectionWrapper = ({
@@ -23,13 +24,13 @@ const SectionWrapper = ({
   children,
   customCss,
 }: {
-  title: string;
+  title?: string;
   children: ReactNode;
   customCss?: SerializedStyles;
 }) => {
   return (
     <div css={[styles, customCss]}>
-      <div className="title">{title}</div>
+      {title && <div className="title">{title}</div>}
       {children}
     </div>
   );

@@ -1,21 +1,6 @@
 import { css } from "@emotion/react";
 import { flex } from "@styles/index";
 
-export const sectionStyles = css`
-  ${flex({ gap: 20, column: true, align: "center" })};
-  align-self: center;
-
-  > .title {
-    font-size: 25px;
-    font-weight: bold;
-    line-height: 25px;
-  }
-
-  > .content {
-    ${flex({ gap: 20 })}
-  }
-`;
-
 export const socialIconStyles = css`
   transition-duration: 200ms;
   cursor: pointer;
