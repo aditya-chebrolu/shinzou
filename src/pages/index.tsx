@@ -10,18 +10,18 @@ import { bgStyles, pageStyles, Spacer } from "@styles/index";
 const index = () => {
   return (
     <>
-      <div css={bgStyles}>
+      {/* <div css={bgStyles}>
         <div className="mask" />
-      </div>
+      </div> */}
       <div css={pageStyles}>
         <IntroSection />
-        <GradientDivider fullBleed />
+        <GradientDivider />
         <ExperienceSection />
-        <GradientDivider fullBleed />
+        <GradientDivider />
         <ProjectsSection />
-        <GradientDivider fullBleed />
+        <GradientDivider />
         <SkillsSectionStyles />
-        <GradientDivider fullBleed />
+        <GradientDivider />
         <ContactMeSection />
         <Spacer gap={10} />
         <Sign />

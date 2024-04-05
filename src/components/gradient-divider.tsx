@@ -1,24 +1,30 @@
 import { css } from "@emotion/react";
-import { Divider } from "@styles/index";
-// import PropTypes, { InferProps } from "prop-types";
+import { Divider, lgScreen } from "@styles/index";
+
 const styles = css`
-  background: linear-gradient(
-    90deg,
-    hsla(240, 4%, 15%, 1) 0%,
-    hsla(6, 92%, 67%, 1) 50%,
-    hsla(240, 4%, 15%, 1) 100%
-  );
+  background: linear-gradient(90deg, #fffacd 0%, #89cff0 50%, #fffacd 100%);
   position: relative;
+  flex-shrink: 0;
+
+  ${lgScreen} {
+    background: linear-gradient(
+      90deg,
+      #fffacd 0%,
+      #89cff0 10%,
+      #89cff0 90%,
+      #fffacd 100%
+    );
+  }
 `;
 
-type ElementConstructor = ((props: any) => JSX.Element) | React.FC<any>;
+// type ElementConstructor = ((props: any) => JSX.Element) | React.FC<any>;
 
-type PropsFrom<T extends ElementConstructor> = T extends React.FC<infer P>
-  ? P
-  : never;
+// type PropsFrom<T extends ElementConstructor> = T extends React.FC<infer P>
+//   ? P
+//   : never;
 
-const GradientDivider = (props: PropsFrom<typeof Divider>) => (
-  <Divider {...props} css={styles} fullBleed />
+const GradientDivider = () => (
+  <Divider thickness={0.6} color="#fffacd" css={styles} fullBleed />
 );
 
 export default GradientDivider;

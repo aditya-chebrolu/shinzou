@@ -24,5 +24,16 @@ a {
 
 html {
   color-scheme: dark;
-  background-color: black
+  background-color: black;
+  background-size: 20px 20px;
+  background-image: radial-gradient(circle, #fffacd50 0.5px, black 1px);
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media(min-width: 400px) {
+  html {
+    background-size: 40px 40px;
+  }
 }
