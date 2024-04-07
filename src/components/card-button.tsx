@@ -1,7 +1,6 @@
 import { css } from "@emotion/react";
-import { black, colors } from "@styles/colors";
+import { black } from "@styles/colors";
 import { MouseEventHandler, ReactNode, useState } from "react";
-import cn from "classnames";
 
 const styles = (md = false) => css`
   position: relative;

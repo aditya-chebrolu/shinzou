@@ -26,9 +26,9 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="apple-mobile-web-app-title" content="AC Portfolio" />
         <meta name="apple-mobile-web-app-status-bar-style" content="#000000" />
       </Head>
-      <main className={`${rubikFont.className} ${oswaldFont.variable}`}>
-        <Component {...pageProps} />
-      </main>
+      {/* <main className={`${rubikFont.className} ${oswaldFont.variable}`}> */}
+      <Component {...pageProps} />
+      {/* </main> */}
     </>
   );
 }

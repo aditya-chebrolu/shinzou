@@ -6,7 +6,7 @@ import {
   positionSectionStyles,
   techStackRowStyles,
 } from "./components/experience-summary-strip/styles";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Dialog } from "@mui/material";
 import { Card, Spacer, SvgContainer } from "@styles/index";
 import PlanetIcon from "@assets/planet.svg";

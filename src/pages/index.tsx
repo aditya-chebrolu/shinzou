@@ -9,25 +9,20 @@ import { bgStyles, pageStyles, Spacer } from "@styles/index";
 
 const index = () => {
   return (
-    <>
-      {/* <div css={bgStyles}>
-        <div className="mask" />
-      </div> */}
-      <div css={pageStyles}>
-        <IntroSection />
-        <GradientDivider />
-        <ExperienceSection />
-        <GradientDivider />
-        <ProjectsSection />
-        <GradientDivider />
-        <SkillsSectionStyles />
-        <GradientDivider />
-        <ContactMeSection />
-        <Spacer gap={10} />
-        <Sign />
-        <Spacer gap={10} />
-      </div>
-    </>
+    <div css={pageStyles}>
+      <IntroSection />
+      <GradientDivider />
+      <ExperienceSection />
+      <GradientDivider />
+      <ProjectsSection />
+      <GradientDivider />
+      <SkillsSectionStyles />
+      <GradientDivider />
+      <ContactMeSection />
+      <Spacer gap={10} />
+      <Sign />
+      <Spacer gap={10} />
+    </div>
   );
 };
 
