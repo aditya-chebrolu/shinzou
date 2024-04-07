@@ -6,7 +6,6 @@ export const containerStyles = css`
   display: grid;
   grid-template-columns: auto 1fr;
   column-gap: 10px;
-  cursor: pointer;
 
   > .logo {
     grid-area: 1/1/3/2;

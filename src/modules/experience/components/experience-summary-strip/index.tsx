@@ -1,20 +1,44 @@
 import { Card, SvgContainer } from "@styles/index";
 import { containerStyles } from "./styles";
+import CardButton from "@components/card-button";
 
-type Props = {
-  summary?: {
-    Icon: any;
-    designation: string;
-    duration: string;
-  };
-  onClick?: () => void;
+type Summary = {
+  Icon: any;
+  designation: string;
+  duration: string;
 };
 
-const ExperienceSummaryStrip = ({ summary, onClick = () => null }: Props) => {
+type Props = {
+  summary?: Summary;
+  onClick?: () => void;
+  isButton?: boolean;
+};
+
+const ExperienceSummaryStrip = ({
+  summary,
+  onClick = () => null,
+  isButton = false,
+}: Props) => {
   if (!summary) return null;
+
+  if (isButton) {
+    return (
+      <CardButton onClick={onClick}>
+        <Content summary={summary} />
+      </CardButton>
+    );
+  }
+  return (
+    <Card>
+      <Content summary={summary} />
+    </Card>
+  );
+};
+
+const Content = ({ summary }: { summary: Summary }) => {
   const { Icon, designation, duration } = summary;
   return (
-    <Card css={containerStyles} onClick={onClick}>
+    <div css={containerStyles}>
       <SvgContainer
         ratio="37/15"
         h={{ dweb: 25, mweb: 20, default: 25 }}
@@ -24,7 +48,7 @@ const ExperienceSummaryStrip = ({ summary, onClick = () => null }: Props) => {
       </SvgContainer>
       <div className="title">{designation}</div>
       <div className="date">{duration}</div>
-    </Card>
+    </div>
   );
 };
 

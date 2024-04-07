@@ -12,6 +12,7 @@ import { Card, Spacer, SvgContainer } from "@styles/index";
 import PlanetIcon from "@assets/planet.svg";
 import { containerStyles } from "./styles";
 import SectionWrapper from "@components/section-wrapper";
+import CardButton from "@components/card-button";
 
 const ExperienceSection = () => {
   const [idx, setIdx] = useState<number>(-1);
@@ -25,6 +26,7 @@ const ExperienceSection = () => {
               summary={exp.summary}
               onClick={() => setIdx(idx)}
               key={idx}
+              isButton
             />
           ))}
         </div>
