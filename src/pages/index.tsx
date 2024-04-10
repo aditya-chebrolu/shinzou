@@ -20,8 +20,8 @@ const index = () => {
         <GradientDivider />
         <SkillsSectionStyles />
         <GradientDivider />
-        <CheatSheets />
-        <GradientDivider />
+        {/* <CheatSheets /> */}
+        {/* <GradientDivider /> */}
         <ContactMeSection />
         <Spacer gap={10} />
         <Sign />
