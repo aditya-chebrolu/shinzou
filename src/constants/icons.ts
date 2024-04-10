@@ -7,7 +7,7 @@ import ReactIcon from "@assets/tech/reactjs.svg";
 import HTMLIcon from "@assets/tech/html5.svg";
 import CSSIcon from "@assets/tech/css3.svg";
 import NodeIcon from "@assets/tech/nodejs.svg";
-import TailwindIcon from "@assets/tech/tailwindcss.svg";
+import TailwindIcon from "@assets/tech/tailwind.svg";
 import MongoIcon from "@assets/tech/mongo.svg";
 import Ec2Icon from "@assets/tech/ec2.svg";
 
@@ -21,7 +21,7 @@ export const icons = {
   html: { Icon: HTMLIcon, text: "HTML" },
   css: { Icon: CSSIcon, text: "CSS" },
   node: { Icon: NodeIcon, text: "Node.js" },
-  tailwond: { Icon: TailwindIcon, text: "Tailwind CSS" },
+  tailwind: { Icon: TailwindIcon, text: "Tailwind CSS" },
   mongo: { Icon: MongoIcon, text: "MongoDB" },
   ec2: { Icon: Ec2Icon, text: "Amazon EC2" },
 };

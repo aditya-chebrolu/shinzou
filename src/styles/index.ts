@@ -43,7 +43,6 @@ export const noScrollbar = css`
 export const pageStyles = css`
   ${flex({ column: true, gap: 20 })};
   max-width: min(100%, 1000px);
-
   ${lgScreen} {
     margin-inline: auto;
   }
@@ -85,18 +84,18 @@ export const SvgContainer = styled.div<{
   stroke?: string;
 }>`
   font-size: 0;
+
   > svg {
     ${({ w }) => (w ? `width:${w.mweb || w.default}px` : "")};
     ${({ h }) => (h ? `height:${h.mweb || h.default}px` : "")};
-    ${({ ratio }) => (ratio ? `aspect-ratio:${ratio || 1}` : "")};
     ${({ fill }) => (fill ? `fill:${fill}` : "")};
     ${({ stroke }) => (stroke ? `stroke:${stroke}` : "")};
+    aspect-ratio: ${({ ratio="1" }) => ratio};
   }
   @media (min-width: 500px) {
     > svg {
       ${({ w }) => (w ? `width:${w.dweb || w.default}px` : "")};
       ${({ h }) => (h ? `height:${h.dweb || h.default}px` : "")};
-      ${({ ratio }) => (ratio ? `aspect-ratio:${ratio}` : "")};
     }
   }
 `;
@@ -108,27 +107,6 @@ export const Card = styled.div`
 `;
 
 export const bgStyles = css`
-  top: 0;
-  left: 0;
-  height: 400px;
-  width: 100%;
-  position: absolute;
-  overflow: hidden;
-  background-image: url("bg2.png");
-  background-repeat: repeat;
-  background-size: contain;
-  z-index: -1;
-
-  .mask {
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 0),
-      rgba(0, 0, 0, 1)
-    );
-    position: absolute;
-    top: 0;
-  }
+   background-size: 17px 17px;
+  background-image: radial-gradient(circle, #fffacd50 0.5px, black 1px);
 `;

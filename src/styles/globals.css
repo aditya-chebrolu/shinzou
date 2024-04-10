@@ -24,8 +24,7 @@ a {
 html {
   color-scheme: dark;
   background-color: black;
-  background-size: 17px 17px;
-  background-image: radial-gradient(circle, #fffacd50 0.5px, black 1px);
+
   &::-webkit-scrollbar {
     display: none;
   }

@@ -8,13 +8,13 @@ import HTMLIcon from "@assets/tech/html5.svg";
 import CSSIcon from "@assets/tech/css3.svg";
 import NodeIcon from "@assets/tech/nodejs.svg";
 
-export const experience = [
+export const experiences = [
   {
-    summary: {
-      designation: "SOFTWARE ENGINEER II",
-      duration: "Jan 2022 - Present",
-      Icon: BajajIcon,
-    },
+    company:"Bajaj Finserv Health Limited",
+    companyURL:"",
+    designation: "SOFTWARE ENGINEER II",
+    duration: "Jan 2022 - Present",
+    Icon: BajajIcon,
     techStack: [
       { Icon: JSIcon, text: "JS" },
       { Icon: TSIcon, text: "TS" },

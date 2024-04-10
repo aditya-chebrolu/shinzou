@@ -1,4 +1,4 @@
-import { experience } from "@constants/data/experience";
+import { experiences } from "@modules/experience/data";
 import ExperienceSummaryStrip from "./components/experience-summary-strip";
 import {
   dialogStyles,
@@ -6,13 +6,12 @@ import {
   positionSectionStyles,
   techStackRowStyles,
 } from "./components/experience-summary-strip/styles";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Dialog } from "@mui/material";
-import { Card, Spacer, SvgContainer } from "@styles/index";
+import { Card, SvgContainer } from "@styles/index";
 import PlanetIcon from "@assets/planet.svg";
 import { containerStyles } from "./styles";
 import SectionWrapper from "@components/section-wrapper";
-import CardButton from "@components/card-button";
 
 const ExperienceSection = () => {
   const [idx, setIdx] = useState<number>(-1);
@@ -21,9 +20,13 @@ const ExperienceSection = () => {
     <>
       <SectionWrapper title="EXPERIENCE">
         <div css={containerStyles}>
-          {experience.map((exp, idx) => (
+          {experiences.map((exp, idx) => (
             <ExperienceSummaryStrip
-              summary={exp.summary}
+              summary={{
+                Icon: exp.Icon,
+                designation: exp.designation,
+                duration: exp.duration,
+              }}
               onClick={() => setIdx(idx)}
               key={idx}
               isButton
@@ -32,19 +35,25 @@ const ExperienceSection = () => {
         </div>
       </SectionWrapper>
       <Dialog open={isDialogOpen} css={dialogStyles} onClose={() => setIdx(-1)}>
-        <Content exp={experience[idx]} />
+        <Content exp={experiences[idx]} />
       </Dialog>
     </>
   );
 };
 
-const Content = ({ exp }: { exp: (typeof experience)[number] }) => {
+const Content = ({ exp }: { exp: (typeof experiences)[number] }) => {
   if (!exp) return null;
-  const { techStack, summary, positions } = exp;
+  const { techStack, Icon, designation, duration, positions } = exp;
 
   return (
     <>
-      <ExperienceSummaryStrip summary={summary} />
+      <ExperienceSummaryStrip
+        summary={{
+          Icon,
+          designation,
+          duration,
+        }}
+      />
       <Card css={techStackRowStyles}>
         <div className="title">TECHNOLOGIES</div>
         <div className="content">

@@ -1,6 +1,7 @@
 import { css } from "@emotion/react";
 import { black } from "@styles/colors";
 import { MouseEventHandler, ReactNode, useState } from "react";
+import { sleep } from "src/utils";
 
 const styles = (md = false) => css`
   position: relative;
@@ -33,7 +34,7 @@ const styles = (md = false) => css`
   }
 
   > .down {
-    background-color: ${black[1]}aa;
+    background-color: ${black[1]};
     bottom: 0;
     left: 4px;
     height: 4px;
@@ -43,7 +44,7 @@ const styles = (md = false) => css`
   }
 
   > .left {
-    background-color: ${black[1]};
+    background-color: ${black[0]};
     top: 4px;
     left: 0;
     width: 4px;
@@ -62,7 +63,8 @@ const CardButton = ({
 }) => {
   const [isMouseDown, setMouseDown] = useState(false);
 
-  const onClick = (e: any) => {
+  const onClick = async (e: any) => {
+    await sleep(150);
     onCardClick?.(e);
   };
 
