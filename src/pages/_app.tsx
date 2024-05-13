@@ -2,7 +2,8 @@ import "@styles/globals.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { description, keywords, title } from "@constants/data/meta";
-import { oswaldFont, rubikFont } from "@styles/fonts";
+import { newTitleFont, rubikFont, sourceSansPro } from "@styles/fonts";
+import ThemeProvider from "src/contexts/theme-provider";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -26,8 +27,12 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="apple-mobile-web-app-title" content="AC Portfolio" />
         <meta name="apple-mobile-web-app-status-bar-style" content="#000000" />
       </Head>
-      <main className={`${rubikFont.className} ${oswaldFont.variable}`}>
-        <Component {...pageProps} />
+      <main
+        className={`${rubikFont.className} ${sourceSansPro.variable} ${newTitleFont.variable}`}
+      >
+        <ThemeProvider>
+          <Component {...pageProps} />
+        </ThemeProvider>
       </main>
     </>
   );

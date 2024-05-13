@@ -1,7 +1,7 @@
 :root {
   --primary-bg: #102542;
-  --primary: #f87060;
   --secondary: #b3a394;
+
 }
 
 * {
@@ -21,17 +21,16 @@ a {
   text-decoration: none;
 }
 
-html {
-  color-scheme: dark;
+body {
+  color:white;
   background-color: black;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
+  --primary:#007FFF;
+  --dotted-bg: radial-gradient(circle,#242427 0.5px,black 1px);
 }
 
-@media(min-width: 400px) {
-  html {
-    background-size: 35px 35px;
-  }
+body.light {
+  color:black;
+  background-color: white;
+  --primary: #324ab2;
+  --dotted-bg: radial-gradient(circle,#AFAFAF 0.5px,#fcfcfc 1px);
 }

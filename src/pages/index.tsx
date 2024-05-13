@@ -1,6 +1,5 @@
 import GradientDivider from "@components/gradient-divider";
 import Sign from "@components/sign";
-import CheatSheets from "@modules/cheatsheets";
 import ContactMeSection from "@modules/contact-me";
 import ExperienceSection from "@modules/experience";
 import IntroSection from "@modules/intro";

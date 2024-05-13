@@ -57,6 +57,42 @@ export const center = css`
   place-items: center;
 `;
 
+export const Card = styled.div`
+  background: ${black[3]};
+  padding: 10px;
+  border: solid 1px ${black[1]};
+`;
+
+// todo: rename
+export const bgStyles = css`
+  background-size: 17px 17px;
+  background-image: radial-gradient(circle, ${black[2]} 0.5px, black 1px);
+`;
+
+export const SvgContainer = styled.div<{
+  ratio?: string;
+  w?: { dweb?: number; mweb?: number; default?: number };
+  h?: { dweb?: number; mweb?: number; default?: number };
+  fill?: string;
+  stroke?: string;
+}>`
+  font-size: 0;
+
+  > svg {
+    ${({ w }) => (w ? `width:${w.mweb || w.default}px` : "")};
+    ${({ h }) => (h ? `height:${h.mweb || h.default}px` : "")};
+    ${({ fill }) => (fill ? `fill:${fill}` : "")};
+    ${({ stroke }) => (stroke ? `stroke:${stroke}` : "")};
+    aspect-ratio: ${({ ratio = "1" }) => ratio};
+  }
+  @media (min-width: 500px) {
+    > svg {
+      ${({ w }) => (w ? `width:${w.dweb || w.default}px` : "")};
+      ${({ h }) => (h ? `height:${h.dweb || h.default}px` : "")};
+    }
+  }
+`;
+
 export const Divider = styled.div<{
   space?: number;
   color?: string;
@@ -74,39 +110,4 @@ export const Divider = styled.div<{
           clip-path: inset(0 -100vmax);
         `
       : ""}
-`;
-
-export const SvgContainer = styled.div<{
-  ratio?: string;
-  w?: { dweb?: number; mweb?: number; default?: number };
-  h?: { dweb?: number; mweb?: number; default?: number };
-  fill?: string;
-  stroke?: string;
-}>`
-  font-size: 0;
-
-  > svg {
-    ${({ w }) => (w ? `width:${w.mweb || w.default}px` : "")};
-    ${({ h }) => (h ? `height:${h.mweb || h.default}px` : "")};
-    ${({ fill }) => (fill ? `fill:${fill}` : "")};
-    ${({ stroke }) => (stroke ? `stroke:${stroke}` : "")};
-    aspect-ratio: ${({ ratio="1" }) => ratio};
-  }
-  @media (min-width: 500px) {
-    > svg {
-      ${({ w }) => (w ? `width:${w.dweb || w.default}px` : "")};
-      ${({ h }) => (h ? `height:${h.dweb || h.default}px` : "")};
-    }
-  }
-`;
-
-export const Card = styled.div`
-  background: ${black[3]};
-  padding: 10px;
-  border: solid 1px ${black[1]};
-`;
-
-export const bgStyles = css`
-   background-size: 17px 17px;
-  background-image: radial-gradient(circle, #fffacd50 0.5px, black 1px);
 `;

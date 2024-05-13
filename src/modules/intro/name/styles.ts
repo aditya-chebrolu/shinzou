@@ -1,5 +1,5 @@
 import { css, keyframes } from "@emotion/react";
-import { black, colors } from "@styles/colors";
+import { colors } from "@styles/colors";
 import { flex, lgScreen, smScreen } from "@styles/index";
 
 export const containerStyles = css`
