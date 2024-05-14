@@ -7,13 +7,13 @@ export const smScreen = `@media (max-width: 900px)`;
 
 export const flex = ({
   column = false,
-  gap = 0,
+  gap = [0, 0],
   wrap,
   align = "stretched",
   justify = "flex-start",
 }: {
   column?: boolean;
-  gap?: number;
+  gap?: number[];
   wrap?: "wrap" | "no-wrap";
   align?: "center" | "stretched" | "start" | "end";
   justify?:
@@ -28,10 +28,14 @@ export const flex = ({
 } = {}) => css`
   display: flex;
   flex-direction: ${column ? "column" : "row"};
-  gap: ${gap}px;
+  gap: ${gap[0]}px;
   align-items: ${align};
   justify-content: ${justify};
   flex-wrap: ${wrap};
+
+  ${lgScreen} {
+    gap: ${gap[1] || gap[0]}px;
+  }
 `;
 
 export const noScrollbar = css`
@@ -41,7 +45,7 @@ export const noScrollbar = css`
 `;
 
 export const pageStyles = css`
-  ${flex({ column: true, gap: 20 })};
+  ${flex({ column: true, gap: [20] })};
   max-width: min(100%, 1000px);
   ${lgScreen} {
     margin-inline: auto;

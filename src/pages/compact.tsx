@@ -1,8 +1,8 @@
 import DottedCard from "@components/dotted-card";
 import { css } from "@emotion/react";
-import CompactExperience from "@modules/experience/compact";
+import CompactExperience from "@modules/v0/experience/compact";
 import CompactIntro from "@modules/intro/compact";
-import CompactSkills from "@modules/skills/compact";
+import CompactSkills from "@modules/v0/skills/compact";
 import { black, colors } from "@styles/colors";
 import { Divider, flex, lgScreen } from "@styles/index";
 
@@ -14,7 +14,7 @@ const styles = css`
   padding: 20px;
 
   > .content {
-    ${flex({ gap: 15, column: true })};
+    ${flex({ gap: [15], column: true })};
     width: min(100%, 600px);
   }
 

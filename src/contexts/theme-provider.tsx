@@ -36,8 +36,8 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     const theme = localStorage.getItem("theme");
-    if (theme === "light") setLightTheme();
-    else setDarkTheme();
+    if (theme === "dark") setDarkTheme();
+    else setLightTheme();
   }, []);
 
   const toggleMode = () => {

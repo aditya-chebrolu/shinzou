@@ -16,6 +16,7 @@ body {
   font-family: Roboto, sans-serif;
 }
 
+
 a {
   color: inherit;
   text-decoration: none;
@@ -24,13 +25,56 @@ a {
 body {
   color:white;
   background-color: black;
-  --primary:#007FFF;
+
+  /* name */
+  --name:#FFBA00;
+  --name-line:#5A4FCF;
+  
+  /* Skills  */
+  --skills-bg-color:#FFBA00;
+  
+  /*  */
+  --section-title:#6082B6;
+  --section-title-line:#BCCAE0;
+
+  /* Exp */
+  --title:#FFBA00;
+  --title-line:#DE3163;
+
+  --exp-duration:#DBDBDB;
+  --exp-pos-title:#DBDBDB;
+  --exp-pos-duration:#DBDBDB;
+
   --dotted-bg: radial-gradient(circle,#242427 0.5px,black 1px);
+
 }
 
 body.light {
   color:black;
   background-color: white;
-  --primary: #324ab2;
+  
+  /* name */
+  --name:#324AB2;
+  --name-line:#ffcba4;
+
+  /* Skills */
+  --skills-bg-color:#324AB2;
+
+  /* Exp */
+  --title:#324ab2;
+  --title-line:#E0E4F6;
+
+  --exp-duration:#2a3439;
+  --exp-pos-title:#2a3439;
+  --exp-pos-duration:#2a3439;
+
+  --section-title:#2a3439;
+  --section-title-line:#ef9b0f;
+
   --dotted-bg: radial-gradient(circle,#AFAFAF 0.5px,#fcfcfc 1px);
+}
+
+body {
+  background-size: 17px 17px;
+  background-image: var(--dotted-bg);
 }

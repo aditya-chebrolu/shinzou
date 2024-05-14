@@ -2,29 +2,19 @@ import { css } from "@emotion/react";
 import { flex, lgScreen } from "@styles/index";
 
 export const containerStyles = css`
-  ${flex({ column: true, align: "center", gap: 20 })}
-  font-family: var(--source-sans-pro-font);
+  ${flex({ column: true, align: "center", gap: [20] })};
+  top: 0;
+  z-index: 1;
   text-align: center;
-
-  > .name {
-    color: var(--primary);
-    font-weight: 900;
-    /* color: #de3163; */
-    font-size: 46px;
-  }
-
+  transition: all 200ms;
   > .icons {
-    ${flex({ gap: 20 })}
+    ${flex({ gap: [20] })}
+    svg {
+      transition-duration: 200ms;
+    }
   }
 
   ${lgScreen} {
-    /* font-size: 160px; */
+    align-items: flex-start;
   }
-`;
-
-export const resumeButtonStyles = css`
-  padding: 10px 40px;
-  background-color: var(--primary);
-  font-size: large;
-  color: white;
 `;
