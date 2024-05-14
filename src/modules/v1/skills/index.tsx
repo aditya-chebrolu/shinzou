@@ -1,6 +1,5 @@
 import { icons } from "@constants/icons";
 import { SvgContainer } from "@styles/index";
-import React from "react";
 import { containerStyles } from "./styles";
 
 const Skills = () => {

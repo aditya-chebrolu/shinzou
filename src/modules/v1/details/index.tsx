@@ -5,7 +5,7 @@ import { useTheme } from "src/contexts/theme-provider";
 import UnderlinedText from "@components/underlined-text";
 
 const Details = () => {
-  const { isDarkMode, toggleMode } = useTheme();
+  const { isDarkMode } = useTheme();
   return (
     <div css={containerStyles}>
       <UnderlinedText

@@ -1,5 +1,5 @@
 import { containerStyles, imageStyles } from "./styles";
-import Name from "@modules/intro/name";
+import Name from "@modules/v0/intro/name";
 import mypic from "@assets/aditya.jpg";
 import Image from "next/image";
 import { useEffect, useState } from "react";
