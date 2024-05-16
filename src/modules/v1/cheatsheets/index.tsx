@@ -1,5 +1,5 @@
 import UnderlinedText from "@components/underlined-text";
-import { cheatsheets } from "@constants/data/cheat-sheets";
+import { cheatSheets } from "@constants/data/cheat-sheets";
 import { containerStyles, contentStyles } from "./styles";
 import LinkIcon from "@assets/link.svg";
 import { SvgContainer } from "@styles/index";
@@ -9,7 +9,7 @@ const Cheatsheets = () => {
     <div css={containerStyles}>
       <UnderlinedText text="Cheatsheets" />
       <div css={contentStyles}>
-        {cheatsheets.map((cs, idx) => (
+        {cheatSheets.map((cs, idx) => (
           <a key={idx} className="row" href={cs.link}>
             <UnderlinedText
               text={cs.title}
