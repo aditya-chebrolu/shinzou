@@ -7,4 +7,8 @@ export const cheatsheets = [
     title: "CSS Cheat sheet",
     link: "https://github.com/aditya-chebrolu/cs-css",
   },
+  {
+    title: "Mongo DB Cheat Sheet",
+    link: "https://github.com/aditya-chebrolu/cs-mongo",
+  },
 ];
