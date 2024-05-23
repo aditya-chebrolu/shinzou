@@ -1,7 +1,7 @@
 import { css } from "@emotion/react";
 import { lgScreen } from "@styles/index";
 
-export const styles = ({
+const styles = ({
   size,
   color = "",
   lineColor = "",

@@ -8,4 +8,5 @@ export const containerStyles = css`
   background-color: var(--skills-bg-color);
   padding: 15px;
   overflow: hidden;
+  flex-shrink: 0;
 `;

@@ -1,24 +1,24 @@
 import { css } from "@emotion/react";
-import Blogs from "@modules/v1/blogs";
+// import Blogs from "@modules/v1/blogs";
 import Cheatsheets from "@modules/v1/cheatsheets";
 import Details from "@modules/v1/details";
 import Experience from "@modules/v1/exp";
+import Footer from "@modules/v1/footer";
 import Projects from "@modules/v1/projects";
 import Skills from "@modules/v1/skills";
-import Switch from "@modules/v1/switch";
 import { flex, lgScreen } from "@styles/index";
 
 const styles = css`
-  position: relative;
-
   > .wrapper {
-    margin: 15px;
-    ${flex({ column: true, gap: [20, 50] })};
+    ${flex({ column: true, gap: [20, 50] })}
+    padding: 15px 15px 0;
+    min-height: 100vh;
   }
 
   ${lgScreen} {
     > .wrapper {
-      margin: 70px 15%;
+      padding: 70px 0 0;
+      margin-inline: 15%;
     }
   }
 `;
@@ -46,7 +46,6 @@ const Page = () => {
   return (
     <div css={styles}>
       <div className="wrapper">
-        <Switch />
         <Details />
         <Skills />
         <div css={sectionStyles}>
@@ -58,6 +57,7 @@ const Page = () => {
             <Cheatsheets />
           </div>
         </div>
+        <Footer />
       </div>
     </div>
   );

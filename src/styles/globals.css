@@ -1,7 +1,6 @@
 :root {
-  --primary-bg: #102542;
-  --secondary: #b3a394;
-
+  --primary:#324AB2;
+  --secondary:#ef9b0f;
 }
 
 * {
@@ -23,36 +22,12 @@ a {
 }
 
 body {
-  color:white;
-  background-color: black;
-
-  /* name */
-  --name:#FFBA00;
-  --name-line:#5A4FCF;
-  
-  /* Skills  */
-  --skills-bg-color:#FFBA00;
-  
-  /*  */
-  --section-title:#6082B6;
-  --section-title-line:#BCCAE0;
-
-  /* Exp */
-  --title:#FFBA00;
-  --title-line:#DE3163;
-
-  --exp-duration:#DBDBDB;
-  --exp-pos-title:#DBDBDB;
-  --exp-pos-duration:#DBDBDB;
-
-  --dotted-bg: radial-gradient(circle,#242427 0.5px,black 1px);
-
-}
-
-body.light {
   color:black;
   background-color: white;
   
+  /* colors */
+ 
+
   /* name */
   --name:#324AB2;
   --name-line:#ffcba4;
@@ -73,6 +48,7 @@ body.light {
 
   --dotted-bg: radial-gradient(circle,#AFAFAF 0.5px,#fcfcfc 1px);
 }
+
 
 body {
   background-size: 17px 17px;
