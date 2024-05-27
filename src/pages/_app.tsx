@@ -2,7 +2,7 @@ import "@styles/globals.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { description, keywords, title } from "@constants/data/meta";
-import { newTitleFont, rubikFont, sourceSansPro } from "@styles/fonts";
+import { codeFont, sourceSansPro } from "@styles/fonts";
 import ThemeProvider from "src/contexts/theme-provider";
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -27,7 +27,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="apple-mobile-web-app-title" content="AC Portfolio" />
         <meta name="apple-mobile-web-app-status-bar-style" content="#000000" />
       </Head>
-      <main className={`${sourceSansPro.className}`}>
+      <main className={`${sourceSansPro.className} ${codeFont.variable}`}>
         <ThemeProvider>
           <Component {...pageProps} />
         </ThemeProvider>
