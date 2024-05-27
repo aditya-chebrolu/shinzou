@@ -23,7 +23,7 @@
       "@modules/*": ["src/modules/*"],
       "@styles/*": ["src/styles/*"],
       "@assets/*": ["src/assets/*"],
-
+      "@configs/*": ["src/configs/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/image-loader.js"],

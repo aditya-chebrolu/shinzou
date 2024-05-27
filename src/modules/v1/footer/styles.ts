@@ -8,6 +8,19 @@ export const containerStyles = css`
   padding: 15px 0;
   font-size: 22px;
   height: 200px;
+
+  > .ok {
+    color: white;
+    margin: 15px;
+    text-decoration: underline;
+    text-decoration-color: var(--secondary);
+    font-weight: bold;
+    font-size: 60px;
+    text-align: center;
+    text-underline-offset: -10px;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: 15px;
+  }
 `;
 
 export const resumeButton = css`
