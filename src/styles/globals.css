@@ -44,8 +44,6 @@ body {
   color: black;
   background-color: white;
 
-  /* colors */
-
   &::-webkit-scrollbar {
     display: none;
   }

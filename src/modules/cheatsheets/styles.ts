@@ -63,13 +63,34 @@ export const searchbarStyles = css`
     ${flex({ gap: [10], align: "center" })}
     align-self: stretch;
     flex-shrink: 0;
+
     > div {
+      cursor: pointer;
       height: 100%;
-      aspect-ratio: 1;
+      width: 50px;
       display: grid;
       place-items: center;
       background-color: #0d0d0f;
       border: solid 1.5px #1c1c20;
+      transition: all 200ms;
+
+      &.checked {
+        border-color: #494954;
+      }
+
+      ${lgScreen} {
+        &:hover {
+          scale: 1.01;
+          border-color: #494954;
+        }
+
+        &:has(~ div:hover),
+        &:hover ~ div {
+          filter: grayscale(5);
+          scale: 0.9;
+          border-color: #1c1c20;
+        }
+      }
     }
   }
 `;

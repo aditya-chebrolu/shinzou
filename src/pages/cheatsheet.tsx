@@ -69,7 +69,7 @@ const CheatSheet = () => {
       });
     } else {
       setLanguage({
-        value: val,
+        value: inp,
         options: pickIcons(["java", "swift"]),
       });
     }
@@ -109,7 +109,13 @@ const CheatSheet = () => {
             <input type="text" onChange={onSearch} />
             <div className="langs">
               {language.options.map(({ Icon, text }, idx) => (
-                <div key={idx} onClick={onLanguageClick(text)}>
+                <div
+                  key={idx}
+                  className={
+                    language.value === text.toLowerCase() ? "checked" : ""
+                  }
+                  onClick={onLanguageClick(text)}
+                >
                   <SvgContainer h={{ default: 30 }}>
                     <Icon />
                   </SvgContainer>
