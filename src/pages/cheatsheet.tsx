@@ -2,7 +2,6 @@ import Prism from "@configs/prism.config";
 import { useCallback, useEffect, useRef, useState } from "react";
 import CheatSheetSection from "@modules/cheatsheets/section";
 import {
-  filtersRowStyles,
   headerStyles,
   pageStyles,
   searchbarStyles,
