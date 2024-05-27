@@ -74,14 +74,3 @@ export const searchbarStyles = css`
     }
   }
 `;
-
-export const filtersRowStyles = css`
-  ${flex({ gap: [10], align: "center" })};
-  color: white;
-
-  /* > div {
-    border: solid 1.5px #1c1c20;
-    background-color: #0d0d0f;
-    padding: 4px 10px;
-  } */
-`;
