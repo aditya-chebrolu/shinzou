@@ -63,6 +63,7 @@ export const searchbarStyles = css`
     ${flex({ gap: [10], align: "center" })}
     align-self: stretch;
     flex-shrink: 0;
+    /* aspect-ratio: 1; */
     > div {
       height: 100%;
       aspect-ratio: 1;
