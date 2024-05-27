@@ -1,5 +1,4 @@
 import { css } from "@emotion/react";
-// import Blogs from "@modules/v1/blogs";
 import Cheatsheets from "@modules/v1/cheatsheets";
 import Details from "@modules/v1/details";
 import Experience from "@modules/v1/exp";
@@ -9,6 +8,8 @@ import Skills from "@modules/v1/skills";
 import { flex, lgScreen } from "@styles/index";
 
 const styles = css`
+  background-image: var(--dotted-bg);
+  background-size: 17px 17px;
   > .wrapper {
     ${flex({ column: true, gap: [20, 50] })}
     padding: 15px 15px 0;
