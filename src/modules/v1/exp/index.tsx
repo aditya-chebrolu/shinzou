@@ -8,8 +8,8 @@ const Experience = () => {
     <div css={flex({ column: true, gap: [10, 20] })}>
       <UnderlinedText text="Experience" />
       <div css={flex({ column: true, gap: [5, 10] })}>
-        {experiences.map((exp) => (
-          <div css={experienceStripStyles}>
+        {experiences.map((exp, idx) => (
+          <div css={experienceStripStyles} key={idx}>
             <div className="row">
               <UnderlinedText
                 text={exp.company}
@@ -19,8 +19,8 @@ const Experience = () => {
               />
               <div className="duration">{exp.duration}</div>
             </div>
-            {exp.positions.map((pos) => (
-              <div className="pos">
+            {exp.positions.map((pos, idx) => (
+              <div className="pos" key={idx}>
                 <div className="title">{pos.designation}</div>
                 <div className="duration">{pos.duration}</div>
               </div>
