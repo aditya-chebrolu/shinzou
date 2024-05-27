@@ -57,7 +57,8 @@ export const searchbarStyles = css`
       border-color: #494954;
     }
 
-    padding: 8px;
+    padding: 4px 8px;
+    font-size: 18px;
 
     ${lgScreen} {
       font-size: 22px;
