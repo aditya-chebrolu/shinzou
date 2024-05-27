@@ -1,10 +1,10 @@
-import { Rubik, Source_Sans_3 } from "@next/font/google";
+import { Fira_Code, Source_Sans_3 } from "@next/font/google";
 import local from "@next/font/local";
 
-export const rubikFont = Rubik({
+export const codeFont = Fira_Code({
   subsets: ["latin"],
   weight: ["400", "700"],
-  variable: "--rubik-font",
+  variable: "--code-font",
 });
 
 export const sourceSansPro = Source_Sans_3({
