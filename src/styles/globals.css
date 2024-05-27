@@ -1,6 +1,8 @@
 :root {
-  --primary:#324AB2;
-  --secondary:#ef9b0f;
+  --primary: #324ab2;
+  --secondary: #ef9b0f;
+  --dotted-bg: radial-gradient(circle, #afafaf 0.5px, #fcfcfc 1px);
+  --dotted-dark-bg: radial-gradient(circle, #232323 0.5px, black 1px);
 }
 
 * {
@@ -15,42 +17,32 @@ body {
   font-family: Roboto, sans-serif;
 }
 
-
 a {
   color: inherit;
   text-decoration: none;
 }
 
 body {
-  color:black;
+  color: black;
   background-color: white;
-  
+
   /* colors */
- 
 
   /* name */
-  --name:#324AB2;
-  --name-line:#ffcba4;
+  --name: #324ab2;
+  --name-line: #ffcba4;
 
   /* Skills */
-  --skills-bg-color:#324AB2;
+  --skills-bg-color: #324ab2;
 
   /* Exp */
-  --title:#324ab2;
-  --title-line:#E0E4F6;
+  --title: #324ab2;
+  --title-line: #e0e4f6;
 
-  --exp-duration:#2a3439;
-  --exp-pos-title:#2a3439;
-  --exp-pos-duration:#2a3439;
+  --exp-duration: #2a3439;
+  --exp-pos-title: #2a3439;
+  --exp-pos-duration: #2a3439;
 
-  --section-title:#2a3439;
-  --section-title-line:#ef9b0f;
-
-  --dotted-bg: radial-gradient(circle,#AFAFAF 0.5px,#fcfcfc 1px);
-}
-
-
-body {
-  background-size: 17px 17px;
-  background-image: var(--dotted-bg);
+  --section-title: #2a3439;
+  --section-title-line: #ef9b0f;
 }
