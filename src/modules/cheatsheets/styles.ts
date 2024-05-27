@@ -5,21 +5,18 @@ export const pageStyles = css`
   background-image: var(--dotted-dark-bg);
   background-size: 17px 17px;
   min-height: 100dvh;
-  padding: 0 0 50px;
 
   > .wrapper {
+    margin-inline: 20px;
     > .content {
-      padding: 20px;
       ${flex({ gap: [50], column: true })}
+      padding: 0 0 50px;
     }
   }
 
   ${lgScreen} {
     .wrapper {
       margin-inline: 20%;
-      > .content {
-        padding: 0;
-      }
     }
   }
 `;
@@ -30,7 +27,7 @@ export const headerStyles = css`
   top: 0;
   z-index: 2;
   background: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(0, 0, 0, 1));
-  padding: 20px;
+  padding: 20px 0;
 
   ${lgScreen} {
     padding: 30px 0;
@@ -39,23 +36,32 @@ export const headerStyles = css`
 
 export const searchbarStyles = css`
   ${flex({ align: "center", gap: [10] })};
-  height: 50px;
+  height: 40px;
+
+  ${lgScreen} {
+    height: 50px;
+  }
 
   > input {
     border: none;
     border-radius: 0;
     background-color: black;
     color: white;
-    padding: 10px;
     outline: none;
     width: 100%;
-    font-size: 22px;
     font-weight: bold;
     border: solid 1.5px #1c1c20;
     height: 100%;
 
     &:focus {
       border-color: #494954;
+    }
+
+    padding: 8px;
+
+    ${lgScreen} {
+      font-size: 22px;
+      padding: 10px;
     }
   }
 
@@ -67,7 +73,6 @@ export const searchbarStyles = css`
     > div {
       cursor: pointer;
       height: 100%;
-      width: 50px;
       display: grid;
       place-items: center;
       background-color: #0d0d0f;
@@ -77,8 +82,11 @@ export const searchbarStyles = css`
       &.checked {
         border-color: #494954;
       }
+      width: 40px;
 
       ${lgScreen} {
+        width: 50px;
+
         &:hover {
           scale: 1.01;
           border-color: #494954;
@@ -93,4 +101,9 @@ export const searchbarStyles = css`
       }
     }
   }
+`;
+
+export const welcomeTextStyles = css`
+  color: #ffe4e1;
+  text-align: center;
 `;

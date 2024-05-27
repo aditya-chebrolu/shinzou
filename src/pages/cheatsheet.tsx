@@ -5,6 +5,7 @@ import {
   headerStyles,
   pageStyles,
   searchbarStyles,
+  welcomeTextStyles,
 } from "@modules/cheatsheets/styles";
 import { CheatSheetSectionType } from "@modules/cheatsheets/types";
 import { SvgContainer } from "@styles/index";
@@ -116,7 +117,7 @@ const CheatSheet = () => {
                   }
                   onClick={onLanguageClick(text)}
                 >
-                  <SvgContainer h={{ default: 30 }}>
+                  <SvgContainer h={{ mweb: 20, default: 30 }}>
                     <Icon />
                   </SvgContainer>
                 </div>
@@ -132,6 +133,9 @@ const CheatSheet = () => {
               key={idx}
             />
           ))}
+          {data.length > 0 && (
+            <div css={welcomeTextStyles}>{"You're welcome 🤗"}</div>
+          )}
         </div>
       </div>
     </div>
