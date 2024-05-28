@@ -48,7 +48,7 @@ export const languageOptionStyles = (checked = false) => css`
     line-height: 12px;
     ${checked
       ? css`
-          color: #ffd700;
+          color: #ffe5b4;
         `
       : ""}
   }

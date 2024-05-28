@@ -35,21 +35,33 @@ const getSize = (
   screen: "mweb" | "dweb"
 ) => (typeof size === "object" ? size[screen] : size);
 
+const getColor = ({
+  color,
+  screen,
+}: {
+  color?: string | { dweb?: string; mweb?: string };
+  screen: "mweb" | "dweb";
+}) => {
+  if (!color) return;
+  return typeof color === "object" ? color[screen] : color;
+};
+
 export const headingStyles = ({
   size,
   color,
   lineColor,
 }: {
   size: Sizes | { mweb: Sizes; dweb: Sizes };
-  color?: string;
-  lineColor?: string;
+  color?: string | { dweb?: string; mweb?: string };
+  lineColor?: string | { dweb?: string; mweb?: string };
 }) => css`
   margin: unset;
   padding: unset;
-  color: ${color || "var(--section-title)"};
+  color: ${getColor({ color, screen: "mweb" }) || "var(--section-title)"};
   text-decoration: underline;
   text-decoration-skip-ink: none;
-  text-decoration-color: ${lineColor || "var(--section-title-line)"};
+  text-decoration-color: ${getColor({ color: lineColor, screen: "mweb" }) ||
+  "var(--section-title-line)"};
 
   ${sizeStyles("mweb", getSize(size, "mweb"))}
   ${lgScreen} {

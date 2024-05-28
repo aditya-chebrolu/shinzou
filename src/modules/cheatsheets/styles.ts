@@ -57,6 +57,10 @@ export const searchbarStyles = css`
       padding: 10px;
       height: 50px;
     }
+
+    &::placeholder {
+      color: #494954;
+    }
   }
 `;
 

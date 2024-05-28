@@ -10,7 +10,7 @@ const CheatSheets = () => {
         text="Cheatsheets🔥"
         type="h2"
         size={{ mweb: "lg", dweb: "xs" }}
-        lineColor="#FFE5B4"
+        lineColor={{ dweb: "#FFE5B4" }}
       />
       <div css={contentStyles}>
         {cheatSheetsData.map((data, idx) => (

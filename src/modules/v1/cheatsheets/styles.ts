@@ -2,9 +2,10 @@ import { css } from "@emotion/react";
 import { flex, lgScreen } from "@styles/index";
 
 export const containerStyles = css`
-  ${flex({ column: true, gap: [5] })};
+  ${flex({ column: true, gap: [10] })};
 
   ${lgScreen} {
+    gap: 5px;
     background-color: #fff;
     border: solid 1.5px #e5e4e2;
     padding: 15px;

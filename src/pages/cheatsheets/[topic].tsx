@@ -10,8 +10,11 @@ import getCheatSheetServerSideProps, {
   type CheatSheetServerSideReturnType,
 } from "@modules/cheatsheets/server";
 import CheatSheetHeader from "@modules/cheatsheets/header";
+import { capitalize } from "lodash-es";
+import { useRouter } from "next/router";
 
 const CheatSheet = ({ data: initData }: CheatSheetServerSideReturnType) => {
+  const { query } = useRouter();
   const [data, setData] = useState<CheatSheetSectionType[]>(initData);
 
   useEffect(() => {
@@ -62,7 +65,11 @@ const CheatSheet = ({ data: initData }: CheatSheetServerSideReturnType) => {
       <CheatSheetHeader />
       <div className="wrapper">
         <div css={searchbarStyles}>
-          <input type="text" onChange={onSearch} />
+          <input
+            type="text"
+            onChange={onSearch}
+            placeholder={`Search ${capitalize(query.topic as string)} topics`}
+          />
         </div>
         <div className="content">
           {data.map((section, idx) => (
