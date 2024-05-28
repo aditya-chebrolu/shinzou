@@ -30,7 +30,14 @@ const getCheatSheetServerSideProps = async (
   context: GetServerSidePropsContext
 ) => {
   const { topic } = context.query as Record<string, string>;
-  const filePath = path.join(process.cwd(), "src", "data", `${topic}.json`);
+  const filePath = path.join(
+    process.cwd(),
+    "src",
+    "constants",
+    "data",
+    "cheatsheets",
+    `${topic}.json`
+  );
   let data: CheatSheetSectionType[] = [];
   try {
     const fileContents = fs.readFileSync(filePath, "utf8");
