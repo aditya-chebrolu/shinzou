@@ -1,35 +1,28 @@
 import UnderlinedText from "@components/underlined-text";
-import { cheatSheets } from "@constants/data/cheat-sheets";
+import { cheatSheetsData } from "@constants/data/cheat-sheets";
 import { containerStyles, contentStyles } from "./styles";
-import LinkIcon from "@assets/link.svg";
-import { SvgContainer } from "@styles/index";
+import Link from "next/link";
 
-const Cheatsheets = () => {
+const CheatSheets = () => {
   return (
     <div css={containerStyles}>
-      <UnderlinedText text="Cheatsheets" type="h2" />
+      <UnderlinedText
+        text="Cheatsheets🔥"
+        type="h2"
+        size={{ mweb: "lg", dweb: "xs" }}
+        lineColor="#FFE5B4"
+      />
       <div css={contentStyles}>
-        {cheatSheets.map((cs, idx) => (
-          <a key={idx} className="row" href={cs.link}>
-            <UnderlinedText
-              text={cs.title}
-              color="var(--title)"
-              lineColor="var(--title-line)"
-              size="xs"
-              type="h3"
-            />
-            <SvgContainer
-              h={{ dweb: 20, mweb: 18 }}
-              stroke="var(--name)"
-              className="icon"
-            >
-              <LinkIcon />
-            </SvgContainer>
-          </a>
+        {cheatSheetsData.map((data, idx) => (
+          <Link key={idx} href={data.link}>
+            <span className="num">{idx + 1}.</span>
+            <span className="name">{data.title}</span>
+            <span className="txt"> Cheat Sheet</span>
+          </Link>
         ))}
       </div>
     </div>
   );
 };
 
-export default Cheatsheets;
+export default CheatSheets;

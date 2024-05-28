@@ -1,14 +1,10 @@
-export const cheatSheets = [
+export const cheatSheetsData = [
   {
-    title: "Java Cheat sheet",
-    link: "https://github.com/aditya-chebrolu/cs-java",
+    title: "Java",
+    link: "/cheatsheets/java",
   },
   {
-    title: "CSS Cheat sheet",
-    link: "https://github.com/aditya-chebrolu/cs-css",
-  },
-  {
-    title: "Mongo Cheat Sheet",
-    link: "https://github.com/aditya-chebrolu/cs-mongo",
+    title: "Swift",
+    link: "/cheatsheets/swift",
   },
 ];

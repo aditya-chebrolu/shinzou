@@ -1,5 +1,5 @@
 import { css } from "@emotion/react";
-import Cheatsheets from "@modules/v1/cheatsheets";
+import CheatSheets from "@modules/v1/cheatsheets";
 import Details from "@modules/v1/details";
 import Experience from "@modules/v1/exp";
 import Footer from "@modules/v1/footer";
@@ -36,10 +36,10 @@ const sectionStyles = css`
   ${lgScreen} {
     flex-direction: row;
     > .left {
-      flex-basis: 70%;
+      flex-basis: 65%;
     }
     > .right {
-      flex-basis: 30%;
+      flex-basis: 35%;
     }
   }
 `;
@@ -58,7 +58,7 @@ const Page = () => {
               <Projects />
             </div>
             <div className="right">
-              <Cheatsheets />
+              <CheatSheets />
             </div>
           </div>
           <Footer />

@@ -1,8 +1,8 @@
-import { headingStyles } from "./styles";
+import { headingStyles, Sizes } from "./styles";
 
 type Props = {
   text: string;
-  size?: "xs" | "sm" | "md" | "lg" | "xl";
+  size?: { mweb: Sizes; dweb: Sizes } | Sizes;
   color?: string;
   lineColor?: string;
   customStyles?: any;

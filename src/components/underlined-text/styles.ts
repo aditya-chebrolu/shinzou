@@ -1,7 +1,7 @@
 import { css } from "@emotion/react";
 import { lgScreen } from "@styles/index";
 
-type Sizes = "xs" | "sm" | "md" | "lg" | "xl";
+export type Sizes = "xs" | "sm" | "md" | "lg" | "xl";
 
 const stylesConfig = {
   dweb: {
@@ -22,7 +22,6 @@ const stylesConfig = {
 
 const sizeStyles = (screen: "dweb" | "mweb", size: Sizes) => {
   const [fontSize, lineThickness, lineOffset] = stylesConfig[screen][size];
-
   return css`
     font-size: ${fontSize}px;
     line-height: ${fontSize}px;
@@ -31,12 +30,17 @@ const sizeStyles = (screen: "dweb" | "mweb", size: Sizes) => {
   `;
 };
 
+const getSize = (
+  size: Sizes | { mweb: Sizes; dweb: Sizes },
+  screen: "mweb" | "dweb"
+) => (typeof size === "object" ? size[screen] : size);
+
 export const headingStyles = ({
   size,
   color,
   lineColor,
 }: {
-  size: Sizes;
+  size: Sizes | { mweb: Sizes; dweb: Sizes };
   color?: string;
   lineColor?: string;
 }) => css`
@@ -47,8 +51,8 @@ export const headingStyles = ({
   text-decoration-skip-ink: none;
   text-decoration-color: ${lineColor || "var(--section-title-line)"};
 
-  ${sizeStyles("mweb", size)}
+  ${sizeStyles("mweb", getSize(size, "mweb"))}
   ${lgScreen} {
-    ${sizeStyles("dweb", size)}
+    ${sizeStyles("dweb", getSize(size, "dweb"))}
   }
 `;
