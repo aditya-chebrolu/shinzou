@@ -57,17 +57,19 @@ export const headingStyles = ({
 }) => css`
   margin: unset;
   padding: unset;
-  color: ${getColor({ color, screen: "mweb" }) || "var(--section-title)"};
   text-decoration: underline;
   text-decoration-skip-ink: none;
+
+  color: ${getColor({ color, screen: "mweb" }) || "var(--section-title)"};
   text-decoration-color: ${getColor({ color: lineColor, screen: "mweb" }) ||
   "var(--section-title-line)"};
 
   ${sizeStyles("mweb", getSize(size, "mweb"))}
   ${lgScreen} {
     ${sizeStyles("dweb", getSize(size, "dweb"))};
+
+    color: ${getColor({ color, screen: "dweb" }) || "var(--section-title)"};
     text-decoration-color: ${getColor({ color: lineColor, screen: "dweb" }) ||
     "var(--section-title-line)"};
-    color: ${getColor({ color, screen: "dweb" }) || "var(--section-title)"};
   }
 `;
