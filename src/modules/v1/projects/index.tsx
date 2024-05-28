@@ -7,7 +7,7 @@ import { projects } from "@modules/v0/projects/data";
 const Projects = () => {
   return (
     <div css={flex({ gap: [10, 20], column: true })}>
-      <UnderlinedText text="Projects" />
+      <UnderlinedText text="Projects" type="h2" />
       <div css={flex({ gap: [10, 20], column: true })}>
         {projects.map((project) => (
           <a css={titleStyles} href={project.url} key={project.title}>
@@ -16,6 +16,7 @@ const Projects = () => {
               color="var(--title)"
               lineColor="var(--title-line)"
               size="xs"
+              type="h4"
             />
             <SvgContainer
               h={{ dweb: 20, mweb: 18 }}

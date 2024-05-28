@@ -13,6 +13,7 @@ const Details = () => {
         size="xl"
         color={"var(--name)"}
         lineColor="var(--name-line)"
+        type="h1"
       />
       <div className="icons">
         {socials2.map(({ href, Icon }, idx) => (

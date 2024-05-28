@@ -3,6 +3,7 @@ import Cheatsheets from "@modules/v1/cheatsheets";
 import Details from "@modules/v1/details";
 import Experience from "@modules/v1/exp";
 import Footer from "@modules/v1/footer";
+import PortfolioMeta from "@modules/v1/meta";
 import Projects from "@modules/v1/projects";
 import Skills from "@modules/v1/skills";
 import { flex, lgScreen } from "@styles/index";
@@ -45,22 +46,25 @@ const sectionStyles = css`
 
 const Page = () => {
   return (
-    <div css={styles}>
-      <div className="wrapper">
-        <Details />
-        <Skills />
-        <div css={sectionStyles}>
-          <div className="left">
-            <Experience />
-            <Projects />
+    <>
+      <PortfolioMeta />
+      <div css={styles}>
+        <div className="wrapper">
+          <Details />
+          <Skills />
+          <div css={sectionStyles}>
+            <div className="left">
+              <Experience />
+              <Projects />
+            </div>
+            <div className="right">
+              <Cheatsheets />
+            </div>
           </div>
-          <div className="right">
-            <Cheatsheets />
-          </div>
+          <Footer />
         </div>
-        <Footer />
       </div>
-    </div>
+    </>
   );
 };
 
