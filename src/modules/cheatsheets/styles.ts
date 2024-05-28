@@ -37,9 +37,11 @@ export const headerStyles = css`
 export const searchbarStyles = css`
   ${flex({ align: "center", gap: [10] })};
   height: 40px;
+  margin-inline: -5px;
 
   ${lgScreen} {
     height: 50px;
+    margin-inline: -10px;
   }
 
   > input {
