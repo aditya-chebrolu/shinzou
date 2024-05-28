@@ -65,6 +65,9 @@ export const headingStyles = ({
 
   ${sizeStyles("mweb", getSize(size, "mweb"))}
   ${lgScreen} {
-    ${sizeStyles("dweb", getSize(size, "dweb"))}
+    ${sizeStyles("dweb", getSize(size, "dweb"))};
+    text-decoration-color: ${getColor({ color: lineColor, screen: "dweb" }) ||
+    "var(--section-title-line)"};
+    color: ${getColor({ color, screen: "dweb" }) || "var(--section-title)"};
   }
 `;
