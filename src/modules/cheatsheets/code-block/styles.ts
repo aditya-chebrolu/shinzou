@@ -12,7 +12,7 @@ export const containerStyles = css`
   border: solid 1.5px #1c1c20;
 
   > .desc {
-    font-size: 16px;
+    font-size: 14px;
     color: #c0c0c0;
     background-color: #1c1c20;
     padding: 4px 8px;
@@ -23,13 +23,17 @@ export const containerStyles = css`
     color: #dbdbdb;
     font-family: var(--code-font);
     cursor: pointer;
-    font-size: 14px;
+    font-size: 13px;
     padding: 8px;
   }
 
   ${lgScreen} {
+    > .desc {
+      font-size: 16px;
+    }
     > .code {
       padding: 15px 10px;
+      font-size: 14px;
 
       transition: all 200ms;
       &:hover {
