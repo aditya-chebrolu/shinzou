@@ -41,7 +41,7 @@ const getCheatSheetServerSideProps = async (
   let data: CheatSheetSectionType[] = [];
   try {
     const fileContents = fs.readFileSync(filePath, "utf8");
-    data = JSON.parse(fileContents).data;
+    data = JSON.parse(fileContents) as CheatSheetSectionType[];
     loadData(data, topic);
     return {
       props: {

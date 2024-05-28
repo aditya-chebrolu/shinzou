@@ -13,21 +13,21 @@ import Ec2Icon from "@assets/tech/ec2.svg";
 import SwiftIcon from "@assets/tech/swift.svg";
 
 export const icons = {
-  next: { Icon: NextIcon, text: "Next JS" },
-  nest: { Icon: NestIcon, text: "Nest" },
-  javascript: { Icon: JSIcon, text: "JavaScript" },
-  ts: { Icon: TSIcon, text: "TypeScript" },
-  java: { Icon: JavaIcon, text: "Java" },
-  react: { Icon: ReactIcon, text: "React" },
-  html: { Icon: HTMLIcon, text: "HTML" },
-  css: { Icon: CSSIcon, text: "CSS" },
-  node: { Icon: NodeIcon, text: "Node.js" },
-  tailwind: { Icon: TailwindIcon, text: "Tailwind CSS" },
-  mongo: { Icon: MongoIcon, text: "MongoDB" },
-  ec2: { Icon: Ec2Icon, text: "Amazon EC2" },
-  swift: { Icon: SwiftIcon, text: "Swift" },
+  next: { Icon: NextIcon, text: "Next JS", slug: "next" },
+  nest: { Icon: NestIcon, text: "Nest", slug: "nest" },
+  javascript: { Icon: JSIcon, text: "JavaScript", slug: "javascript" },
+  ts: { Icon: TSIcon, text: "TypeScript", slug: "typescript" },
+  java: { Icon: JavaIcon, text: "Java", slug: "java" },
+  react: { Icon: ReactIcon, text: "React", slug: "react" },
+  html: { Icon: HTMLIcon, text: "HTML", slug: "html" },
+  css: { Icon: CSSIcon, text: "CSS", slug: "css" },
+  node: { Icon: NodeIcon, text: "Node.js", slug: "node" },
+  tailwind: { Icon: TailwindIcon, text: "Tailwind CSS", slug: "tailwind" },
+  mongo: { Icon: MongoIcon, text: "MongoDB", slug: "mongo" },
+  ec2: { Icon: Ec2Icon, text: "Amazon EC2", slug: "ec2" },
+  swift: { Icon: SwiftIcon, text: "Swift", slug: "swift" },
 };
 
-export const pickIcons = (languages: (keyof typeof icons)[]) => {
-  return languages.map((lang) => icons[lang]);
+export const pickIcons = (inp: (keyof typeof icons)[]) => {
+  return inp.map((lang) => icons[lang]);
 };

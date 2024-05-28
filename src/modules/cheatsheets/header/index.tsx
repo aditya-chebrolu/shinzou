@@ -1,3 +1,4 @@
+import { availableCheatSheets } from "@constants/data/cheatsheets/available-cheat-sheets";
 import { containerStyles, languageOptionStyles } from "./styles";
 import { pickIcons } from "@constants/icons";
 import { SvgContainer } from "@styles/index";
@@ -11,18 +12,20 @@ const CheatSheetHeader = () => {
   return (
     <div css={containerStyles}>
       <div className="content">
-        {pickIcons(["java", "swift"]).map(({ Icon, text }, idx) => (
-          <Link
-            key={idx}
-            css={languageOptionStyles(topic === text.toLowerCase())}
-            href={`/cheatsheets/${text.toLowerCase()}`}
-          >
-            <SvgContainer h={{ mweb: 25, default: 30 }}>
-              <Icon />
-            </SvgContainer>
-            <div>{text}</div>
-          </Link>
-        ))}
+        {pickIcons(availableCheatSheets as any).map(
+          ({ Icon, text, slug }, idx) => (
+            <Link
+              key={idx}
+              css={languageOptionStyles(topic === text.toLowerCase())}
+              href={`/cheatsheets/${slug}`}
+            >
+              <SvgContainer h={{ mweb: 25, default: 30 }}>
+                <Icon />
+              </SvgContainer>
+              <div>{text}</div>
+            </Link>
+          )
+        )}
       </div>
     </div>
   );

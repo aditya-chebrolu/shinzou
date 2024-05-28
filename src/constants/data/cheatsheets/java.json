@@ -1,576 +1,574 @@
-{
-  "data": [
-    {
-      "title": "Java Strings",
-      "sections": [
-        {
-          "subtitle": "Creating Strings",
-          "snippets": [
-            {
-              "description": "Using string literal",
-              "code": "String str1 = \"Hello\";"
-            },
-            {
-              "description": "Using new keyword",
-              "code": "String str2 = new String(\"Hello\");"
-            },
-            {
-              "description": "From a char array",
-              "code": "char[] chars = {'H', 'e', 'l', 'l', 'o'};\nString str3 = new String(chars);"
-            },
-            {
-              "description": "From byte array",
-              "code": "byte[] bytes = {72, 101, 108, 108, 111};\nString str4 = new String(bytes);"
-            }
-          ]
-        },
-        {
-          "subtitle": "Length and Character Access",
-          "snippets": [
-            {
-              "description": "Returns the length of the string",
-              "code": "int length = str1.length();"
-            },
-            {
-              "description": "Returns the character at the specified index",
-              "code": "char ch = str1.charAt(0);"
-            }
-          ]
-        },
-        {
-          "subtitle": "Substring",
-          "snippets": [
-            {
-              "description": "Returns a substring starting from the specified index",
-              "code": "String sub1 = str1.substring(2);"
-            },
-            {
-              "description": "Returns a substring from beginIndex to endIndex - 1",
-              "code": "String sub2 = str1.substring(1, 4);"
-            }
-          ]
-        },
-        {
-          "subtitle": "Concatenation",
-          "snippets": [
-            {
-              "description": "Concatenates the specified string to the end of this string",
-              "code": "String newStr = str1.concat(\" World\");"
-            }
-          ]
-        },
-        {
-          "subtitle": "Contains",
-          "snippets": [
-            {
-              "description": "Returns true if the string contains the specified sequence of char values",
-              "code": "boolean contains = str1.contains(\"ell\");"
-            }
-          ]
-        },
-        {
-          "subtitle": "Equality Check",
-          "snippets": [
-            {
-              "description": "Compares this string to the specified object",
-              "code": "boolean isEqual = str1.equals(\"Hello\");"
-            },
-            {
-              "description": "Compares this string to another string, ignoring case considerations",
-              "code": "boolean isEqualIgnoreCase = str1.equalsIgnoreCase(\"hello\");"
-            }
-          ]
-        },
-        {
-          "subtitle": "Starts and Ends With",
-          "snippets": [
-            {
-              "description": "Tests if this string starts with the specified prefix",
-              "code": "boolean starts = str1.startsWith(\"He\");"
-            },
-            {
-              "description": "Tests if this string ends with the specified suffix",
-              "code": "boolean ends = str1.endsWith(\"lo\");"
-            }
-          ]
-        },
-        {
-          "subtitle": "Index of Characters and Substrings",
-          "snippets": [
-            {
-              "description": "Returns the index within this string of the first occurrence of the specified character",
-              "code": "int index1 = str1.indexOf('e');"
-            },
-            {
-              "description": "Returns the index within this string of the first occurrence of the specified substring",
-              "code": "int index2 = str1.indexOf(\"ll\");"
-            },
-            {
-              "description": "Returns the index within this string of the last occurrence of the specified character",
-              "code": "int lastIndex1 = str1.lastIndexOf('l');"
-            },
-            {
-              "description": "Returns the index within this string of the last occurrence of the specified substring",
-              "code": "int lastIndex2 = str1.lastIndexOf(\"l\");"
-            }
-          ]
-        },
-        {
-          "subtitle": "Case Conversion",
-          "snippets": [
-            {
-              "description": "Converts all characters in the string to lowercase",
-              "code": "String lower = str1.toLowerCase();"
-            },
-            {
-              "description": "Converts all characters in the string to uppercase",
-              "code": "String upper = str1.toUpperCase();"
-            }
-          ]
-        },
-        {
-          "subtitle": "Trimming and Replacing",
-          "snippets": [
-            {
-              "description": "Removes leading and trailing whitespace from the string",
-              "code": "String trimmed = str1.trim();"
-            },
-            {
-              "description": "Replaces all occurrences of a specified character with a new character",
-              "code": "String replaced1 = str1.replace('l', 'p');"
-            },
-            {
-              "description": "Replaces each substring of this string that matches the literal target sequence with the specified literal replacement sequence",
-              "code": "String replaced2 = str1.replace(\"ll\", \"yy\");"
-            }
-          ]
-        },
-        {
-          "subtitle": "Splitting and Conversion to Array",
-          "snippets": [
-            {
-              "description": "Splits this string around matches of the given regular expression",
-              "code": "String[] parts = str1.split(\" \");"
-            },
-            {
-              "description": "Converts this string to a new character array",
-              "code": "char[] charArray = str1.toCharArray();"
-            }
-          ]
-        },
-        {
-          "subtitle": "Converting Strings",
-          "snippets": [
-            {
-              "description": "To char array",
-              "code": "char[] chars = str1.toCharArray();"
-            },
-            {
-              "description": "To byte array",
-              "code": "byte[] bytes = str1.getBytes();"
-            },
-            {
-              "description": "From char array",
-              "code": "String strFromChars = new String(chars);"
-            },
-            {
-              "description": "From byte array",
-              "code": "String strFromBytes = new String(bytes);"
-            }
-          ]
-        },
-        {
-          "subtitle": "Mutating Strings",
-          "snippets": [
-            {
-              "description": "Replacing characters",
-              "code": "String newStr1 = str1.replace('l', 'p');"
-            },
-            {
-              "description": "Appending strings",
-              "code": "String newStr2 = str1.concat(\" World\");"
-            },
-            {
-              "description": "Substrings",
-              "code": "String newStr3 = str1.substring(1, 4);"
-            },
-            {
-              "description": "Inserting characters (using StringBuilder or StringBuffer)",
-              "code": "StringBuilder sb = new StringBuilder(str1);\nsb.insert(2, 'X');\nString newStr4 = sb.toString();"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "title": "Java Collections",
-      "sections": [
-        {
-          "subtitle": "Lists",
-          "snippets": [
-            {
-              "description": "Creating an ArrayList",
-              "code": "List<String> arrayList = new ArrayList<>();"
-            },
-            {
-              "description": "Creating a LinkedList",
-              "code": "List<String> linkedList = new LinkedList<>();"
-            },
-            {
-              "description": "Creating a Vector",
-              "code": "List<String> vector = new Vector<>();"
-            },
-            {
-              "description": "Creating a Stack",
-              "code": "List<String> stack = new Stack<>();"
-            }
-          ]
-        },
-        {
-          "subtitle": "Sets",
-          "snippets": [
-            {
-              "description": "Creating a HashSet",
-              "code": "Set<String> hashSet = new HashSet<>();"
-            },
-            {
-              "description": "Creating a LinkedHashSet",
-              "code": "Set<String> linkedHashSet = new LinkedHashSet<>();"
-            },
-            {
-              "description": "Creating a TreeSet",
-              "code": "Set<String> treeSet = new TreeSet<>();"
-            },
-            {
-              "description": "Creating a ConcurrentSkipListSet",
-              "code": "Set<String> concurrentSkipListSet = new ConcurrentSkipListSet<>();"
-            },
-            {
-              "description": "Creating a CopyOnWriteArraySet",
-              "code": "Set<String> copyOnWriteArraySet = new CopyOnWriteArraySet<>();"
-            }
-          ]
-        },
-        {
-          "subtitle": "Maps",
-          "snippets": [
-            {
-              "description": "Creating a HashMap",
-              "code": "Map<String, String> hashMap = new HashMap<>();"
-            },
-            {
-              "description": "Creating a LinkedHashMap",
-              "code": "Map<String, String> linkedHashMap = new LinkedHashMap<>();"
-            },
-            {
-              "description": "Creating a TreeMap",
-              "code": "Map<String, String> treeMap = new TreeMap<>();"
-            },
-            {
-              "description": "Creating a Hashtable",
-              "code": "Map<String, String> hashtable = new Hashtable<>();"
-            },
-            {
-              "description": "Creating a ConcurrentHashMap",
-              "code": "Map<String, String> concurrentHashMap = new ConcurrentHashMap<>();"
-            },
-            {
-              "description": "Creating a WeakHashMap",
-              "code": "Map<String, String> weakHashMap = new WeakHashMap<>();"
-            },
-            {
-              "description": "Creating an IdentityHashMap",
-              "code": "Map<String, String> identityHashMap = new IdentityHashMap<>();"
-            },
-            {
-              "description": "Creating a ConcurrentSkipListMap",
-              "code": "Map<String, String> concurrentSkipListMap = new ConcurrentSkipListMap<>();"
-            }
-          ]
-        },
-        {
-          "subtitle": "Queues",
-          "snippets": [
-            {
-              "description": "Creating a PriorityQueue",
-              "code": "Queue<String> priorityQueue = new PriorityQueue<>();"
-            },
-            {
-              "description": "Creating a LinkedList as a Queue",
-              "code": "Queue<String> linkedListQueue = new LinkedList<>();"
-            },
-            {
-              "description": "Creating a Deque",
-              "code": "Deque<String> deque = new LinkedList<>();"
-            },
-            {
-              "description": "Creating an ArrayDeque",
-              "code": "Deque<String> arrayDeque = new ArrayDeque<>();"
-            },
-            {
-              "description": "Creating a BlockingQueue",
-              "code": "BlockingQueue<String> blockingQueue = new ArrayBlockingQueue<>(10);"
-            },
-            {
-              "description": "Creating a SynchronousQueue",
-              "code": "SynchronousQueue<String> synchronousQueue = new SynchronousQueue<>();"
-            },
-            {
-              "description": "Creating a LinkedBlockingQueue",
-              "code": "LinkedBlockingQueue<String> linkedBlockingQueue = new LinkedBlockingQueue<>();"
-            },
-            {
-              "description": "Creating a PriorityBlockingQueue",
-              "code": "PriorityBlockingQueue<String> priorityBlockingQueue = new PriorityBlockingQueue<>();"
-            }
-          ]
-        },
-        {
-          "subtitle": "Stacks",
-          "snippets": [
-            {
-              "description": "Creating a Stack",
-              "code": "Stack<String> stack = new Stack<>();"
-            },
-            {
-              "description": "Using Deque as a Stack",
-              "code": "Deque<String> stackDeque = new ArrayDeque<>();"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "title": "Java Exception Handling",
-      "sections": [
-        {
-          "subtitle": "Basics",
-          "snippets": [
-            {
-              "description": "Try-Catch Block",
-              "code": "try {\n    // Code that may throw an exception\n} catch (ExceptionType e) {\n    // Code to handle the exception\n}"
-            },
-            {
-              "description": "Try-Catch-Finally Block",
-              "code": "try {\n    // Code that may throw an exception\n} catch (ExceptionType e) {\n    // Code to handle the exception\n} finally {\n    // Code that will always execute\n}"
-            },
-            {
-              "description": "Multiple Catch Blocks",
-              "code": "try {\n    // Code that may throw an exception\n} catch (ExceptionType1 e1) {\n    // Code to handle ExceptionType1\n} catch (ExceptionType2 e2) {\n    // Code to handle ExceptionType2\n}"
-            }
-          ]
-        },
-        {
-          "subtitle": "Throw and Throws",
-          "snippets": [
-            {
-              "description": "Throwing an Exception",
-              "code": "public void myMethod() {\n    if (someCondition) {\n        throw new MyException(\"Error message\");\n    }\n}"
-            },
-            {
-              "description": "Declaring Exceptions with Throws",
-              "code": "public void myMethod() throws MyException {\n    // Code that may throw MyException\n}"
-            },
-            {
-              "description": "Throwing Multiple Exceptions",
-              "code": "public void myMethod() throws Exception1, Exception2 {\n    // Code that may throw Exception1 or Exception2\n}"
-            }
-          ]
-        },
-        {
-          "subtitle": "Custom Exceptions",
-          "snippets": [
-            {
-              "description": "Creating a Custom Exception",
-              "code": "public class MyException extends Exception {\n    public MyException(String message) {\n        super(message);\n    }\n}"
-            },
-            {
-              "description": "Using a Custom Exception",
-              "code": "public void myMethod() throws MyException {\n    if (someCondition) {\n        throw new MyException(\"Error message\");\n    }\n}"
-            }
-          ]
-        },
-        {
-          "subtitle": "Common Exceptions",
-          "snippets": [
-            {
-              "description": "NullPointerException",
-              "code": "try {\n    String str = null;\n    str.length();\n} catch (NullPointerException e) {\n    e.printStackTrace();\n}"
-            },
-            {
-              "description": "ArrayIndexOutOfBoundsException",
-              "code": "try {\n    int[] arr = new int[5];\n    int num = arr[10];\n} catch (ArrayIndexOutOfBoundsException e) {\n    e.printStackTrace();\n}"
-            },
-            {
-              "description": "ArithmeticException",
-              "code": "try {\n    int result = 10 / 0;\n} catch (ArithmeticException e) {\n    e.printStackTrace();\n}"
-            }
-          ]
-        },
-        {
-          "subtitle": "Exception Methods",
-          "snippets": [
-            {
-              "description": "getMessage()",
-              "code": "try {\n    // Code that may throw an exception\n} catch (Exception e) {\n    System.out.println(e.getMessage());\n}"
-            },
-            {
-              "description": "printStackTrace()",
-              "code": "try {\n    // Code that may throw an exception\n} catch (Exception e) {\n    e.printStackTrace();\n}"
-            },
-            {
-              "description": "toString()",
-              "code": "try {\n    // Code that may throw an exception\n} catch (Exception e) {\n    System.out.println(e.toString());\n}"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "title": "Java Multithreading Cheat Sheet",
-      "sections": [
-        {
-          "subtitle": "Creating Threads",
-          "snippets": [
-            {
-              "description": "Extending Thread Class",
-              "code": "class MyThread extends Thread {\n    public void run() {\n        System.out.println(\"Thread running\");\n    }\n}\n\nMyThread t = new MyThread();\nt.start();"
-            },
-            {
-              "description": "Implementing Runnable Interface",
-              "code": "class MyRunnable implements Runnable {\n    public void run() {\n        System.out.println(\"Thread running\");\n    }\n}\n\nThread t = new Thread(new MyRunnable());\nt.start();"
-            }
-          ]
-        },
-        {
-          "subtitle": "Thread Lifecycle",
-          "snippets": [
-            {
-              "description": "Thread States",
-              "code": "Thread.State state = t.getState();\nSystem.out.println(state);"
-            },
-            {
-              "description": "Joining Threads",
-              "code": "Thread t1 = new Thread(new MyRunnable());\nt1.start();\nt1.join();\nSystem.out.println(\"Thread joined\");"
-            },
-            {
-              "description": "Sleeping Threads",
-              "code": "Thread.sleep(1000); // Sleep for 1000 milliseconds"
-            }
-          ]
-        },
-        {
-          "subtitle": "Synchronization",
-          "snippets": [
-            {
-              "description": "Synchronized Method",
-              "code": "class MyClass {\n    synchronized void myMethod() {\n        // synchronized code\n    }\n}"
-            },
-            {
-              "description": "Synchronized Block",
-              "code": "class MyClass {\n    void myMethod() {\n        synchronized(this) {\n            // synchronized code\n        }\n    }\n}"
-            }
-          ]
-        },
-        {
-          "subtitle": "Inter-Thread Communication",
-          "snippets": [
-            {
-              "description": "Using wait() and notify()",
-              "code": "class MyClass {\n    synchronized void myMethod() {\n        try {\n            wait();\n        } catch (InterruptedException e) {\n            e.printStackTrace();\n        }\n    }\n\n    synchronized void myOtherMethod() {\n        notify();\n    }\n}"
-            }
-          ]
-        },
-        {
-          "subtitle": "Executors Framework",
-          "snippets": [
-            {
-              "description": "Using ExecutorService",
-              "code": "ExecutorService executor = Executors.newFixedThreadPool(5);\nexecutor.execute(new MyRunnable());\nexecutor.shutdown();"
-            },
-            {
-              "description": "Using Callable and Future",
-              "code": "class MyCallable implements Callable<Integer> {\n    public Integer call() throws Exception {\n        return 123;\n    }\n}\n\nExecutorService executor = Executors.newFixedThreadPool(5);\nFuture<Integer> future = executor.submit(new MyCallable());\nInteger result = future.get();\nSystem.out.println(result);\nexecutor.shutdown();"
-            }
-          ]
-        },
-        {
-          "subtitle": "Thread Priority",
-          "snippets": [
-            {
-              "description": "Setting Thread Priority",
-              "code": "Thread t = new Thread(new MyRunnable());\nt.setPriority(Thread.MAX_PRIORITY);\nt.start();"
-            }
-          ]
-        },
-        {
-          "subtitle": "Thread Group",
-          "snippets": [
-            {
-              "description": "Creating a Thread Group",
-              "code": "ThreadGroup group = new ThreadGroup(\"MyGroup\");\nThread t1 = new Thread(group, new MyRunnable());\nThread t2 = new Thread(group, new MyRunnable());\nt1.start();\nt2.start();"
-            }
-          ]
-        },
-        {
-          "subtitle": "Reentrant Locks",
-          "snippets": [
-            {
-              "description": "Using ReentrantLock",
-              "code": "ReentrantLock lock = new ReentrantLock();\nlock.lock();\ntry {\n    // critical section\n} finally {\n    lock.unlock();\n}"
-            }
-          ]
-        },
-        {
-          "subtitle": "Condition Variables",
-          "snippets": [
-            {
-              "description": "Using Condition",
-              "code": "ReentrantLock lock = new ReentrantLock();\nCondition condition = lock.newCondition();\nlock.lock();\ntry {\n    condition.await();\n    // code\n    condition.signal();\n} finally {\n    lock.unlock();\n}"
-            }
-          ]
-        },
-        {
-          "subtitle": "Thread Local Variables",
-          "snippets": [
-            {
-              "description": "Using ThreadLocal",
-              "code": "ThreadLocal<Integer> threadLocal = new ThreadLocal<>();\nthreadLocal.set(123);\nint value = threadLocal.get();"
-            }
-          ]
-        },
-        {
-          "subtitle": "Concurrent Collections",
-          "snippets": [
-            {
-              "description": "Using ConcurrentHashMap",
-              "code": "ConcurrentMap<String, String> concurrentMap = new ConcurrentHashMap<>();\nconcurrentMap.put(\"key\", \"value\");"
-            },
-            {
-              "description": "Using CopyOnWriteArrayList",
-              "code": "List<String> cowList = new CopyOnWriteArrayList<>();\ncowList.add(\"element\");"
-            }
-          ]
-        },
-        {
-          "subtitle": "Atomic Variables",
-          "snippets": [
-            {
-              "description": "Using AtomicInteger",
-              "code": "AtomicInteger atomicInt = new AtomicInteger(0);\nint value = atomicInt.incrementAndGet();"
-            }
-          ]
-        },
-        {
-          "subtitle": "Fork/Join Framework",
-          "snippets": [
-            {
-              "description": "Using ForkJoinPool",
-              "code": "ForkJoinPool forkJoinPool = new ForkJoinPool();\nforkJoinPool.invoke(new RecursiveTask<Integer>() {\n    protected Integer compute() {\n        // computation\n        return result;\n    }\n});"
-            }
-          ]
-        }
-      ]
-    }
-  ]
-}
+[
+  {
+    "title": "Java Strings",
+    "sections": [
+      {
+        "subtitle": "Creating Strings",
+        "snippets": [
+          {
+            "description": "Using string literal",
+            "code": "String str1 = \"Hello\";"
+          },
+          {
+            "description": "Using new keyword",
+            "code": "String str2 = new String(\"Hello\");"
+          },
+          {
+            "description": "From a char array",
+            "code": "char[] chars = {'H', 'e', 'l', 'l', 'o'};\nString str3 = new String(chars);"
+          },
+          {
+            "description": "From byte array",
+            "code": "byte[] bytes = {72, 101, 108, 108, 111};\nString str4 = new String(bytes);"
+          }
+        ]
+      },
+      {
+        "subtitle": "Length and Character Access",
+        "snippets": [
+          {
+            "description": "Returns the length of the string",
+            "code": "int length = str1.length();"
+          },
+          {
+            "description": "Returns the character at the specified index",
+            "code": "char ch = str1.charAt(0);"
+          }
+        ]
+      },
+      {
+        "subtitle": "Substring",
+        "snippets": [
+          {
+            "description": "Returns a substring starting from the specified index",
+            "code": "String sub1 = str1.substring(2);"
+          },
+          {
+            "description": "Returns a substring from beginIndex to endIndex - 1",
+            "code": "String sub2 = str1.substring(1, 4);"
+          }
+        ]
+      },
+      {
+        "subtitle": "Concatenation",
+        "snippets": [
+          {
+            "description": "Concatenates the specified string to the end of this string",
+            "code": "String newStr = str1.concat(\" World\");"
+          }
+        ]
+      },
+      {
+        "subtitle": "Contains",
+        "snippets": [
+          {
+            "description": "Returns true if the string contains the specified sequence of char values",
+            "code": "boolean contains = str1.contains(\"ell\");"
+          }
+        ]
+      },
+      {
+        "subtitle": "Equality Check",
+        "snippets": [
+          {
+            "description": "Compares this string to the specified object",
+            "code": "boolean isEqual = str1.equals(\"Hello\");"
+          },
+          {
+            "description": "Compares this string to another string, ignoring case considerations",
+            "code": "boolean isEqualIgnoreCase = str1.equalsIgnoreCase(\"hello\");"
+          }
+        ]
+      },
+      {
+        "subtitle": "Starts and Ends With",
+        "snippets": [
+          {
+            "description": "Tests if this string starts with the specified prefix",
+            "code": "boolean starts = str1.startsWith(\"He\");"
+          },
+          {
+            "description": "Tests if this string ends with the specified suffix",
+            "code": "boolean ends = str1.endsWith(\"lo\");"
+          }
+        ]
+      },
+      {
+        "subtitle": "Index of Characters and Substrings",
+        "snippets": [
+          {
+            "description": "Returns the index within this string of the first occurrence of the specified character",
+            "code": "int index1 = str1.indexOf('e');"
+          },
+          {
+            "description": "Returns the index within this string of the first occurrence of the specified substring",
+            "code": "int index2 = str1.indexOf(\"ll\");"
+          },
+          {
+            "description": "Returns the index within this string of the last occurrence of the specified character",
+            "code": "int lastIndex1 = str1.lastIndexOf('l');"
+          },
+          {
+            "description": "Returns the index within this string of the last occurrence of the specified substring",
+            "code": "int lastIndex2 = str1.lastIndexOf(\"l\");"
+          }
+        ]
+      },
+      {
+        "subtitle": "Case Conversion",
+        "snippets": [
+          {
+            "description": "Converts all characters in the string to lowercase",
+            "code": "String lower = str1.toLowerCase();"
+          },
+          {
+            "description": "Converts all characters in the string to uppercase",
+            "code": "String upper = str1.toUpperCase();"
+          }
+        ]
+      },
+      {
+        "subtitle": "Trimming and Replacing",
+        "snippets": [
+          {
+            "description": "Removes leading and trailing whitespace from the string",
+            "code": "String trimmed = str1.trim();"
+          },
+          {
+            "description": "Replaces all occurrences of a specified character with a new character",
+            "code": "String replaced1 = str1.replace('l', 'p');"
+          },
+          {
+            "description": "Replaces each substring of this string that matches the literal target sequence with the specified literal replacement sequence",
+            "code": "String replaced2 = str1.replace(\"ll\", \"yy\");"
+          }
+        ]
+      },
+      {
+        "subtitle": "Splitting and Conversion to Array",
+        "snippets": [
+          {
+            "description": "Splits this string around matches of the given regular expression",
+            "code": "String[] parts = str1.split(\" \");"
+          },
+          {
+            "description": "Converts this string to a new character array",
+            "code": "char[] charArray = str1.toCharArray();"
+          }
+        ]
+      },
+      {
+        "subtitle": "Converting Strings",
+        "snippets": [
+          {
+            "description": "To char array",
+            "code": "char[] chars = str1.toCharArray();"
+          },
+          {
+            "description": "To byte array",
+            "code": "byte[] bytes = str1.getBytes();"
+          },
+          {
+            "description": "From char array",
+            "code": "String strFromChars = new String(chars);"
+          },
+          {
+            "description": "From byte array",
+            "code": "String strFromBytes = new String(bytes);"
+          }
+        ]
+      },
+      {
+        "subtitle": "Mutating Strings",
+        "snippets": [
+          {
+            "description": "Replacing characters",
+            "code": "String newStr1 = str1.replace('l', 'p');"
+          },
+          {
+            "description": "Appending strings",
+            "code": "String newStr2 = str1.concat(\" World\");"
+          },
+          {
+            "description": "Substrings",
+            "code": "String newStr3 = str1.substring(1, 4);"
+          },
+          {
+            "description": "Inserting characters (using StringBuilder or StringBuffer)",
+            "code": "StringBuilder sb = new StringBuilder(str1);\nsb.insert(2, 'X');\nString newStr4 = sb.toString();"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Java Collections",
+    "sections": [
+      {
+        "subtitle": "Lists",
+        "snippets": [
+          {
+            "description": "Creating an ArrayList",
+            "code": "List<String> arrayList = new ArrayList<>();"
+          },
+          {
+            "description": "Creating a LinkedList",
+            "code": "List<String> linkedList = new LinkedList<>();"
+          },
+          {
+            "description": "Creating a Vector",
+            "code": "List<String> vector = new Vector<>();"
+          },
+          {
+            "description": "Creating a Stack",
+            "code": "List<String> stack = new Stack<>();"
+          }
+        ]
+      },
+      {
+        "subtitle": "Sets",
+        "snippets": [
+          {
+            "description": "Creating a HashSet",
+            "code": "Set<String> hashSet = new HashSet<>();"
+          },
+          {
+            "description": "Creating a LinkedHashSet",
+            "code": "Set<String> linkedHashSet = new LinkedHashSet<>();"
+          },
+          {
+            "description": "Creating a TreeSet",
+            "code": "Set<String> treeSet = new TreeSet<>();"
+          },
+          {
+            "description": "Creating a ConcurrentSkipListSet",
+            "code": "Set<String> concurrentSkipListSet = new ConcurrentSkipListSet<>();"
+          },
+          {
+            "description": "Creating a CopyOnWriteArraySet",
+            "code": "Set<String> copyOnWriteArraySet = new CopyOnWriteArraySet<>();"
+          }
+        ]
+      },
+      {
+        "subtitle": "Maps",
+        "snippets": [
+          {
+            "description": "Creating a HashMap",
+            "code": "Map<String, String> hashMap = new HashMap<>();"
+          },
+          {
+            "description": "Creating a LinkedHashMap",
+            "code": "Map<String, String> linkedHashMap = new LinkedHashMap<>();"
+          },
+          {
+            "description": "Creating a TreeMap",
+            "code": "Map<String, String> treeMap = new TreeMap<>();"
+          },
+          {
+            "description": "Creating a Hashtable",
+            "code": "Map<String, String> hashtable = new Hashtable<>();"
+          },
+          {
+            "description": "Creating a ConcurrentHashMap",
+            "code": "Map<String, String> concurrentHashMap = new ConcurrentHashMap<>();"
+          },
+          {
+            "description": "Creating a WeakHashMap",
+            "code": "Map<String, String> weakHashMap = new WeakHashMap<>();"
+          },
+          {
+            "description": "Creating an IdentityHashMap",
+            "code": "Map<String, String> identityHashMap = new IdentityHashMap<>();"
+          },
+          {
+            "description": "Creating a ConcurrentSkipListMap",
+            "code": "Map<String, String> concurrentSkipListMap = new ConcurrentSkipListMap<>();"
+          }
+        ]
+      },
+      {
+        "subtitle": "Queues",
+        "snippets": [
+          {
+            "description": "Creating a PriorityQueue",
+            "code": "Queue<String> priorityQueue = new PriorityQueue<>();"
+          },
+          {
+            "description": "Creating a LinkedList as a Queue",
+            "code": "Queue<String> linkedListQueue = new LinkedList<>();"
+          },
+          {
+            "description": "Creating a Deque",
+            "code": "Deque<String> deque = new LinkedList<>();"
+          },
+          {
+            "description": "Creating an ArrayDeque",
+            "code": "Deque<String> arrayDeque = new ArrayDeque<>();"
+          },
+          {
+            "description": "Creating a BlockingQueue",
+            "code": "BlockingQueue<String> blockingQueue = new ArrayBlockingQueue<>(10);"
+          },
+          {
+            "description": "Creating a SynchronousQueue",
+            "code": "SynchronousQueue<String> synchronousQueue = new SynchronousQueue<>();"
+          },
+          {
+            "description": "Creating a LinkedBlockingQueue",
+            "code": "LinkedBlockingQueue<String> linkedBlockingQueue = new LinkedBlockingQueue<>();"
+          },
+          {
+            "description": "Creating a PriorityBlockingQueue",
+            "code": "PriorityBlockingQueue<String> priorityBlockingQueue = new PriorityBlockingQueue<>();"
+          }
+        ]
+      },
+      {
+        "subtitle": "Stacks",
+        "snippets": [
+          {
+            "description": "Creating a Stack",
+            "code": "Stack<String> stack = new Stack<>();"
+          },
+          {
+            "description": "Using Deque as a Stack",
+            "code": "Deque<String> stackDeque = new ArrayDeque<>();"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Java Exception Handling",
+    "sections": [
+      {
+        "subtitle": "Basics",
+        "snippets": [
+          {
+            "description": "Try-Catch Block",
+            "code": "try {\n    // Code that may throw an exception\n} catch (ExceptionType e) {\n    // Code to handle the exception\n}"
+          },
+          {
+            "description": "Try-Catch-Finally Block",
+            "code": "try {\n    // Code that may throw an exception\n} catch (ExceptionType e) {\n    // Code to handle the exception\n} finally {\n    // Code that will always execute\n}"
+          },
+          {
+            "description": "Multiple Catch Blocks",
+            "code": "try {\n    // Code that may throw an exception\n} catch (ExceptionType1 e1) {\n    // Code to handle ExceptionType1\n} catch (ExceptionType2 e2) {\n    // Code to handle ExceptionType2\n}"
+          }
+        ]
+      },
+      {
+        "subtitle": "Throw and Throws",
+        "snippets": [
+          {
+            "description": "Throwing an Exception",
+            "code": "public void myMethod() {\n    if (someCondition) {\n        throw new MyException(\"Error message\");\n    }\n}"
+          },
+          {
+            "description": "Declaring Exceptions with Throws",
+            "code": "public void myMethod() throws MyException {\n    // Code that may throw MyException\n}"
+          },
+          {
+            "description": "Throwing Multiple Exceptions",
+            "code": "public void myMethod() throws Exception1, Exception2 {\n    // Code that may throw Exception1 or Exception2\n}"
+          }
+        ]
+      },
+      {
+        "subtitle": "Custom Exceptions",
+        "snippets": [
+          {
+            "description": "Creating a Custom Exception",
+            "code": "public class MyException extends Exception {\n    public MyException(String message) {\n        super(message);\n    }\n}"
+          },
+          {
+            "description": "Using a Custom Exception",
+            "code": "public void myMethod() throws MyException {\n    if (someCondition) {\n        throw new MyException(\"Error message\");\n    }\n}"
+          }
+        ]
+      },
+      {
+        "subtitle": "Common Exceptions",
+        "snippets": [
+          {
+            "description": "NullPointerException",
+            "code": "try {\n    String str = null;\n    str.length();\n} catch (NullPointerException e) {\n    e.printStackTrace();\n}"
+          },
+          {
+            "description": "ArrayIndexOutOfBoundsException",
+            "code": "try {\n    int[] arr = new int[5];\n    int num = arr[10];\n} catch (ArrayIndexOutOfBoundsException e) {\n    e.printStackTrace();\n}"
+          },
+          {
+            "description": "ArithmeticException",
+            "code": "try {\n    int result = 10 / 0;\n} catch (ArithmeticException e) {\n    e.printStackTrace();\n}"
+          }
+        ]
+      },
+      {
+        "subtitle": "Exception Methods",
+        "snippets": [
+          {
+            "description": "getMessage()",
+            "code": "try {\n    // Code that may throw an exception\n} catch (Exception e) {\n    System.out.println(e.getMessage());\n}"
+          },
+          {
+            "description": "printStackTrace()",
+            "code": "try {\n    // Code that may throw an exception\n} catch (Exception e) {\n    e.printStackTrace();\n}"
+          },
+          {
+            "description": "toString()",
+            "code": "try {\n    // Code that may throw an exception\n} catch (Exception e) {\n    System.out.println(e.toString());\n}"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Java Multithreading Cheat Sheet",
+    "sections": [
+      {
+        "subtitle": "Creating Threads",
+        "snippets": [
+          {
+            "description": "Extending Thread Class",
+            "code": "class MyThread extends Thread {\n    public void run() {\n        System.out.println(\"Thread running\");\n    }\n}\n\nMyThread t = new MyThread();\nt.start();"
+          },
+          {
+            "description": "Implementing Runnable Interface",
+            "code": "class MyRunnable implements Runnable {\n    public void run() {\n        System.out.println(\"Thread running\");\n    }\n}\n\nThread t = new Thread(new MyRunnable());\nt.start();"
+          }
+        ]
+      },
+      {
+        "subtitle": "Thread Lifecycle",
+        "snippets": [
+          {
+            "description": "Thread States",
+            "code": "Thread.State state = t.getState();\nSystem.out.println(state);"
+          },
+          {
+            "description": "Joining Threads",
+            "code": "Thread t1 = new Thread(new MyRunnable());\nt1.start();\nt1.join();\nSystem.out.println(\"Thread joined\");"
+          },
+          {
+            "description": "Sleeping Threads",
+            "code": "Thread.sleep(1000); // Sleep for 1000 milliseconds"
+          }
+        ]
+      },
+      {
+        "subtitle": "Synchronization",
+        "snippets": [
+          {
+            "description": "Synchronized Method",
+            "code": "class MyClass {\n    synchronized void myMethod() {\n        // synchronized code\n    }\n}"
+          },
+          {
+            "description": "Synchronized Block",
+            "code": "class MyClass {\n    void myMethod() {\n        synchronized(this) {\n            // synchronized code\n        }\n    }\n}"
+          }
+        ]
+      },
+      {
+        "subtitle": "Inter-Thread Communication",
+        "snippets": [
+          {
+            "description": "Using wait() and notify()",
+            "code": "class MyClass {\n    synchronized void myMethod() {\n        try {\n            wait();\n        } catch (InterruptedException e) {\n            e.printStackTrace();\n        }\n    }\n\n    synchronized void myOtherMethod() {\n        notify();\n    }\n}"
+          }
+        ]
+      },
+      {
+        "subtitle": "Executors Framework",
+        "snippets": [
+          {
+            "description": "Using ExecutorService",
+            "code": "ExecutorService executor = Executors.newFixedThreadPool(5);\nexecutor.execute(new MyRunnable());\nexecutor.shutdown();"
+          },
+          {
+            "description": "Using Callable and Future",
+            "code": "class MyCallable implements Callable<Integer> {\n    public Integer call() throws Exception {\n        return 123;\n    }\n}\n\nExecutorService executor = Executors.newFixedThreadPool(5);\nFuture<Integer> future = executor.submit(new MyCallable());\nInteger result = future.get();\nSystem.out.println(result);\nexecutor.shutdown();"
+          }
+        ]
+      },
+      {
+        "subtitle": "Thread Priority",
+        "snippets": [
+          {
+            "description": "Setting Thread Priority",
+            "code": "Thread t = new Thread(new MyRunnable());\nt.setPriority(Thread.MAX_PRIORITY);\nt.start();"
+          }
+        ]
+      },
+      {
+        "subtitle": "Thread Group",
+        "snippets": [
+          {
+            "description": "Creating a Thread Group",
+            "code": "ThreadGroup group = new ThreadGroup(\"MyGroup\");\nThread t1 = new Thread(group, new MyRunnable());\nThread t2 = new Thread(group, new MyRunnable());\nt1.start();\nt2.start();"
+          }
+        ]
+      },
+      {
+        "subtitle": "Reentrant Locks",
+        "snippets": [
+          {
+            "description": "Using ReentrantLock",
+            "code": "ReentrantLock lock = new ReentrantLock();\nlock.lock();\ntry {\n    // critical section\n} finally {\n    lock.unlock();\n}"
+          }
+        ]
+      },
+      {
+        "subtitle": "Condition Variables",
+        "snippets": [
+          {
+            "description": "Using Condition",
+            "code": "ReentrantLock lock = new ReentrantLock();\nCondition condition = lock.newCondition();\nlock.lock();\ntry {\n    condition.await();\n    // code\n    condition.signal();\n} finally {\n    lock.unlock();\n}"
+          }
+        ]
+      },
+      {
+        "subtitle": "Thread Local Variables",
+        "snippets": [
+          {
+            "description": "Using ThreadLocal",
+            "code": "ThreadLocal<Integer> threadLocal = new ThreadLocal<>();\nthreadLocal.set(123);\nint value = threadLocal.get();"
+          }
+        ]
+      },
+      {
+        "subtitle": "Concurrent Collections",
+        "snippets": [
+          {
+            "description": "Using ConcurrentHashMap",
+            "code": "ConcurrentMap<String, String> concurrentMap = new ConcurrentHashMap<>();\nconcurrentMap.put(\"key\", \"value\");"
+          },
+          {
+            "description": "Using CopyOnWriteArrayList",
+            "code": "List<String> cowList = new CopyOnWriteArrayList<>();\ncowList.add(\"element\");"
+          }
+        ]
+      },
+      {
+        "subtitle": "Atomic Variables",
+        "snippets": [
+          {
+            "description": "Using AtomicInteger",
+            "code": "AtomicInteger atomicInt = new AtomicInteger(0);\nint value = atomicInt.incrementAndGet();"
+          }
+        ]
+      },
+      {
+        "subtitle": "Fork/Join Framework",
+        "snippets": [
+          {
+            "description": "Using ForkJoinPool",
+            "code": "ForkJoinPool forkJoinPool = new ForkJoinPool();\nforkJoinPool.invoke(new RecursiveTask<Integer>() {\n    protected Integer compute() {\n        // computation\n        return result;\n    }\n});"
+          }
+        ]
+      }
+    ]
+  }
+]

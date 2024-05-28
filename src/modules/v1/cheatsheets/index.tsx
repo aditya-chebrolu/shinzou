@@ -1,7 +1,8 @@
 import UnderlinedText from "@components/underlined-text";
-import { cheatSheetsData } from "@constants/data/cheat-sheets";
 import { containerStyles, contentStyles } from "./styles";
 import Link from "next/link";
+import { availableCheatSheets } from "@constants/data/cheatsheets/available-cheat-sheets";
+import { pickIcons } from "@constants/icons";
 
 const CheatSheets = () => {
   return (
@@ -13,10 +14,10 @@ const CheatSheets = () => {
         lineColor={{ dweb: "#FFE5B4" }}
       />
       <div css={contentStyles}>
-        {cheatSheetsData.map((data, idx) => (
-          <Link key={idx} href={data.link}>
+        {pickIcons(availableCheatSheets as any).map((data, idx) => (
+          <Link key={idx} href={`/cheatsheets/${data.slug}`}>
             <span className="num">{idx + 1}.</span>
-            <span className="name">{data.title}</span>
+            <span className="name">{data.text}</span>
             <span className="txt"> Cheat Sheet</span>
           </Link>
         ))}
