@@ -58,15 +58,12 @@ export const containerStyles = css`
     -moz-hyphens: none;
     -ms-hyphens: none;
     hyphens: none;
-
-    span {
-      word-break: break-all;
-      word-wrap: break-word;
-    }
   }
 
-  code {
+  code span {
     text-wrap: wrap;
+    word-break: break-all;
+    /* word-wrap: break-word; */
   }
 
   pre[class*="language-"]::-moz-selection,
