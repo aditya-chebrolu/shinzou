@@ -218,7 +218,7 @@ export const codeStyles = (showAnim = false) => css`
     font-size: 14px;
 
     ${lgScreen} {
-      transition: all 500ms;
+      transition: all 300ms;
       &:hover {
         border-color: #494954;
       }
