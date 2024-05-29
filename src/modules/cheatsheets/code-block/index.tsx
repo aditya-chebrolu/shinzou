@@ -8,16 +8,16 @@ type Props = {
 
 const CodeBlock = ({ snippet }: Props) => {
   const { highlightedCode, description, code } = snippet;
-  const [showAnim, setShowAnim] = useState(false);
+  // const [showAnim, setShowAnim] = useState(false);
 
-  const onCodeClick = () => {
-    navigator.clipboard.writeText(code);
-    setShowAnim(true);
-    const to = setTimeout(() => {
-      setShowAnim(false);
-      clearTimeout(to);
-    }, 7000);
-  };
+  // const onCodeClick = () => {
+  //   navigator.clipboard.writeText(code);
+  //   setShowAnim(true);
+  //   const to = setTimeout(() => {
+  //     setShowAnim(false);
+  //     clearTimeout(to);
+  //   }, 7000);
+  // };
 
   return (
     <div css={containerStyles}>
@@ -28,7 +28,7 @@ const CodeBlock = ({ snippet }: Props) => {
             <div key={idx} dangerouslySetInnerHTML={{ __html: desc }} />
           ))}
       </div>
-      <div css={codeStyles(showAnim)} onClick={onCodeClick}>
+      <div css={codeStyles(showAnim)}>
         <pre>
           <code dangerouslySetInnerHTML={{ __html: highlightedCode }} />
         </pre>

@@ -208,13 +208,7 @@ export const descriptionStyles = css`
   }
 `;
 
-const anim = keyframes`
-  50% {
-    border-color: #29AB87;
-  }
-`;
-
-export const codeStyles = (showAnim = false) => css`
+export const codeStyles = css`
   background-color: #0d0d0f;
   color: #dbdbdb;
   font-family: var(--code-font);
@@ -222,12 +216,6 @@ export const codeStyles = (showAnim = false) => css`
   font-size: 13px;
   padding: 8px;
   border: solid 1.5px #1c1c20;
-
-  ${showAnim
-    ? css`
-        animation: ${anim} 700ms forwards;
-      `
-    : ""}
 
   ${lgScreen} {
     padding: 15px;
