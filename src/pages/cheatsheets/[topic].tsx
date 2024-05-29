@@ -37,9 +37,16 @@ const CheatSheet = ({ data: initData }: CheatSheetServerSideReturnType) => {
           const filteredSnippets = [];
           for (const snippet of subsection.snippets) {
             if (
-              snippet.description.toLowerCase().includes(lowercasedTerm) ||
-              snippet.code.toLowerCase().includes(lowercasedTerm)
+              typeof snippet.description === "string" &&
+              snippet.description.toLowerCase().includes(lowercasedTerm)
             ) {
+              filteredSnippets.push(snippet);
+            } else if (
+              typeof snippet.description === "object" &&
+              snippet.description.some((desc) => desc.includes(lowercasedTerm))
+            ) {
+              filteredSnippets.push(snippet);
+            } else if (snippet.code.toLowerCase().includes(lowercasedTerm)) {
               filteredSnippets.push(snippet);
             }
           }

@@ -6,16 +6,22 @@
         "subtitle": "Array Creation and Initialization",
         "snippets": [
           {
-            "description": "Creating an Array",
-            "code": "int[] intArray = new int[5];"
+            "description": [
+              "Creating an Array with a specified size. The array elements will be initialized to their default values (0 for int)."
+            ],
+            "code": "int[] intArray = new int[5];\n// Output: [0, 0, 0, 0, 0]"
           },
           {
-            "description": "Creating and Initializing an Array",
-            "code": "int[] intArray = {1, 2, 3, 4, 5};"
+            "description": [
+              "Creating and Initializing an Array with specified values."
+            ],
+            "code": "int[] intArray = {1, 2, 3, 4, 5};\n// Output: [1, 2, 3, 4, 5]"
           },
           {
-            "description": "Creating an Array with Specified Values",
-            "code": "int[] intArray = new int[]{1, 2, 3, 4, 5};"
+            "description": [
+              "Creating an Array using the 'new' keyword with specified values."
+            ],
+            "code": "int[] intArray = new int[]{1, 2, 3, 4, 5};\n// Output: [1, 2, 3, 4, 5]"
           }
         ]
       },
@@ -23,12 +29,12 @@
         "subtitle": "Accessing Array Elements",
         "snippets": [
           {
-            "description": "Accessing the First Element",
-            "code": "int firstElement = intArray[0];"
+            "description": ["Accessing the first element of the array."],
+            "code": "int firstElement = intArray[0];\n// Output: 1"
           },
           {
-            "description": "Accessing the Last Element",
-            "code": "int lastElement = intArray[intArray.length - 1];"
+            "description": ["Accessing the last element of the array."],
+            "code": "int lastElement = intArray[intArray.length - 1];\n// Output: 5"
           }
         ]
       },
@@ -36,12 +42,16 @@
         "subtitle": "Modifying Array Elements",
         "snippets": [
           {
-            "description": "Changing the Value of the First Element",
-            "code": "intArray[0] = 10;"
+            "description": [
+              "Changing the value of the first element in the array."
+            ],
+            "code": "intArray[0] = 10;\n// Output: [10, 2, 3, 4, 5]"
           },
           {
-            "description": "Changing the Value of the Last Element",
-            "code": "intArray[intArray.length - 1] = 20;"
+            "description": [
+              "Changing the value of the last element in the array."
+            ],
+            "code": "intArray[intArray.length - 1] = 20;\n// Output: [10, 2, 3, 4, 20]"
           }
         ]
       },
@@ -49,8 +59,8 @@
         "subtitle": "Array Length",
         "snippets": [
           {
-            "description": "Getting the Length of the Array",
-            "code": "int length = intArray.length;"
+            "description": ["Getting the length of the array."],
+            "code": "int length = intArray.length;\n// Output: 5"
           }
         ]
       },
@@ -58,12 +68,12 @@
         "subtitle": "Iterating Over Arrays",
         "snippets": [
           {
-            "description": "Using a For Loop to Iterate Over the Array",
-            "code": "for (int i = 0; i < intArray.length; i++) {\n    System.out.println(intArray[i]);\n}"
+            "description": ["Using a For Loop to iterate over the array."],
+            "code": "for (int i = 0; i < intArray.length; i++) {\n    System.out.println(intArray[i]);\n}\n// Output: 10 2 3 4 20"
           },
           {
-            "description": "Using a For-Each Loop to Iterate Over the Array",
-            "code": "for (int num : intArray) {\n    System.out.println(num);\n}"
+            "description": ["Using a For-Each Loop to iterate over the array."],
+            "code": "for (int num : intArray) {\n    System.out.println(num);\n}\n// Output: 10 2 3 4 20"
           }
         ]
       },
@@ -71,20 +81,22 @@
         "subtitle": "Multi-dimensional Arrays",
         "snippets": [
           {
-            "description": "Creating a 2D Array",
-            "code": "int[][] matrix = new int[3][3];"
+            "description": [
+              "Creating a 2D Array with a specified size. The array elements will be initialized to their default values (0 for int)."
+            ],
+            "code": "int[][] matrix = new int[3][3];\n// Output: [[0, 0, 0], [0, 0, 0], [0, 0, 0]]"
           },
           {
-            "description": "Initializing a 2D Array",
-            "code": "int[][] matrix = {\n    {1, 2, 3},\n    {4, 5, 6},\n    {7, 8, 9}\n};"
+            "description": ["Initializing a 2D Array with specified values."],
+            "code": "int[][] matrix = {\n    {1, 2, 3},\n    {4, 5, 6},\n    {7, 8, 9}\n};\n// Output: [[1, 2, 3], [4, 5, 6], [7, 8, 9]]"
           },
           {
-            "description": "Accessing Elements in a 2D Array",
-            "code": "int element = matrix[0][1];"
+            "description": ["Accessing an element in a 2D Array."],
+            "code": "int element = matrix[0][1];\n// Output: 2"
           },
           {
-            "description": "Iterating Over a 2D Array",
-            "code": "for (int i = 0; i < matrix.length; i++) {\n    for (int j = 0; j < matrix[i].length; j++) {\n        System.out.print(matrix[i][j] + \" \");\n    }\n    System.out.println();\n}"
+            "description": ["Iterating over a 2D Array."],
+            "code": "for (int i = 0; i < matrix.length; i++) {\n    for (int j = 0; j < matrix[i].length; j++) {\n        System.out.print(matrix[i][j] + \" \");\n    }\n    System.out.println();\n}\n// Output:\n// 1 2 3\n// 4 5 6\n// 7 8 9"
           }
         ]
       },
@@ -92,24 +104,70 @@
         "subtitle": "Common Array Operations",
         "snippets": [
           {
-            "description": "Sorting an Array",
-            "code": "Arrays.sort(intArray);"
+            "description": ["Sorting an array in ascending order."],
+            "code": "Arrays.sort(intArray);\n// Output: [2, 3, 4, 10, 20]"
           },
           {
-            "description": "Copying an Array",
-            "code": "int[] copiedArray = Arrays.copyOf(intArray, intArray.length);"
+            "description": ["Copying an array."],
+            "code": "int[] copiedArray = Arrays.copyOf(intArray, intArray.length);\n// Output: [2, 3, 4, 10, 20]"
           },
           {
-            "description": "Filling an Array",
-            "code": "Arrays.fill(intArray, 0);"
+            "description": ["Filling an array with a specified value."],
+            "code": "Arrays.fill(intArray, 0);\n// Output: [0, 0, 0, 0, 0]"
           },
           {
-            "description": "Comparing Arrays",
-            "code": "boolean areEqual = Arrays.equals(intArray, copiedArray);"
+            "description": ["Comparing two arrays for equality."],
+            "code": "boolean areEqual = Arrays.equals(intArray, copiedArray);\n// Output: false"
           },
           {
-            "description": "Searching an Array",
-            "code": "int index = Arrays.binarySearch(intArray, 3);"
+            "description": [
+              "Searching for a value in a sorted array using binary search."
+            ],
+            "code": "int index = Arrays.binarySearch(intArray, 3);\n// Output: -1 (since intArray is filled with 0s after the fill operation)"
+          },
+          {
+            "description": ["Converting an array to a string."],
+            "code": "String arrayString = Arrays.toString(intArray);\n// Output: [0, 0, 0, 0, 0]"
+          },
+          {
+            "description": ["Finding the maximum value in an array."],
+            "code": "int max = Arrays.stream(intArray).max().orElseThrow(NoSuchElementException::new);\n// Output: 0"
+          },
+          {
+            "description": "Finding the minimum value in an array.",
+            "code": "int min = Arrays.stream(intArray).min().orElseThrow(NoSuchElementException::new);\n// Output: 0"
+          },
+          {
+            "description": "Calculating the sum of all elements in an array.",
+            "code": "int sum = Arrays.stream(intArray).sum();\n// Output: 0"
+          },
+          {
+            "description": "Calculating the average of all elements in an array.",
+            "code": "double average = Arrays.stream(intArray).average().orElse(0);\n// Output: 0.0"
+          },
+          {
+            "description": "Cloning an array.",
+            "code": "int[] clonedArray = intArray.clone();\n// Output: [0, 0, 0, 0, 0]"
+          },
+          {
+            "description": "Checking if an array is empty.",
+            "code": "boolean isEmpty = intArray.length == 0;\n// Output: false"
+          },
+          {
+            "description": "Reversing an array.",
+            "code": "int[] reversedArray = new int[intArray.length];\nfor (int i = 0; i < intArray.length; i++) {\n    reversedArray[i] = intArray[intArray.length - 1 - i];\n}\n// Output: [0, 0, 0, 0, 0]"
+          },
+          {
+            "description": "Converting an array to a List.",
+            "code": "List<Integer> arrayList = Arrays.asList(Arrays.stream(intArray).boxed().toArray(Integer[]::new));\n// Output: [0, 0, 0, 0, 0]"
+          },
+          {
+            "description": "Converting a List to an array.",
+            "code": "List<Integer> list = Arrays.asList(1, 2, 3, 4, 5);\nInteger[] array = list.toArray(new Integer[0]);\n// Output: [1, 2, 3, 4, 5]"
+          },
+          {
+            "description": "Joining two arrays.",
+            "code": "int[] array1 = {1, 2, 3};\nint[] array2 = {4, 5, 6};\nint[] joinedArray = IntStream.concat(Arrays.stream(array1), Arrays.stream(array2)).toArray();\n// Output: [1, 2, 3, 4, 5, 6]"
           }
         ]
       }
@@ -318,26 +376,49 @@
     ]
   },
   {
-    "title": "Java Collections",
+    "title": "Java Collections Cheat Sheet",
     "sections": [
       {
         "subtitle": "Lists",
         "snippets": [
           {
-            "description": "Creating an ArrayList",
+            "description": [
+              "ArrayList is a resizable array implementation of the List interface. It allows <span class=\"highlighted\">random access</span> to elements and provides methods to manipulate the size of the array that is used internally.",
+              "Useful when <span class=\"highlighted\">frequent read operations</span> are needed."
+            ],
             "code": "List<String> arrayList = new ArrayList<>();"
           },
           {
-            "description": "Creating a LinkedList",
+            "description": [
+              "LinkedList implements the List and Deque interfaces. It uses a <span class=\"highlighted\">doubly-linked list</span> internally to store elements.",
+              "Useful when <span class=\"highlighted\">frequent insertions and deletions</span> are needed as they are faster than in an ArrayList."
+            ],
             "code": "List<String> linkedList = new LinkedList<>();"
           },
           {
-            "description": "Creating a Vector",
+            "description": [
+              "Vector is similar to ArrayList but is <span class=\"highlighted\">synchronized</span>, meaning it is thread-safe.",
+              "Rarely used in new code as <span class=\"highlighted\">Collections.synchronizedList()</span> is preferred."
+            ],
             "code": "List<String> vector = new Vector<>();"
           },
           {
-            "description": "Creating a Stack",
-            "code": "List<String> stack = new Stack<>();"
+            "description": [
+              "Stack is a subclass of Vector and represents a last-in-first-out (LIFO) stack of objects.",
+              "Useful for scenarios where data needs to be stored and retrieved in <span class=\"highlighted\">LIFO</span> order."
+            ],
+            "code": "Stack<String> stack = new Stack<>();"
+          },
+          {
+            "description": [
+              "Synchronized lists are <span class=\"highlighted\">thread-safe</span> implementations of the List interface, created by wrapping another list using Collections.synchronizedList().",
+              "Useful when a thread-safe list is needed."
+            ],
+            "code": "List<String> synchronizedList = Collections.synchronizedList(new ArrayList<>());"
+          },
+          {
+            "description": "List interface methods.",
+            "code": "arrayList.add(\"element\");\narrayList.get(0);\narrayList.set(0, \"newElement\");\narrayList.remove(0);\narrayList.size();\narrayList.contains(\"element\");\narrayList.clear();\n// LinkedList Specific Methods\nlinkedList.addFirst(\"element\");\nlinkedList.addLast(\"element\");\nlinkedList.getFirst();\nlinkedList.getLast();\nlinkedList.removeFirst();\nlinkedList.removeLast();\n// Stack Specific Methods\nstack.push(\"element\");\nstack.pop();\nstack.peek();\nstack.isEmpty();\nstack.search(\"element\");"
           }
         ]
       },
@@ -345,24 +426,43 @@
         "subtitle": "Sets",
         "snippets": [
           {
-            "description": "Creating a HashSet",
+            "description": [
+              "HashSet implements the Set interface and <span class=\"highlighted\">uses a hash table</span> for storage. It does not guarantee the order of elements and allows null values.",
+              "Useful when a unique collection of items is needed and <span class=\"highlighted\">order does not matter</span>."
+            ],
             "code": "Set<String> hashSet = new HashSet<>();"
           },
           {
-            "description": "Creating a LinkedHashSet",
+            "description": [
+              "LinkedHashSet is similar to HashSet but maintains a linked list of the entries in the set, in the order in which they were inserted.",
+              "Useful when <span class=\"highlighted\">iteration order is required to be the same as insertion order</span>."
+            ],
             "code": "Set<String> linkedHashSet = new LinkedHashSet<>();"
           },
           {
-            "description": "Creating a TreeSet",
+            "description": [
+              "TreeSet implements the Set interface and uses a <span class=\"highlighted\">red-black tree</span> for storage. It orders the elements based on their values.",
+              "Useful when a <span class=\"highlighted\">sorted set</span> of unique items is needed."
+            ],
             "code": "Set<String> treeSet = new TreeSet<>();"
           },
           {
-            "description": "Creating a ConcurrentSkipListSet",
+            "description": [
+              "ConcurrentSkipListSet is a scalable concurrent NavigableSet implementation based on a skip list. It maintains elements in a <span class=\"highlighted\">sorted order</span> and is <span class=\"highlighted\">thread-safe</span>.",
+              "Useful in concurrent applications where a sorted set is needed."
+            ],
             "code": "Set<String> concurrentSkipListSet = new ConcurrentSkipListSet<>();"
           },
           {
-            "description": "Creating a CopyOnWriteArraySet",
+            "description": [
+              "CopyOnWriteArraySet is a thread-safe variant of HashSet in which all mutative operations (add, set, and so on) are implemented by making a fresh copy of the underlying array.",
+              "Useful in concurrent scenarios where <span class=\"highlighted\">reads are frequent</span> and <span class=\"highlighted\">writes are rare</span>."
+            ],
             "code": "Set<String> copyOnWriteArraySet = new CopyOnWriteArraySet<>();"
+          },
+          {
+            "description": ["Set interface methods."],
+            "code": "hashSet.add(\"element\");\nhashSet.remove(\"element\");\nhashSet.contains(\"element\");\nhashSet.size();\nhashSet.clear();\nhashSet.isEmpty();\n// Additional Set Methods\nSet<String> otherSet = new HashSet<>();\nhashSet.addAll(otherSet); // Adds all elements from another set\nhashSet.retainAll(otherSet); // Retains only elements that are in both sets\nhashSet.removeAll(otherSet); // Removes all elements that are in another set\nhashSet.equals(otherSet); // Compares two sets for equality\nhashSet.toArray(); // Converts the set to an array\n// TreeSet Specific Methods\ntreeSet.first();\ntreeSet.last();\ntreeSet.headSet(\"element\");\ntreeSet.tailSet(\"element\");\ntreeSet.subSet(\"start\", \"end\");\ntreeSet.comparator(); // Returns the comparator used to order the elements\ntreeSet.descendingSet(); // Returns a reverse order view of the elements\ntreeSet.floor(\"element\"); // Returns the greatest element less than or equal to the given element\ntreeSet.ceiling(\"element\"); // Returns the least element greater than or equal to the given element\ntreeSet.lower(\"element\"); // Returns the greatest element strictly less than the given element\ntreeSet.higher(\"element\"); // Returns the least element strictly greater than the given element\ntreeSet.pollFirst(); // Retrieves and removes the first (lowest) element\ntreeSet.pollLast(); // Retrieves and removes the last (highest) element"
           }
         ]
       },
@@ -370,36 +470,64 @@
         "subtitle": "Maps",
         "snippets": [
           {
-            "description": "Creating a HashMap",
+            "description": [
+              "<span class=\"highlighted\">HashMap</span> implements the Map interface using a hash table. It allows <span class=\"highlighted\">null values</span> and one <span class=\"highlighted\">null key</span>. It does not guarantee the order of its elements.",
+              "Useful when a key-value pair collection is needed without ordering."
+            ],
             "code": "Map<String, String> hashMap = new HashMap<>();"
           },
           {
-            "description": "Creating a LinkedHashMap",
+            "description": [
+              "LinkedHashMap is similar to HashMap but maintains a doubly-linked list running through all of its entries. This linked list defines the iteration ordering, which is the order in which keys were inserted.",
+              "Useful when insertion order needs to be preserved."
+            ],
             "code": "Map<String, String> linkedHashMap = new LinkedHashMap<>();"
           },
           {
-            "description": "Creating a TreeMap",
+            "description": [
+              "TreeMap implements the NavigableMap interface and uses a red-black tree to store its elements. It orders the keys based on their natural order or by a specified comparator.",
+              "Useful when a sorted map is required."
+            ],
             "code": "Map<String, String> treeMap = new TreeMap<>();"
           },
           {
-            "description": "Creating a Hashtable",
+            "description": [
+              "Hashtable is similar to HashMap but is synchronized, meaning it is thread-safe. It does not allow null keys or values.",
+              "Rarely used in new code as Collections.synchronizedMap() is preferred."
+            ],
             "code": "Map<String, String> hashtable = new Hashtable<>();"
           },
           {
-            "description": "Creating a ConcurrentHashMap",
+            "description": [
+              "ConcurrentHashMap is a thread-safe variant of HashMap. It allows concurrent read and write operations and provides high concurrency with scalability.",
+              "Useful in concurrent applications where a map is needed."
+            ],
             "code": "Map<String, String> concurrentHashMap = new ConcurrentHashMap<>();"
           },
           {
-            "description": "Creating a WeakHashMap",
+            "description": [
+              "WeakHashMap implements the Map interface with weak keys, which means that the keys are subject to garbage collection when they are no longer in use.",
+              "Useful when using keys that should be eligible for garbage collection."
+            ],
             "code": "Map<String, String> weakHashMap = new WeakHashMap<>();"
           },
           {
-            "description": "Creating an IdentityHashMap",
+            "description": [
+              "IdentityHashMap uses reference equality (==) instead of object equality (equals()) for comparing keys.",
+              "Useful when reference equality is required."
+            ],
             "code": "Map<String, String> identityHashMap = new IdentityHashMap<>();"
           },
           {
-            "description": "Creating a ConcurrentSkipListMap",
+            "description": [
+              "ConcurrentSkipListMap is a scalable concurrent NavigableMap implementation based on a skip list. It maintains elements in a sorted order and is thread-safe.",
+              "Useful in concurrent applications where a sorted map is needed."
+            ],
             "code": "Map<String, String> concurrentSkipListMap = new ConcurrentSkipListMap<>();"
+          },
+          {
+            "description": "Map interface methods.",
+            "code": "hashMap.put(\"key\", \"value\");\nhashMap.get(\"key\");\nhashMap.remove(\"key\");\nhashMap.containsKey(\"key\");\nhashMap.containsValue(\"value\");\nhashMap.size();\nhashMap.clear();\nhashMap.isEmpty();\nhashMap.keySet(); // Returns a Set view of the keys contained in this map\nhashMap.values(); // Returns a Collection view of the values contained in this map\nhashMap.entrySet(); // Returns a Set view of the mappings contained in this map\n// TreeMap Specific Methods\ntreeMap.firstKey();\ntreeMap.lastKey();\ntreeMap.headMap(\"key\");\ntreeMap.tailMap(\"key\");\ntreeMap.subMap(\"startKey\", \"endKey\");\ntreeMap.comparator(); // Returns the comparator used to order the elements\ntreeMap.descendingMap(); // Returns a reverse order view of the mappings\ntreeMap.floorKey(\"key\"); // Returns the greatest key less than or equal to the given key\ntreeMap.ceilingKey(\"key\"); // Returns the least key greater than or equal to the given key\ntreeMap.lowerKey(\"key\"); // Returns the greatest key strictly less than the given key\ntreeMap.higherKey(\"key\"); // Returns the least key strictly greater than the given key\ntreeMap.pollFirstEntry(); // Retrieves and removes the first (lowest) entry\ntreeMap.pollLastEntry(); // Retrieves and removes the last (highest) entry\n// IdentityHashMap Specific Methods\nidentityHashMap.keySet(); // Returns a Set view of the keys contained in this map\nidentityHashMap.values(); // Returns a Collection view of the values contained in this map\nidentityHashMap.entrySet(); // Returns a Set view of the mappings contained in this map\n// ConcurrentSkipListMap Specific Methods\nconcurrentSkipListMap.firstKey();\nconcurrentSkipListMap.lastKey();\nconcurrentSkipListMap.headMap(\"key\");\nconcurrentSkipListMap.tailMap(\"key\");\nconcurrentSkipListMap.subMap(\"startKey\", \"endKey\");\nconcurrentSkipListMap.comparator(); // Returns the comparator used to order the elements\nconcurrentSkipListMap.descendingMap(); // Returns a reverse order view of the mappings\nconcurrentSkipListMap.floorKey(\"key\"); // Returns the greatest key less than or equal to the given key\nconcurrentSkipListMap.ceilingKey(\"key\"); // Returns the least key greater than or equal to the given key\nconcurrentSkipListMap.lowerKey(\"key\"); // Returns the greatest key strictly less than the given key\nconcurrentSkipListMap.higherKey(\"key\"); // Returns the least key strictly greater than the given key\nconcurrentSkipListMap.pollFirstEntry(); // Retrieves and removes the first (lowest) entry\nconcurrentSkipListMap.pollLastEntry(); // Retrieves and removes the last (highest) entry"
           }
         ]
       },
@@ -407,49 +535,50 @@
         "subtitle": "Queues",
         "snippets": [
           {
-            "description": "Creating a PriorityQueue",
-            "code": "Queue<String> priorityQueue = new PriorityQueue<>();"
+            "description": [
+              "PriorityQueue is an unbounded priority queue based on a priority heap. It orders elements according to their <span class=\"highlighted\">natural ordering</span> or by a specified comparator.",
+              "Useful when elements need to be processed based on their priority."
+            ],
+            "code": "Queue priorityQueue = new PriorityQueue<>();"
           },
           {
-            "description": "Creating a LinkedList as a Queue",
-            "code": "Queue<String> linkedListQueue = new LinkedList<>();"
+            "description": [
+              "LinkedList can be used as a queue by implementing the Queue interface. It provides methods to insert elements at the end and remove them from the beginning.",
+              "Useful for implementing a simple queue."
+            ],
+            "code": "Queue linkedListQueue = new LinkedList<>();"
           },
           {
-            "description": "Creating a Deque",
-            "code": "Deque<String> deque = new LinkedList<>();"
+            "description": [
+              "Deque stands for double-ended queue and allows elements to be added or removed from <span class=\"highlighted\">both ends</span>.",
+              "Useful for implementing both stacks and queues."
+            ],
+            "code": "Deque deque = new LinkedList<>();"
           },
           {
-            "description": "Creating an ArrayDeque",
-            "code": "Deque<String> arrayDeque = new ArrayDeque<>();"
+            "description": [
+              "ArrayDeque is a resizable array implementation of the Deque interface. It has no capacity restrictions and is faster than LinkedList when used as a deque.",
+              "Useful for <span class=\"highlighted\">stack and queue operations</span>."
+            ],
+            "code": "Deque arrayDeque = new ArrayDeque<>();"
           },
           {
-            "description": "Creating a BlockingQueue",
-            "code": "BlockingQueue<String> blockingQueue = new ArrayBlockingQueue<>(10);"
+            "description": [
+              "BlockingQueue is an interface that represents a thread-safe queue that supports operations that wait for the queue to become non-empty when retrieving an element and wait for space to become available in the queue when storing an element.",
+              "Useful for producer-consumer scenarios."
+            ],
+            "code": "BlockingQueue blockingQueue = new ArrayBlockingQueue<>(10);"
           },
           {
-            "description": "Creating a SynchronousQueue",
-            "code": "SynchronousQueue<String> synchronousQueue = new SynchronousQueue<>();"
+            "description": [
+              "SynchronousQueue is a BlockingQueue in which each insert operation must wait for a corresponding remove operation by another thread, and vice versa.",
+              "Useful for handoff designs where an object should be passed from one thread to another."
+            ],
+            "code": "SynchronousQueue synchronousQueue = new SynchronousQueue<>();"
           },
           {
-            "description": "Creating a LinkedBlockingQueue",
-            "code": "LinkedBlockingQueue<String> linkedBlockingQueue = new LinkedBlockingQueue<>();"
-          },
-          {
-            "description": "Creating a PriorityBlockingQueue",
-            "code": "PriorityBlockingQueue<String> priorityBlockingQueue = new PriorityBlockingQueue<>();"
-          }
-        ]
-      },
-      {
-        "subtitle": "Stacks",
-        "snippets": [
-          {
-            "description": "Creating a Stack",
-            "code": "Stack<String> stack = new Stack<>();"
-          },
-          {
-            "description": "Using Deque as a Stack",
-            "code": "Deque<String> stackDeque = new ArrayDeque<>();"
+            "description": ["Queue interface methods."],
+            "code": "queue.add(\"element\"); // Adds an element to the queue\nqueue.offer(\"element\"); // Adds an element to the queue\nqueue.remove(); // Removes and returns the head of the queue\nqueue.poll(); // Retrieves and removes the head of the queue, or returns null if the queue is empty\nqueue.element(); // Retrieves, but does not remove, the head of the queue\nqueue.peek(); // Retrieves, but does not remove, the head of the queue, or returns null if the queue is empty\nqueue.size(); // Returns the number of elements in the queue\nqueue.clear(); // Removes all elements from the queue\nqueue.isEmpty(); // Returns true if the queue contains no elements\nqueue.contains(\"element\"); // Returns true if the queue contains the specified element\nqueue.toArray(); // Returns an array containing all of the elements in the queue\n\n// ArrayDeque Specific Methods\narrayDeque.addFirst(\"element\"); // Inserts the specified element at the front of this deque\narrayDeque.addLast(\"element\"); // Inserts the specified element at the end of this deque\narrayDeque.removeFirst(); // Retrieves and removes the first element of this deque\narrayDeque.removeLast(); // Retrieves and removes the last element of this deque\narrayDeque.getFirst(); // Retrieves, but does not remove, the first element of this deque\narrayDeque.getLast(); // Retrieves, but does not remove, the last element of this deque\n\n// PriorityQueue Specific Methods\npriorityQueue.add(\"element\");\npriorityQueue.offer(\"element\");\npriorityQueue.remove();\npriorityQueue.poll();\npriorityQueue.peek();\npriorityQueue.size();\npriorityQueue.clear();\npriorityQueue.contains(\"element\");\npriorityQueue.toArray();\n\n// BlockingQueue Specific Methods\nblockingQueue.put(\"element\"); // Adds an element to the queue, waiting if necessary for space to become available\nblockingQueue.take(); // Retrieves and removes the head of the queue, waiting if necessary until an element becomes available\nblockingQueue.offer(\"element\", 1, TimeUnit.SECONDS); // Adds an element to the queue, waiting up to the specified wait time for space to become available\nblockingQueue.poll(1, TimeUnit.SECONDS); // Retrieves and removes the head of the queue, waiting up to the specified wait time if necessary for an element to become available\n\n// Deque Specific Methods\ndeque.addFirst(\"element\");\ndeque.addLast(\"element\");\ndeque.removeFirst();\ndeque.removeLast();\ndeque.getFirst();\ndeque.getLast();\n\n// SynchronousQueue Specific Methods\nsynchronousQueue.put(\"element\");\nsynchronousQueue.take();"
           }
         ]
       }
@@ -688,17 +817,21 @@
     ]
   },
   {
-    "title": "Java Comparator and Comparison Cheat Sheet",
+    "title": "Java Comparator and Comparison",
     "sections": [
       {
         "subtitle": "Comparable Interface",
         "snippets": [
           {
-            "description": "Implementing Comparable",
+            "description": [
+              "Implementing <span class=\"highlighted\">Comparable</span>"
+            ],
             "code": "class Person implements Comparable<Person> {\n    private String name;\n    private int age;\n\n    public Person(String name, int age) {\n        this.name = name;\n        this.age = age;\n    }\n\n    @Override\n    public int compareTo(Person other) {\n        return Integer.compare(this.age, other.age);\n    }\n\n    // Getters and toString() method\n}"
           },
           {
-            "description": "Sorting with Comparable",
+            "description": [
+              "Sorting with <span class=\"highlighted\">Comparable</span>"
+            ],
             "code": "List<Person> people = new ArrayList<>();\npeople.add(new Person(\"Alice\", 30));\npeople.add(new Person(\"Bob\", 25));\npeople.add(new Person(\"Charlie\", 35));\n\nCollections.sort(people);\nfor (Person person : people) {\n    System.out.println(person);\n}\n// Output:\n// Person{name='Bob', age=25}\n// Person{name='Alice', age=30}\n// Person{name='Charlie', age=35}"
           }
         ]
@@ -707,19 +840,27 @@
         "subtitle": "Comparator Interface",
         "snippets": [
           {
-            "description": "Implementing Comparator",
+            "description": [
+              "Implementing <span class=\"highlighted\">Comparator</span>"
+            ],
             "code": "class PersonNameComparator implements Comparator<Person> {\n    @Override\n    public int compare(Person p1, Person p2) {\n        return p1.getName().compareTo(p2.getName());\n    }\n}"
           },
           {
-            "description": "Sorting with Comparator",
+            "description": [
+              "Sorting with <span class=\"highlighted\">Comparator</span>"
+            ],
             "code": "List<Person> people = new ArrayList<>();\npeople.add(new Person(\"Alice\", 30));\npeople.add(new Person(\"Bob\", 25));\npeople.add(new Person(\"Charlie\", 35));\n\nCollections.sort(people, new PersonNameComparator());\nfor (Person person : people) {\n    System.out.println(person);\n}\n// Output:\n// Person{name='Alice', age=30}\n// Person{name='Bob', age=25}\n// Person{name='Charlie', age=35}"
           },
           {
-            "description": "Using Anonymous Comparator",
+            "description": [
+              "Using Anonymous <span class=\"highlighted\">Comparator</span>"
+            ],
             "code": "Collections.sort(people, new Comparator<Person>() {\n    @Override\n    public int compare(Person p1, Person p2) {\n        return Integer.compare(p1.getAge(), p2.getAge());\n    }\n});"
           },
           {
-            "description": "Using Lambda Expression",
+            "description": [
+              "Using <span class=\"highlighted\">Lambda Expression</span>"
+            ],
             "code": "Collections.sort(people, (p1, p2) -> p1.getName().compareTo(p2.getName()));"
           }
         ]
@@ -728,19 +869,27 @@
         "subtitle": "Common Comparison Methods",
         "snippets": [
           {
-            "description": "Comparing Integers: Returns -1 if the first value is less than the second, 0 if equal, and 1 if greater",
+            "description": [
+              "Comparing <span class=\"highlighted\">Integers</span>: Returns -1 if the first value is less than the second, 0 if equal, and 1 if greater"
+            ],
             "code": "int result1 = Integer.compare(10, 20); // -1\nint result2 = Integer.compare(20, 10); // 1\nint result3 = Integer.compare(10, 10); // 0"
           },
           {
-            "description": "Comparing Doubles: Returns -1 if the first value is less than the second, 0 if equal, and 1 if greater",
+            "description": [
+              "Comparing <span class=\"highlighted\">Doubles</span>: Returns -1 if the first value is less than the second, 0 if equal, and 1 if greater"
+            ],
             "code": "int result1 = Double.compare(10.5, 20.5); // -1\nint result2 = Double.compare(20.5, 10.5); // 1\nint result3 = Double.compare(10.5, 10.5); // 0"
           },
           {
-            "description": "Comparing Strings: Returns -1 if the first string is lexicographically less than the second, 0 if equal, and 1 if greater",
+            "description": [
+              "Comparing <span class=\"highlighted\">Strings</span>: Returns -1 if the first string is lexicographically less than the second, 0 if equal, and 1 if greater"
+            ],
             "code": "int result1 = \"apple\".compareTo(\"banana\"); // -1\nint result2 = \"banana\".compareTo(\"apple\"); // 1\nint result3 = \"apple\".compareTo(\"apple\"); // 0"
           },
           {
-            "description": "Comparing with nullsFirst and nullsLast: Sorts with nulls first or last respectively",
+            "description": [
+              "Comparing with <span class=\"highlighted\">nullsFirst</span> and <span class=\"highlighted\">nullsLast</span>: Sorts with nulls first or last respectively"
+            ],
             "code": "List<String> strings = Arrays.asList(\"apple\", null, \"banana\");\nCollections.sort(strings, Comparator.nullsFirst(String::compareTo)); // [null, \"apple\", \"banana\"]\nCollections.sort(strings, Comparator.nullsLast(String::compareTo)); // [\"apple\", \"banana\", null]"
           }
         ]
@@ -749,7 +898,9 @@
         "subtitle": "Comparator Chaining",
         "snippets": [
           {
-            "description": "Chaining Comparators: First compares by name, then by age",
+            "description": [
+              "Chaining <span class=\"highlighted\">Comparators</span>: First compares by name, then by age"
+            ],
             "code": "Comparator<Person> comparator = Comparator.comparing(Person::getName)\n                                          .thenComparing(Person::getAge);\n\nCollections.sort(people, comparator);"
           }
         ]

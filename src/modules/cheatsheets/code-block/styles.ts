@@ -1,47 +1,7 @@
 import { css, keyframes } from "@emotion/react";
 import { flex, lgScreen } from "@styles/index";
 
-const anim = keyframes`
-to{
-  rotate: 90deg;
-}
-`;
-
-export const containerStyles = css`
-  ${flex({ column: true, gap: [0] })};
-  border: solid 1.5px #1c1c20;
-
-  > .desc {
-    font-size: 14px;
-    color: #c0c0c0;
-    background-color: #1c1c20;
-    padding: 4px 8px;
-  }
-
-  > .code {
-    background-color: #0d0d0f;
-    color: #dbdbdb;
-    font-family: var(--code-font);
-    cursor: pointer;
-    font-size: 13px;
-    padding: 8px;
-  }
-
-  ${lgScreen} {
-    > .desc {
-      font-size: 16px;
-    }
-    > .code {
-      padding: 15px 10px;
-      font-size: 14px;
-
-      transition: all 200ms;
-      &:hover {
-        border-color: #494954;
-      }
-    }
-  }
-
+const codeThemeStyles = css`
   code[class*="language-"],
   pre[class*="language-"] {
     color: #d6deeb;
@@ -150,7 +110,8 @@ export const containerStyles = css`
   }
 
   .token.constant,
-  .token.function .token.builtin,
+  .token.function,
+  .token.builtin,
   .token.char {
     color: #82aaff;
   }
@@ -194,5 +155,73 @@ export const containerStyles = css`
 
   .token.italic {
     font-style: italic;
+  }
+`;
+
+export const containerStyles = css`
+  ${flex({ column: true, gap: [0] })};
+  position: relative;
+  > .copied {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    font-size: 12px;
+    line-height: 12px;
+    color: #29ab87;
+  }
+  ${codeThemeStyles}
+`;
+
+export const descriptionStyles = css`
+  ${flex({ gap: [10], column: true })}
+  color: #c0c0c0;
+  background-color: #1c1c20;
+  padding: 8px;
+  font-size: 14px;
+
+  > div {
+    > .highlighted {
+      /* color: #f653a6; */
+      color: #318ce7;
+    }
+  }
+
+  ${lgScreen} {
+    font-size: 15px;
+    padding: 10px 15px;
+  }
+`;
+
+const anim = keyframes`
+  50% {
+    border-color: #29AB87;
+  }
+`;
+
+export const codeStyles = (showAnim = false) => css`
+  background-color: #0d0d0f;
+  color: #dbdbdb;
+  font-family: var(--code-font);
+  cursor: pointer;
+  font-size: 13px;
+  padding: 8px;
+  border: solid 1.5px #1c1c20;
+
+  ${showAnim
+    ? css`
+        animation: ${anim} 700ms forwards;
+      `
+    : ""}
+
+  ${lgScreen} {
+    padding: 15px;
+    font-size: 14px;
+
+    ${lgScreen} {
+      transition: all 500ms;
+      &:hover {
+        border-color: #494954;
+      }
+    }
   }
 `;
