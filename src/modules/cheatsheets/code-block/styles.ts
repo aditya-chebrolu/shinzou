@@ -1,6 +1,17 @@
 import { css, keyframes } from "@emotion/react";
 import { flex, lgScreen } from "@styles/index";
 
+const scrollAnim = keyframes`
+  from {   
+    scale: 0.9;
+    opacity: 0;
+  }
+  to { 
+    scale: 1;
+    opacity: 1;
+  }
+`;
+
 const codeThemeStyles = css`
   code[class*="language-"],
   pre[class*="language-"] {
@@ -161,14 +172,19 @@ const codeThemeStyles = css`
 export const containerStyles = css`
   ${flex({ column: true, gap: [0] })};
   position: relative;
-  > .copied {
-    position: absolute;
-    right: 15px;
-    bottom: 15px;
-    font-size: 12px;
-    line-height: 12px;
-    color: #29ab87;
-  }
+  /* scale: 0.9; */
+  /* opacity: 0; */
+
+  animation: ${scrollAnim} forwards linear;
+  /* animation-timeline: scroll(); //block for y scroll ; inline for x scroll */
+  /* animation-timeline: view(500px 0px); dist. from top and dist. from bottom */
+  animation-timeline: view();
+  animation-range: 0px 100px; //  start when top is 100px from bottom
+  /* animation-range: cover; */
+  /* animation-range-start: 0px; // start when elem top is 0px from bottom */
+  /* animation-range-end: 100px; // end when elem top is 0px from bottom */
+  /* animation-range: 0px 100px; // shorthand for start and end */
+
   ${codeThemeStyles}
 `;
 
