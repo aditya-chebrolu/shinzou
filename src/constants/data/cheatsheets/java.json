@@ -581,6 +581,31 @@
             "code": "queue.add(\"element\"); // Adds an element to the queue\nqueue.offer(\"element\"); // Adds an element to the queue\nqueue.remove(); // Removes and returns the head of the queue\nqueue.poll(); // Retrieves and removes the head of the queue, or returns null if the queue is empty\nqueue.element(); // Retrieves, but does not remove, the head of the queue\nqueue.peek(); // Retrieves, but does not remove, the head of the queue, or returns null if the queue is empty\nqueue.size(); // Returns the number of elements in the queue\nqueue.clear(); // Removes all elements from the queue\nqueue.isEmpty(); // Returns true if the queue contains no elements\nqueue.contains(\"element\"); // Returns true if the queue contains the specified element\nqueue.toArray(); // Returns an array containing all of the elements in the queue\n\n// ArrayDeque Specific Methods\narrayDeque.addFirst(\"element\"); // Inserts the specified element at the front of this deque\narrayDeque.addLast(\"element\"); // Inserts the specified element at the end of this deque\narrayDeque.removeFirst(); // Retrieves and removes the first element of this deque\narrayDeque.removeLast(); // Retrieves and removes the last element of this deque\narrayDeque.getFirst(); // Retrieves, but does not remove, the first element of this deque\narrayDeque.getLast(); // Retrieves, but does not remove, the last element of this deque\n\n// PriorityQueue Specific Methods\npriorityQueue.add(\"element\");\npriorityQueue.offer(\"element\");\npriorityQueue.remove();\npriorityQueue.poll();\npriorityQueue.peek();\npriorityQueue.size();\npriorityQueue.clear();\npriorityQueue.contains(\"element\");\npriorityQueue.toArray();\n\n// BlockingQueue Specific Methods\nblockingQueue.put(\"element\"); // Adds an element to the queue, waiting if necessary for space to become available\nblockingQueue.take(); // Retrieves and removes the head of the queue, waiting if necessary until an element becomes available\nblockingQueue.offer(\"element\", 1, TimeUnit.SECONDS); // Adds an element to the queue, waiting up to the specified wait time for space to become available\nblockingQueue.poll(1, TimeUnit.SECONDS); // Retrieves and removes the head of the queue, waiting up to the specified wait time if necessary for an element to become available\n\n// Deque Specific Methods\ndeque.addFirst(\"element\");\ndeque.addLast(\"element\");\ndeque.removeFirst();\ndeque.removeLast();\ndeque.getFirst();\ndeque.getLast();\n\n// SynchronousQueue Specific Methods\nsynchronousQueue.put(\"element\");\nsynchronousQueue.take();"
           }
         ]
+      },
+      {
+        "subtitle": "Stacks",
+        "snippets": [
+          {
+            "description": [
+              "Stack is a class that represents a last-in, first-out (LIFO) stack of objects. It extends Vector and has five operations that allow a vector to be treated as a stack.",
+              "Useful when you need a LIFO data structure."
+            ],
+            "code": "Stack<String> stack = new Stack<>();"
+          },
+          {
+            "description": [
+              "Deque (Double Ended Queue) interface can be used as a stack with ArrayDeque implementation.",
+              "Useful when you need a stack but also want the additional functionality provided by Deque."
+            ],
+            "code": "Deque<String> stackDeque = new ArrayDeque<>();"
+          },
+          {
+            "description": [
+              "Methods: Common methods for Stack and Deque used as Stack."
+            ],
+            "code": "stack.push(\"element\"); // Pushes an element onto the stack\nstack.pop(); // Removes and returns the top element of the stack\nstack.peek(); // Returns the top element of the stack without removing it\nstack.isEmpty(); // Checks if the stack is empty\nstack.search(\"element\"); // Returns the 1-based position where an element is on the stack\nstack.size(); // Returns the number of elements in the stack\nstack.clear(); // Removes all elements from the stack\nstack.contains(\"element\"); // Checks if the stack contains the specified element\n\nstackDeque.push(\"element\"); // Pushes an element onto the stack\nstackDeque.pop(); // Removes and returns the top element of the stack\nstackDeque.peek(); // Returns the top element of the stack without removing it\nstackDeque.isEmpty(); // Checks if the stack is empty\nstackDeque.size(); // Returns the number of elements in the stack\nstackDeque.clear(); // Removes all elements from the stack\nstackDeque.contains(\"element\"); // Checks if the stack contains the specified element"
+          }
+        ]
       }
     ]
   },
