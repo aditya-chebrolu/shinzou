@@ -26,39 +26,42 @@ const CheatSheet = ({ data: initData }: CheatSheetServerSideReturnType) => {
     setData(filterData(val));
   };
 
-  const filterData = useCallback((searchTerm: string) => {
-    const lowercasedTerm = searchTerm.toLowerCase();
-    const result = [];
+  const filterData = useCallback(
+    (searchTerm: string) => {
+      const lowercasedTerm = searchTerm.toLowerCase();
+      const result = [];
 
-    for (const section of initData) {
-      const filteredSections = [];
-      for (const subsection of section.sections) {
-        const filteredSnippets = [];
-        for (const snippet of subsection.snippets) {
-          if (
-            snippet.description.toLowerCase().includes(lowercasedTerm) ||
-            snippet.code.toLowerCase().includes(lowercasedTerm)
-          ) {
-            filteredSnippets.push(snippet);
+      for (const section of initData) {
+        const filteredSections = [];
+        for (const subsection of section.sections) {
+          const filteredSnippets = [];
+          for (const snippet of subsection.snippets) {
+            if (
+              snippet.description.toLowerCase().includes(lowercasedTerm) ||
+              snippet.code.toLowerCase().includes(lowercasedTerm)
+            ) {
+              filteredSnippets.push(snippet);
+            }
+          }
+          if (filteredSnippets.length > 0) {
+            filteredSections.push({
+              ...subsection,
+              snippets: filteredSnippets,
+            });
           }
         }
-        if (filteredSnippets.length > 0) {
-          filteredSections.push({
-            ...subsection,
-            snippets: filteredSnippets,
+
+        if (filteredSections.length > 0) {
+          result.push({
+            ...section,
+            sections: filteredSections,
           });
         }
       }
-
-      if (filteredSections.length > 0) {
-        result.push({
-          ...section,
-          sections: filteredSections,
-        });
-      }
-    }
-    return result;
-  }, []);
+      return result;
+    },
+    [initData]
+  );
 
   return (
     <div css={pageStyles}>
