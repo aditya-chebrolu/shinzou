@@ -2,10 +2,13 @@ export type CheatSheetSectionType = {
   title: string;
   sections: {
     subtitle: string;
-    snippets: {
-      description: string;
-      code: string;
-      highlightedCode: string;
-    }[];
+    snippets: [];
   }[];
+};
+
+export type SnippetType = {
+  description: string;
+  code: string;
+  highlightedCode: string;
+  // output: null | string;
 };

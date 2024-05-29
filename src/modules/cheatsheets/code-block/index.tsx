@@ -1,17 +1,18 @@
+import { SnippetType } from "../types";
 import { containerStyles } from "./styles";
 
 type Props = {
-  codeString: string;
-  description: string;
+  snippet: SnippetType;
 };
 
-const CodeBlock = ({ codeString, description }: Props) => {
+const CodeBlock = ({ snippet }: Props) => {
+  const { highlightedCode, description } = snippet;
   return (
     <div css={containerStyles}>
       <div className="desc">{description}</div>
       <div className="code">
         <pre>
-          <code dangerouslySetInnerHTML={{ __html: codeString }} />
+          <code dangerouslySetInnerHTML={{ __html: highlightedCode }} />
         </pre>
       </div>
     </div>

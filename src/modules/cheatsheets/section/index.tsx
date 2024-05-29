@@ -21,11 +21,7 @@ const SubSection = ({
     <div css={subSectionContainerStyles}>
       <div className="title">{subtitle}</div>
       {snippets.map((snippet, idx) => (
-        <CodeBlock
-          codeString={snippet.highlightedCode}
-          description={snippet.description}
-          key={idx}
-        />
+        <CodeBlock snippet={snippet} key={idx} />
       ))}
     </div>
   );

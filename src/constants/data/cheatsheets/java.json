@@ -1,5 +1,121 @@
 [
   {
+    "title": "Java Arrays Cheat Sheet",
+    "sections": [
+      {
+        "subtitle": "Array Creation and Initialization",
+        "snippets": [
+          {
+            "description": "Creating an Array",
+            "code": "int[] intArray = new int[5];"
+          },
+          {
+            "description": "Creating and Initializing an Array",
+            "code": "int[] intArray = {1, 2, 3, 4, 5};"
+          },
+          {
+            "description": "Creating an Array with Specified Values",
+            "code": "int[] intArray = new int[]{1, 2, 3, 4, 5};"
+          }
+        ]
+      },
+      {
+        "subtitle": "Accessing Array Elements",
+        "snippets": [
+          {
+            "description": "Accessing the First Element",
+            "code": "int firstElement = intArray[0];"
+          },
+          {
+            "description": "Accessing the Last Element",
+            "code": "int lastElement = intArray[intArray.length - 1];"
+          }
+        ]
+      },
+      {
+        "subtitle": "Modifying Array Elements",
+        "snippets": [
+          {
+            "description": "Changing the Value of the First Element",
+            "code": "intArray[0] = 10;"
+          },
+          {
+            "description": "Changing the Value of the Last Element",
+            "code": "intArray[intArray.length - 1] = 20;"
+          }
+        ]
+      },
+      {
+        "subtitle": "Array Length",
+        "snippets": [
+          {
+            "description": "Getting the Length of the Array",
+            "code": "int length = intArray.length;"
+          }
+        ]
+      },
+      {
+        "subtitle": "Iterating Over Arrays",
+        "snippets": [
+          {
+            "description": "Using a For Loop to Iterate Over the Array",
+            "code": "for (int i = 0; i < intArray.length; i++) {\n    System.out.println(intArray[i]);\n}"
+          },
+          {
+            "description": "Using a For-Each Loop to Iterate Over the Array",
+            "code": "for (int num : intArray) {\n    System.out.println(num);\n}"
+          }
+        ]
+      },
+      {
+        "subtitle": "Multi-dimensional Arrays",
+        "snippets": [
+          {
+            "description": "Creating a 2D Array",
+            "code": "int[][] matrix = new int[3][3];"
+          },
+          {
+            "description": "Initializing a 2D Array",
+            "code": "int[][] matrix = {\n    {1, 2, 3},\n    {4, 5, 6},\n    {7, 8, 9}\n};"
+          },
+          {
+            "description": "Accessing Elements in a 2D Array",
+            "code": "int element = matrix[0][1];"
+          },
+          {
+            "description": "Iterating Over a 2D Array",
+            "code": "for (int i = 0; i < matrix.length; i++) {\n    for (int j = 0; j < matrix[i].length; j++) {\n        System.out.print(matrix[i][j] + \" \");\n    }\n    System.out.println();\n}"
+          }
+        ]
+      },
+      {
+        "subtitle": "Common Array Operations",
+        "snippets": [
+          {
+            "description": "Sorting an Array",
+            "code": "Arrays.sort(intArray);"
+          },
+          {
+            "description": "Copying an Array",
+            "code": "int[] copiedArray = Arrays.copyOf(intArray, intArray.length);"
+          },
+          {
+            "description": "Filling an Array",
+            "code": "Arrays.fill(intArray, 0);"
+          },
+          {
+            "description": "Comparing Arrays",
+            "code": "boolean areEqual = Arrays.equals(intArray, copiedArray);"
+          },
+          {
+            "description": "Searching an Array",
+            "code": "int index = Arrays.binarySearch(intArray, 3);"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "title": "Java Strings",
     "sections": [
       {
@@ -566,6 +682,75 @@
           {
             "description": "Using ForkJoinPool",
             "code": "ForkJoinPool forkJoinPool = new ForkJoinPool();\nforkJoinPool.invoke(new RecursiveTask<Integer>() {\n    protected Integer compute() {\n        // computation\n        return result;\n    }\n});"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Java Comparator and Comparison Cheat Sheet",
+    "sections": [
+      {
+        "subtitle": "Comparable Interface",
+        "snippets": [
+          {
+            "description": "Implementing Comparable",
+            "code": "class Person implements Comparable<Person> {\n    private String name;\n    private int age;\n\n    public Person(String name, int age) {\n        this.name = name;\n        this.age = age;\n    }\n\n    @Override\n    public int compareTo(Person other) {\n        return Integer.compare(this.age, other.age);\n    }\n\n    // Getters and toString() method\n}"
+          },
+          {
+            "description": "Sorting with Comparable",
+            "code": "List<Person> people = new ArrayList<>();\npeople.add(new Person(\"Alice\", 30));\npeople.add(new Person(\"Bob\", 25));\npeople.add(new Person(\"Charlie\", 35));\n\nCollections.sort(people);\nfor (Person person : people) {\n    System.out.println(person);\n}\n// Output:\n// Person{name='Bob', age=25}\n// Person{name='Alice', age=30}\n// Person{name='Charlie', age=35}"
+          }
+        ]
+      },
+      {
+        "subtitle": "Comparator Interface",
+        "snippets": [
+          {
+            "description": "Implementing Comparator",
+            "code": "class PersonNameComparator implements Comparator<Person> {\n    @Override\n    public int compare(Person p1, Person p2) {\n        return p1.getName().compareTo(p2.getName());\n    }\n}"
+          },
+          {
+            "description": "Sorting with Comparator",
+            "code": "List<Person> people = new ArrayList<>();\npeople.add(new Person(\"Alice\", 30));\npeople.add(new Person(\"Bob\", 25));\npeople.add(new Person(\"Charlie\", 35));\n\nCollections.sort(people, new PersonNameComparator());\nfor (Person person : people) {\n    System.out.println(person);\n}\n// Output:\n// Person{name='Alice', age=30}\n// Person{name='Bob', age=25}\n// Person{name='Charlie', age=35}"
+          },
+          {
+            "description": "Using Anonymous Comparator",
+            "code": "Collections.sort(people, new Comparator<Person>() {\n    @Override\n    public int compare(Person p1, Person p2) {\n        return Integer.compare(p1.getAge(), p2.getAge());\n    }\n});"
+          },
+          {
+            "description": "Using Lambda Expression",
+            "code": "Collections.sort(people, (p1, p2) -> p1.getName().compareTo(p2.getName()));"
+          }
+        ]
+      },
+      {
+        "subtitle": "Common Comparison Methods",
+        "snippets": [
+          {
+            "description": "Comparing Integers: Returns -1 if the first value is less than the second, 0 if equal, and 1 if greater",
+            "code": "int result1 = Integer.compare(10, 20); // -1\nint result2 = Integer.compare(20, 10); // 1\nint result3 = Integer.compare(10, 10); // 0"
+          },
+          {
+            "description": "Comparing Doubles: Returns -1 if the first value is less than the second, 0 if equal, and 1 if greater",
+            "code": "int result1 = Double.compare(10.5, 20.5); // -1\nint result2 = Double.compare(20.5, 10.5); // 1\nint result3 = Double.compare(10.5, 10.5); // 0"
+          },
+          {
+            "description": "Comparing Strings: Returns -1 if the first string is lexicographically less than the second, 0 if equal, and 1 if greater",
+            "code": "int result1 = \"apple\".compareTo(\"banana\"); // -1\nint result2 = \"banana\".compareTo(\"apple\"); // 1\nint result3 = \"apple\".compareTo(\"apple\"); // 0"
+          },
+          {
+            "description": "Comparing with nullsFirst and nullsLast: Sorts with nulls first or last respectively",
+            "code": "List<String> strings = Arrays.asList(\"apple\", null, \"banana\");\nCollections.sort(strings, Comparator.nullsFirst(String::compareTo)); // [null, \"apple\", \"banana\"]\nCollections.sort(strings, Comparator.nullsLast(String::compareTo)); // [\"apple\", \"banana\", null]"
+          }
+        ]
+      },
+      {
+        "subtitle": "Comparator Chaining",
+        "snippets": [
+          {
+            "description": "Chaining Comparators: First compares by name, then by age",
+            "code": "Comparator<Person> comparator = Comparator.comparing(Person::getName)\n                                          .thenComparing(Person::getAge);\n\nCollections.sort(people, comparator);"
           }
         ]
       }
