@@ -1,5 +1,4 @@
 import { css } from "@emotion/react";
-import { fullBleed } from "@styles/custom/full-bleed";
 import { flex, lgScreen } from "@styles/index";
 
 export const pageStyles = css`
@@ -22,45 +21,46 @@ export const pageStyles = css`
   }
 `;
 
-export const searchbarStyles = css`
+export const searchBarWrapperStyles = css`
   background: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(0, 0, 0, 1));
   position: sticky;
   top: 0;
   z-index: 2;
+  padding: 20px;
 
-  margin-inline: -5px;
-  padding: 10px 0;
   ${lgScreen} {
-    margin-inline: -10px;
-    padding: 15px 0;
+    padding: 15px 20%;
+  }
+  display: grid;
+  place-items: center;
+`;
+
+export const searchBarStyles = (scrolled = false) => css`
+  border: none;
+  border-radius: 0;
+  background-color: black;
+  color: white;
+  outline: none;
+  transition: all 300ms;
+  width: ${scrolled ? "calc(100% + 20px)" : "calc(100% - 0px)"};
+  font-weight: bold;
+  border: solid 1.5px #1c1c20;
+
+  &:focus {
+    border-color: #494954;
   }
 
-  > input {
-    border: none;
-    border-radius: 0;
-    background-color: black;
-    color: white;
-    outline: none;
-    width: 100%;
-    font-weight: bold;
-    border: solid 1.5px #1c1c20;
+  height: 45px;
+  padding: 4px 8px;
+  font-size: 18px;
+  ${lgScreen} {
+    font-size: 22px;
+    padding: 10px;
+    height: 50px;
+  }
 
-    &:focus {
-      border-color: #494954;
-    }
-
-    height: 45px;
-    padding: 4px 8px;
-    font-size: 18px;
-    ${lgScreen} {
-      font-size: 22px;
-      padding: 10px;
-      height: 50px;
-    }
-
-    &::placeholder {
-      color: #494954;
-    }
+  &::placeholder {
+    color: #494954;
   }
 `;
 

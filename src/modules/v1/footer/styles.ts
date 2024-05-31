@@ -8,6 +8,7 @@ export const containerStyles = css`
   padding: 15px 0;
   font-size: 22px;
   height: 200px;
+  margin-top: auto;
 `;
 
 export const resumeButton = css`

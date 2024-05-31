@@ -73,6 +73,12 @@ export const bgStyles = css`
   background-image: radial-gradient(circle, ${black[2]} 0.5px, black 1px);
 `;
 
+export const darkBackgroundStyles = css`
+  background-image: var(--dotted-dark-bg);
+  background-size: 17px 17px;
+  background-color: black;
+`;
+
 export const SvgContainer = styled.div<{
   ratio?: string;
   w?: { dweb?: number; mweb?: number; default?: number };

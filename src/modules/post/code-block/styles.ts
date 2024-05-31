@@ -212,7 +212,7 @@ export const codeStyles = css`
   background-color: #0d0d0f;
   color: #dbdbdb;
   font-family: var(--code-font);
-  cursor: pointer;
+  /* cursor: pointer; */
   font-size: 13px;
   padding: 8px;
   border: solid 1.5px #1c1c20;
@@ -223,9 +223,9 @@ export const codeStyles = css`
 
     ${lgScreen} {
       transition: all 300ms;
-      &:hover {
+      /* &:hover {
         border-color: #494954;
-      }
+      } */
     }
   }
 `;

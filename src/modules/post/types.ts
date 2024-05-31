@@ -1,5 +1,6 @@
 export type CheatSheetSectionType = {
   title: string;
+  language: string;
   sections: {
     subtitle: string;
     snippets: SnippetType[];

@@ -1,19 +1,19 @@
-import CodeBlock from "../code-block";
 import { sectionContainerStyles, subSectionContainerStyles } from "./styles";
 import { CheatSheetSectionType } from "../types";
+import CodeBlock from "../code-block";
 
-const CheatSheetSection = ({ title, sections }: CheatSheetSectionType) => {
+export const Content = ({ data }: { data: CheatSheetSectionType }) => {
   return (
     <div css={sectionContainerStyles}>
-      <div className="title">{title}</div>
-      {sections.map((section, idx) => (
-        <SubSection {...section} key={idx} />
+      <div className="title">{data.title}</div>
+      {data.sections.map((section, idx) => (
+        <CheatSheetSection {...section} key={idx} />
       ))}
     </div>
   );
 };
 
-const SubSection = ({
+const CheatSheetSection = ({
   subtitle,
   snippets,
 }: CheatSheetSectionType["sections"][number]) => {
@@ -27,4 +27,4 @@ const SubSection = ({
   );
 };
 
-export default CheatSheetSection;
+export default Content;

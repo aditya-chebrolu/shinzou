@@ -1,0 +1,46 @@
+[
+  {
+    "title": "<span class=\"highlighted\">Java</span> Arrays Cheat Sheet",
+    "tags": ["java", "arrays", "cheat sheet"],
+    "link": "/posts/java-arrays-cheat-sheet"
+  },
+  {
+    "title": "<span class=\"highlighted\">Java</span> Strings Cheat Sheet",
+    "tags": ["java", "strings", "cheat sheet"],
+    "link": "/posts/java-strings-cheat-sheet"
+  },
+  {
+    "title": "<span class=\"highlighted\">Java</span> Collections Cheat Sheet",
+    "tags": [
+      "java",
+      "collections",
+      "cheat sheet",
+      "sets",
+      "maps",
+      "lists",
+      "queues",
+      "stacks"
+    ],
+    "link": "/posts/java-collections-cheat-sheet"
+  },
+  {
+    "title": "<span class=\"highlighted\">Java</span> Comparable & Comparator Cheat Sheet",
+    "tags": ["java", "comparable", "comparator", "sorting"],
+    "link": "/posts/java-comparator-comparable-cheat-sheet"
+  },
+  {
+    "title": "<span class=\"highlighted\">Swift</span> Arrays Cheat Sheet",
+    "tags": ["swift", "arrays", "cheat sheet"],
+    "link": "/posts/swift-arrays-cheat-sheet"
+  },
+  {
+    "title": "<span class=\"highlighted\">Swift</span> Strings Cheat Sheet",
+    "tags": ["swift", "strings", "cheat sheet"],
+    "link": "/posts/swift-strings-cheat-sheet"
+  },
+  {
+    "title": "<span class=\"highlighted\">Swift</span> Structs Cheat Sheet",
+    "tags": ["swift", "structs", "cheat sheet"],
+    "link": "/posts/swift-structs-cheat-sheet"
+  }
+]
