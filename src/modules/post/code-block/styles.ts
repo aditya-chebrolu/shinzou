@@ -1,5 +1,5 @@
 import { css, keyframes } from "@emotion/react";
-import { flex, lgScreen } from "@styles/index";
+import { customScrollBar, flex, lgScreen } from "@styles/index";
 
 const scrollAnim = keyframes`
   from {   
@@ -32,7 +32,7 @@ const codeThemeStyles = css`
   }
 
   code span {
-    text-wrap: wrap;
+    /* text-wrap: wrap; */
     word-break: break-all;
     /* word-wrap: break-word; */
   }
@@ -172,6 +172,7 @@ const codeThemeStyles = css`
 export const containerStyles = css`
   ${flex({ column: true, gap: [0] })};
   position: relative;
+  border: solid 1.5px #343841;
   /* scale: 0.9; */
   /* opacity: 0; */
 
@@ -190,14 +191,15 @@ export const containerStyles = css`
 
 export const descriptionStyles = css`
   ${flex({ gap: [10], column: true })}
-  color: #c0c0c0;
-  background-color: #1c1c20;
   padding: 8px;
   font-size: 14px;
 
+  color: #c0c0c0;
+  border-bottom: solid 1.5px #343841;
+  background-color: #17181c;
+
   > div {
     > .highlighted {
-      /* color: #f653a6; */
       color: #318ce7;
     }
   }
@@ -212,20 +214,19 @@ export const codeStyles = css`
   background-color: #0d0d0f;
   color: #dbdbdb;
   font-family: var(--code-font);
-  /* cursor: pointer; */
   font-size: 13px;
-  padding: 8px;
-  border: solid 1.5px #1c1c20;
+  padding: 6px 8px;
+  line-height: 22px;
+  overflow-x: scroll;
 
   ${lgScreen} {
-    padding: 15px;
+    padding: 10px 15px;
     font-size: 14px;
-
-    ${lgScreen} {
-      transition: all 300ms;
-      /* &:hover {
-        border-color: #494954;
-      } */
-    }
+    line-height: 24px;
+    ${customScrollBar({
+      thumbColor: "#343841",
+      trackColor: "#0d0d0f",
+      thickness: 4,
+    })};
   }
 `;

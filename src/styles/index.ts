@@ -79,6 +79,40 @@ export const darkBackgroundStyles = css`
   background-color: black;
 `;
 
+export const customScrollBar = ({
+  thumbColor,
+  trackColor,
+  thumbRadius = 0,
+  thickness = 2,
+  thumbHoverColor,
+}: {
+  thumbColor: `#${string}`;
+  trackColor: `#${string}`;
+  thumbHoverColor?: `#${string}`;
+  thumbRadius?: number;
+  thickness?: number;
+}) => css`
+  &::-webkit-scrollbar {
+    width: ${thickness}px;
+    height: ${thickness}px;
+  }
+  &::-webkit-scrollbar-track {
+    background: ${trackColor};
+  }
+  &::-webkit-scrollbar-thumb {
+    background: ${thumbColor};
+    border-radius: ${thumbRadius}px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: ${thumbHoverColor};
+  }
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+  }
+`;
+
 export const SvgContainer = styled.div<{
   ratio?: string;
   w?: { dweb?: number; mweb?: number; default?: number };

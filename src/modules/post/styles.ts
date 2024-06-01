@@ -8,12 +8,10 @@ export const searchBarWrapperStyles = (scrolled = false) => css`
   z-index: 2;
   transition: all 300ms;
 
-  margin-top: -15px;
-  padding-top: 15px;
+  margin-top: -20px;
+  padding-top: 20px;
 
   ${lgScreen} {
-    margin-top: -20px;
-    padding-top: 20px;
   }
   display: grid;
   place-items: center;

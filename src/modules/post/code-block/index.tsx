@@ -7,17 +7,7 @@ type Props = {
 };
 
 const CodeBlock = ({ snippet }: Props) => {
-  const { highlightedCode, description, code } = snippet;
-  // const [showAnim, setShowAnim] = useState(false);
-
-  // const onCodeClick = () => {
-  //   navigator.clipboard.writeText(code);
-  //   setShowAnim(true);
-  //   const to = setTimeout(() => {
-  //     setShowAnim(false);
-  //     clearTimeout(to);
-  //   }, 7000);
-  // };
+  const { highlightedCode, description } = snippet;
 
   return (
     <div css={containerStyles}>

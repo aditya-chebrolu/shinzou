@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { containerStyles, headerStyles } from "./styles";
+import { containerStyles, headerStyles, menuStyles } from "./styles";
 import UnderlinedText from "@components/underlined-text";
 import Link from "next/link";
 import { Sizes } from "@components/underlined-text/styles";
@@ -27,16 +27,18 @@ const PageWrapper = ({
           color="#FFFFFF"
           lineColor={headerData.titleLineColor || "#FB607F"}
         />
-        {!!headerData.allTags && (
-          <Link href="/tags" className="links tags">
-            All Tags
-          </Link>
-        )}
-        {!!headerData.allPosts && (
-          <Link href="/posts" className="links posts">
-            All Posts
-          </Link>
-        )}
+        <div css={menuStyles}>
+          {!!headerData.allTags && (
+            <Link href="/tags" className="links tags">
+              All Tags
+            </Link>
+          )}
+          {!!headerData.allPosts && (
+            <Link href="/posts" className="links posts">
+              All Posts
+            </Link>
+          )}
+        </div>
       </div>
       <div className="content">{children}</div>
     </div>
