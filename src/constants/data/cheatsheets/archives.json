@@ -42,5 +42,10 @@
     "title": "<span class=\"highlighted\">Swift</span> Structs Cheat Sheet",
     "tags": ["swift", "structs", "cheat sheet"],
     "link": "/posts/swift-structs-cheat-sheet"
+  },
+  {
+    "title": "SwiftUI Error Handling Cheat Sheet",
+    "tags": ["swift", "error", "handling", "try", "catch"],
+    "link": "/posts/swift-error-handling"
   }
 ]
