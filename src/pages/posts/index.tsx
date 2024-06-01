@@ -1,30 +1,14 @@
-import UnderlinedText from "@components/underlined-text";
-import { containerStyles, headerStyles } from "@modules/posts/styles";
 import path from "path";
 import fs from "fs";
 import { ArchiveType } from "@modules/posts/types";
 import PostsList from "@components/posts-list";
-import Link from "next/link";
+import PageWrapper from "@components/page-wrapper";
 
 const Archives = ({ data }: ReturnType<typeof getServerSideProps>["props"]) => {
   return (
-    <div css={containerStyles}>
-      <div css={headerStyles}>
-        <UnderlinedText
-          text="Posts"
-          type="h1"
-          size="md"
-          color="#FFFFFF"
-          lineColor="#FB607F"
-        />
-        <Link href="/tags" className="links tags">
-          All Tags
-        </Link>
-      </div>
-      <div className="content">
-        <PostsList data={data} />
-      </div>
-    </div>
+    <PageWrapper headerData={{ title: "Posts", allTags: true }}>
+      <PostsList data={data} />
+    </PageWrapper>
   );
 };
 

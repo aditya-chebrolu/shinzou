@@ -9,6 +9,10 @@ export const archiveBlockStyles = css`
 
   > a > h2 {
     all: unset;
+    transition: all 200ms;
+    &:hover {
+      color: #318ce7;
+    }
   }
 
   > .tags {
@@ -19,8 +23,13 @@ export const archiveBlockStyles = css`
     font-size: 14px;
     font-weight: normal;
     color: #ffbf00;
-    > span {
+
+    > a {
+      transition: all 200ms;
       flex-shrink: 0;
+      &:hover {
+        color: #fbec5d;
+      }
     }
   }
 `;

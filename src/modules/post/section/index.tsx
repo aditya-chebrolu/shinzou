@@ -5,7 +5,6 @@ import CodeBlock from "../code-block";
 export const Content = ({ data }: { data: CheatSheetSectionType }) => {
   return (
     <div css={sectionContainerStyles}>
-      <div className="title">{data.title}</div>
       {data.sections.map((section, idx) => (
         <CheatSheetSection {...section} key={idx} />
       ))}

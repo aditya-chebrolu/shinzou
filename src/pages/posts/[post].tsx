@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { Content } from "@modules/post/section";
 import {
-  pageStyles,
   searchBarStyles,
   searchBarWrapperStyles,
   welcomeTextStyles,
@@ -10,9 +9,9 @@ import { CheatSheetSectionType } from "@modules/post/types";
 import getCheatSheetServerSideProps, {
   type CheatSheetServerSideReturnType,
 } from "@modules/post/server";
-import { capitalize } from "lodash-es";
 import { useRouter } from "next/router";
 import useScrolledBy from "src/hooks/use-scrolled-by";
+import PageWrapper from "@components/page-wrapper";
 
 const Post = ({ data: initData }: CheatSheetServerSideReturnType) => {
   const { query } = useRouter();
@@ -69,13 +68,13 @@ const Post = ({ data: initData }: CheatSheetServerSideReturnType) => {
   if (!data) return null;
 
   return (
-    <div css={pageStyles}>
-      <div css={searchBarWrapperStyles}>
+    <PageWrapper headerData={{ title: data.title, titleLineColor: "#EF9B0F" }}>
+      <div css={searchBarWrapperStyles(isScrolled)}>
         <input
           type="text"
           onChange={onSearch}
           css={searchBarStyles(isScrolled)}
-          placeholder={`Search ${capitalize(query.topic as string)} topics`}
+          placeholder={`Search ${data.title}`}
         />
       </div>
       <div className="wrapper">
@@ -84,7 +83,7 @@ const Post = ({ data: initData }: CheatSheetServerSideReturnType) => {
           <div css={welcomeTextStyles}>{"You're welcome 🤗"}</div>
         </div>
       </div>
-    </div>
+    </PageWrapper>
   );
 };
 

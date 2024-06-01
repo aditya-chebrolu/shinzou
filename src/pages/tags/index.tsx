@@ -1,37 +1,26 @@
 import { ArchiveType } from "@modules/posts/types";
 import path from "path";
 import fs from "fs";
-import { containerStyles } from "@modules/tags/styles";
-import { headerStyles } from "@modules/posts/styles";
-import UnderlinedText from "@components/underlined-text";
-import Link from "next/link";
+import PageWrapper from "@components/page-wrapper";
+import { tagsContainerStyles } from "@modules/tags/styles";
 
 const Tags = ({ tags }: ReturnType<typeof getServerSideProps>["props"]) => {
   return (
-    <div css={containerStyles}>
-      <div css={headerStyles}>
-        <UnderlinedText
-          text={`All Tags`}
-          type="h1"
-          size="md"
-          color="#FFFFFF"
-          lineColor="#50C878"
-        />
-
-        <Link href="/posts" className="links posts">
-          All Posts
-        </Link>
+    <PageWrapper
+      headerData={{
+        titleLineColor: "#0D98BA",
+        title: "All Tags",
+        allPosts: true,
+      }}
+    >
+      <div css={tagsContainerStyles}>
+        {tags.map((tag, idx) => (
+          <a href={`/tags/${tag}`} key={idx} className="tag">
+            #{tag}
+          </a>
+        ))}
       </div>
-      <div className="wrapper">
-        <div>
-          {tags.map((tag, idx) => (
-            <a href={`/tags/${tag}`} key={idx} className="tag">
-              #{tag}
-            </a>
-          ))}
-        </div>
-      </div>
-    </div>
+    </PageWrapper>
   );
 };
 

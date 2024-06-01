@@ -13,11 +13,23 @@ export const containerStyles = css`
     place-items: center;
     margin-inline: 20px;
 
-    > div {
+    > .tags {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       column-gap: 10px;
+
+      &:has(> a:hover) > a:not(:hover) {
+        opacity: 0.2;
+      }
+
+      > a {
+        transition: all 200ms;
+        &:hover {
+          color: #fbec5d;
+          scale: 1.5;
+        }
+      }
 
       ${lgScreen} {
         max-width: 300px;
@@ -31,5 +43,31 @@ export const containerStyles = css`
 
   .tag {
     color: #ffcc33;
+  }
+`;
+
+export const tagsContainerStyles = css`
+  color: #ffcc33;
+  align-self: center;
+  margin-block: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  row-gap: 5px;
+  ${lgScreen} {
+    max-width: 400px;
+
+    &:has(> a:hover) > a:not(:hover) {
+      opacity: 0.2;
+    }
+
+    > a {
+      transition: all 200ms;
+      &:hover {
+        color: #fbec5d;
+        scale: 1.5;
+      }
+    }
   }
 `;
