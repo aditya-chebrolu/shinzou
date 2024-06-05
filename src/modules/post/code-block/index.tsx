@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { SnippetType } from "../types";
 import { codeStyles, containerStyles, descriptionStyles } from "./styles";
 
@@ -20,7 +19,11 @@ const CodeBlock = ({ snippet }: Props) => {
       </div>
       <div css={codeStyles}>
         <pre>
-          <code dangerouslySetInnerHTML={{ __html: highlightedCode }} />
+          <code
+            dangerouslySetInnerHTML={{
+              __html: highlightedCode,
+            }}
+          />
         </pre>
       </div>
     </div>

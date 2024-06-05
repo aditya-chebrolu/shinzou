@@ -185,8 +185,6 @@ export const containerStyles = css`
   /* animation-range-start: 0px; // start when elem top is 0px from bottom */
   /* animation-range-end: 100px; // end when elem top is 0px from bottom */
   /* animation-range: 0px 100px; // shorthand for start and end */
-
-  ${codeThemeStyles}
 `;
 
 export const descriptionStyles = css`
@@ -217,7 +215,7 @@ export const codeStyles = css`
   font-size: 13px;
   padding: 6px 8px;
   line-height: 22px;
-  overflow-x: scroll;
+  overflow-x: auto;
 
   ${lgScreen} {
     padding: 10px 15px;

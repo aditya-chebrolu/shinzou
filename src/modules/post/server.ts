@@ -1,20 +1,25 @@
 import { GetServerSidePropsContext } from "next";
 import path from "path";
 import fs from "fs";
-import Prism from "@configs/prism.config";
 import { CheatSheetSectionType } from "./types";
-
+import "src/utils/strings";
+import { highlightCode } from "src/utils/highlight-code";
+// todo: remove this and precalculate stuff.
 const loadData = async (data: CheatSheetSectionType) => {
   try {
     for (const section of data.sections) {
-      section.snippets = section.snippets.map((snippet) => ({
-        ...snippet,
-        highlightedCode: Prism.highlight(
-          snippet.code,
-          Prism.languages[data.language],
-          data.language
-        ),
-      }));
+      const snippets = [];
+      for (const snippet of section.snippets) {
+        const obj = {
+          ...snippet,
+          highlightedCode: await highlightCode({
+            code: snippet.code,
+            language: data.language,
+          }),
+        };
+        snippets.push(obj);
+      }
+      section.snippets = snippets;
     }
   } catch (error) {
     console.error("Error loading JSON file:", error);
@@ -30,7 +35,8 @@ const getCheatSheetServerSideProps = async (
   try {
     const fileContents = fs.readFileSync(filePath, "utf8");
     data = JSON.parse(fileContents) as CheatSheetSectionType;
-    loadData(data);
+    await loadData(data);
+
     return {
       props: {
         data,
