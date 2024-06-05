@@ -27,7 +27,3 @@ export const icons = {
   ec2: { Icon: Ec2Icon, text: "Amazon EC2", slug: "ec2" },
   swift: { Icon: SwiftIcon, text: "Swift", slug: "swift" },
 };
-
-export const pickIcons = (inp: (keyof typeof icons)[]) => {
-  return inp.map((lang) => icons[lang]);
-};

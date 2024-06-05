@@ -5,6 +5,7 @@ import { CheatSheetSectionType } from "./types";
 import "src/utils/strings";
 import { highlightCode } from "src/utils/highlight-code";
 // todo: remove this and precalculate stuff.
+
 const loadData = async (data: CheatSheetSectionType) => {
   try {
     for (const section of data.sections) {
