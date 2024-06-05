@@ -15,7 +15,7 @@ const useScrolledBy = (by = 50) => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [by]);
 
   return isScrolled;
 };

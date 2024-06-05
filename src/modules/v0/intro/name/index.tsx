@@ -27,7 +27,7 @@ const LineOne = () => {
   const lnDelay = fnDelay + ln.length * letterInterval;
   return (
     <div css={introContainerStyles}>
-      <div className="intro">Hi, I'm</div>
+      <div className="intro">Hi, Im</div>
       <div>
         {fn.map((letter, idx) => (
           <div

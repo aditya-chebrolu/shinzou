@@ -5,6 +5,9 @@
 /.pnp
 .pnp.js
 
+# bundle analyzer
+/analyze
+
 # testing
 /coverage
 

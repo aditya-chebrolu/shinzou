@@ -1,5 +1,8 @@
-/** @type {import('next').NextConfig} */
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  enabled: process.env.ANALYZE === "true",
+});
 
+/** @type {import('next').NextConfig} */
 
 const nextConfig = {
   reactStrictMode: false,
@@ -8,19 +11,19 @@ const nextConfig = {
     config.module.rules.push({
       test: /\.svg$/i,
       issuer: /\.[jt]sx?$/,
-      use: ["@svgr/webpack"]
+      use: ["@svgr/webpack"],
     });
     return config;
   },
-
   async rewrites() {
     return [
       {
-        source: '/',
-        destination: '/v1',
+        source: "/",
+        destination: "/v1",
       },
-    ]
-  }
-}
+    ];
+  },
+};
 
-module.exports = nextConfig
+// module.exports = nextConfig;
+module.exports = withBundleAnalyzer(nextConfig);
