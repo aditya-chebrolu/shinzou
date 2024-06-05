@@ -18,7 +18,7 @@ export const highlightCode = async ({
     .use(rehypePrettyCode, {
       theme: "nord",
       keepBackground: false,
-      grid: true,
+      grid: false,
     })
     .use(rehypeStringify)
     .process(input);

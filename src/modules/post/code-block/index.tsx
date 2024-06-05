@@ -17,15 +17,12 @@ const CodeBlock = ({ snippet }: Props) => {
             <div key={idx} dangerouslySetInnerHTML={{ __html: desc }} />
           ))}
       </div>
-      <div css={codeStyles}>
-        <pre>
-          <code
-            dangerouslySetInnerHTML={{
-              __html: highlightedCode,
-            }}
-          />
-        </pre>
-      </div>
+      <div
+        css={codeStyles}
+        dangerouslySetInnerHTML={{
+          __html: highlightedCode,
+        }}
+      />
     </div>
   );
 };
