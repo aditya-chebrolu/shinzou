@@ -217,10 +217,6 @@ export const codeStyles = css`
   line-height: 22px;
   overflow-x: auto;
 
-  > figure {
-    all: unset;
-  }
-
   ${lgScreen} {
     padding: 10px 15px;
     line-height: 24px;
