@@ -6,7 +6,7 @@ type Props = {
 };
 
 const CodeBlock = ({ snippet }: Props) => {
-  const { highlightedCode, description } = snippet;
+  const { highlightedCode, description, codeHtml } = snippet;
 
   return (
     <div css={containerStyles}>
@@ -20,7 +20,7 @@ const CodeBlock = ({ snippet }: Props) => {
       <div
         css={codeStyles}
         dangerouslySetInnerHTML={{
-          __html: highlightedCode,
+          __html: codeHtml,
         }}
       />
     </div>

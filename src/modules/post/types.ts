@@ -11,5 +11,6 @@ export type SnippetType = {
   description: string | string[];
   code: string;
   highlightedCode: string;
+  codeHtml: string;
   // output: null | string;
 };

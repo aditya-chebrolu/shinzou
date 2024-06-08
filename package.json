@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit src",
-    "deadcode": "ts-prune"
+    "deadcode": "ts-prune",
+    "process-json": "node src/scripts/process-json-files.js"
   },
   "dependencies": {
     "@emotion/react": "^11.11.3",
