@@ -4,28 +4,21 @@ import fs from "fs";
 import { CheatSheetSectionType } from "./types";
 import "src/utils/strings";
 import { highlightCode } from "src/utils/highlight-code";
-// todo: remove this and precalculate stuff.
 
-// const loadData = async (data: CheatSheetSectionType) => {
-//   try {
-//     for (const section of data.sections) {
-//       const snippets = [];
-//       for (const snippet of section.snippets) {
-//         const obj = {
-//           ...snippet,
-//           highlightedCode: await highlightCode({
-//             code: snippet.code,
-//             language: data.language,
-//           }),
-//         };
-//         snippets.push(obj);
-//       }
-//       section.snippets = snippets;
-//     }
-//   } catch (error) {
-//     console.error("Error loading JSON file:", error);
-//   }
-// };
+const loadData = async (data: CheatSheetSectionType) => {
+  try {
+    for (const section of data.sections) {
+      for (const snippet of section.snippets) {
+        snippet.codeHtml = await highlightCode({
+          code: snippet.code,
+          language: data.language,
+        });
+      }
+    }
+  } catch (error) {
+    console.error("Error loading JSON file:", error);
+  }
+};
 
 const getCheatSheetServerSideProps = async (
   context: GetServerSidePropsContext
@@ -36,7 +29,7 @@ const getCheatSheetServerSideProps = async (
   try {
     const fileContents = fs.readFileSync(filePath, "utf8");
     data = JSON.parse(fileContents) as CheatSheetSectionType;
-    // await loadData(data);
+    await loadData(data);
 
     return {
       props: {
