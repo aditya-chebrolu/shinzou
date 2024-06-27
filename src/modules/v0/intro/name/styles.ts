@@ -1,6 +1,6 @@
 import { css, keyframes } from "@emotion/react";
 import { colors } from "@styles/colors";
-import { flex, lgScreen, smScreen } from "@styles/index";
+import { flex, minWidth, smScreen } from "@styles/index";
 
 export const containerStyles = css`
   user-select: none;
@@ -16,7 +16,7 @@ export const introContainerStyles = css`
   font-size: 30px;
   font-weight: bold;
 
-  ${lgScreen} {
+  ${minWidth()} {
     gap: 15px;
     font-size: 60px;
   }
@@ -81,7 +81,7 @@ export const dotStyles = (delay: number) => css`
   translate: 5rem 0;
 
   border-radius: 1px;
-  ${lgScreen} {
+  ${minWidth()} {
     border-radius: 1.5px;
     translate: 15rem 0;
     height: 10px;
@@ -108,7 +108,7 @@ export const designationContainerStyles = css`
   font-weight: bold;
   letter-spacing: 0.8px;
 
-  ${lgScreen} {
+  ${minWidth()} {
     gap: 10px;
     font-size: 35px;
   }
@@ -151,7 +151,7 @@ export const descriptionStyles = css`
   animation: ${descAnimation} 1s forwards;
   animation-delay: 4s;
   padding-inline: 10px;
-  ${lgScreen} {
+  ${minWidth()} {
     padding: 0;
     margin-top: 40px;
     width: 80%;

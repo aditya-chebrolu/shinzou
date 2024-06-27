@@ -1,5 +1,5 @@
 import { css, keyframes } from "@emotion/react";
-import { flex, lgScreen } from "@styles/index";
+import { flex, minWidth } from "@styles/index";
 
 export const containerStyles = css`
   height: 100vh;
@@ -57,7 +57,7 @@ export const imageStyles = (animationCompleted = false) => css`
   margin-bottom:40px;
   align-self: center;
 
-  ${lgScreen} {
+  ${minWidth()} {
     align-self: flex-start;
     margin: 20px 0 40px 5px;
     height: 180px;

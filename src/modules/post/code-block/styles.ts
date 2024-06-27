@@ -1,5 +1,5 @@
 import { css, keyframes } from "@emotion/react";
-import { customScrollBar, flex, lgScreen } from "@styles/index";
+import { customScrollBar, flex, minWidth } from "@styles/index";
 
 const scrollAnim = keyframes`
   from {   
@@ -202,7 +202,7 @@ export const descriptionStyles = css`
     }
   }
 
-  ${lgScreen} {
+  ${minWidth()} {
     font-size: 15px;
     padding: 10px 15px;
   }
@@ -217,7 +217,7 @@ export const codeStyles = css`
   line-height: 22px;
   overflow-x: auto;
 
-  ${lgScreen} {
+  ${minWidth()} {
     padding: 10px 15px;
     line-height: 24px;
     ${customScrollBar({

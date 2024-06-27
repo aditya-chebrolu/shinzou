@@ -20,30 +20,32 @@ import SpringIcon from "@assets/tech/spring.svg";
 import BashIcon from "@assets/tech/bash.svg";
 import WebpackIcon from "@assets/tech/webpack.svg";
 import AzureIcon from "@assets/tech/azure.svg";
+import AstroIcon from "@assets/tech/astro.svg";
 
 export const icons = {
-  javascript: { Icon: JSIcon, text: "JavaScript", slug: "javascript" },
-  ts: { Icon: TSIcon, text: "TypeScript", slug: "typescript" },
-  java: { Icon: JavaIcon, text: "Java", slug: "java" },
-  swift: { Icon: SwiftIcon, text: "Swift", slug: "swift" },
-  html: { Icon: HTMLIcon, text: "HTML", slug: "html" },
-  css: { Icon: CSSIcon, text: "CSS", slug: "css" },
-  tailwind: { Icon: TailwindIcon, text: "Tailwind CSS", slug: "tailwind" },
-  react: { Icon: ReactIcon, text: "React", slug: "react" },
-  next: { Icon: NextIcon, text: "Next JS", slug: "next" },
-  nest: { Icon: NestIcon, text: "Nest", slug: "nest" },
-  node: { Icon: NodeIcon, text: "Node.js", slug: "node" },
-  mongo: { Icon: MongoIcon, text: "MongoDB", slug: "mongo" },
-  ec2: { Icon: Ec2Icon, text: "Amazon EC2", slug: "ec2" },
-  bash: { Icon: BashIcon, text: "React", slug: "bash" },
-  redis: { Icon: RedisIcon, text: "React", slug: "redis" },
-  elk: { Icon: ElkIcon, text: "ELK", slug: "elk" },
-  webpack: { Icon: WebpackIcon, text: "Webpack", slug: "webpack" },
+  astro: { Icon: AstroIcon, text: "Astro", slug: "astro" },
   azure: { Icon: AzureIcon, text: "Azure", slug: "azure" },
-  springBoot: { Icon: SpringIcon, text: "Spring Boot", slug: "springBoot" },
-  reactQuery: { Icon: RQIcon, text: "Reqct Query", slug: "reactQuery" },
+  bash: { Icon: BashIcon, text: "React", slug: "bash" },
+  css: { Icon: CSSIcon, text: "CSS", slug: "css" },
   docker: { Icon: DockerIcon, text: "Docker", slug: "docker" },
+  ec2: { Icon: Ec2Icon, text: "Amazon EC2", slug: "ec2" },
+  elk: { Icon: ElkIcon, text: "ELK", slug: "elk" },
+  html: { Icon: HTMLIcon, text: "HTML", slug: "html" },
+  java: { Icon: JavaIcon, text: "Java", slug: "java" },
+  javascript: { Icon: JSIcon, text: "JavaScript", slug: "javascript" },
   kubernetes: { Icon: KubernetesIcon, text: "Kubernetes", slug: "kubernetes" },
+  mongo: { Icon: MongoIcon, text: "MongoDB", slug: "mongo" },
+  nest: { Icon: NestIcon, text: "Nest", slug: "nest" },
+  next: { Icon: NextIcon, text: "Next JS", slug: "next" },
+  node: { Icon: NodeIcon, text: "Node.js", slug: "node" },
+  react: { Icon: ReactIcon, text: "React", slug: "react" },
+  reactQuery: { Icon: RQIcon, text: "Reqct Query", slug: "reactQuery" },
+  redis: { Icon: RedisIcon, text: "React", slug: "redis" },
+  springBoot: { Icon: SpringIcon, text: "Spring Boot", slug: "springBoot" },
+  swift: { Icon: SwiftIcon, text: "Swift", slug: "swift" },
+  tailwind: { Icon: TailwindIcon, text: "Tailwind CSS", slug: "tailwind" },
+  ts: { Icon: TSIcon, text: "TypeScript", slug: "typescript" },
+  webpack: { Icon: WebpackIcon, text: "Webpack", slug: "webpack" },
 };
 
 export type SkillsType = keyof typeof icons;

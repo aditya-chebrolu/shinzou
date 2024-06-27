@@ -6,7 +6,7 @@ import ResumeButton from "@modules/v1/resume-button";
 import PortfolioMeta from "@modules/v1/meta";
 import Projects from "@modules/v1/projects";
 import Skills from "@modules/v1/skills";
-import { flex, lgScreen, maxWidth } from "@styles/index";
+import { flex, minWidth, maxWidth } from "@styles/index";
 
 const styles = css`
   background-image: var(--dotted-bg);
@@ -43,7 +43,7 @@ const styles = css`
     }
   }
 
-  ${lgScreen} {
+  ${minWidth()} {
     > .wrapper {
       padding-block: 50px;
       margin-inline: 22%;

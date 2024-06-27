@@ -1,5 +1,5 @@
 // import { css } from "@emotion/react";
-// import { darkBackgroundStyles, flex, lgScreen } from "@styles/index";
+// import { darkBackgroundStyles, flex, minWidth() } from "@styles/index";
 
 // const inlineSpacing = { dweb: "20%", mweb: "20px" };
 
@@ -27,7 +27,7 @@
 //       margin-left: auto;
 //     }
 
-//     ${lgScreen} {
+//     ${minWidth()} {
 //       font-size: 16px;
 //       line-height: 16px;
 //       padding: 10px 20px;
@@ -43,7 +43,7 @@
 //     background-color: #fb607f;
 //   }
 
-//   ${lgScreen} {
+//   ${minWidth()} {
 //     font-size: 42px;
 //     line-height: 42px;
 //     padding-inline: ${inlineSpacing.dweb};
@@ -61,7 +61,7 @@
 //     margin-inline: ${inlineSpacing.mweb};
 //     margin-block: 20px;
 
-//     ${lgScreen} {
+//     ${minWidth()} {
 //       margin-inline: ${inlineSpacing.dweb};
 //       border-left: solid 1.5px #1c1c20;
 //       padding-left: 20px;

@@ -5,8 +5,8 @@ import styled from "@emotion/styled";
 export const lgScreen = `@media (min-width: 900px)`;
 export const smScreen = `@media (max-width: 900px)`;
 
-export const maxWidth = (w = 500) => `@media(max-width:${w}px)`;
-export const minWidth = (w = 500) => `@media(min-width:${w}px)`;
+export const maxWidth = (w = 900) => `@media(max-width:${w}px)`;
+export const minWidth = (w = 900) => `@media(min-width:${w}px)`;
 
 export const flex = ({
   column = false,
@@ -36,7 +36,7 @@ export const flex = ({
   justify-content: ${justify};
   flex-wrap: ${wrap};
 
-  ${lgScreen} {
+  ${minWidth()} {
     gap: ${gap[1] || gap[0]}px;
   }
 `;
@@ -50,7 +50,7 @@ export const noScrollbar = css`
 export const pageStyles = css`
   ${flex({ column: true, gap: [20] })};
   max-width: min(100%, 1000px);
-  ${lgScreen} {
+  ${minWidth()} {
     margin-inline: auto;
   }
 `;

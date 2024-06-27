@@ -1,12 +1,12 @@
 import { css } from "@emotion/react";
-import { Divider, lgScreen } from "@styles/index";
+import { Divider, minWidth } from "@styles/index";
 
 const styles = css`
   background: linear-gradient(90deg, #fffacd 0%, #89cff0 50%, #fffacd 100%);
   position: relative;
   flex-shrink: 0;
 
-  ${lgScreen} {
+  ${minWidth()} {
     background: linear-gradient(
       90deg,
       #fffacd 0%,

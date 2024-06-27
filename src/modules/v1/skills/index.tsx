@@ -7,7 +7,7 @@ const Skills = () => {
   const rows: SkillsType[][] = [
     ["java", "javascript", "ts", "bash"],
     ["html", "css", "tailwind"],
-    ["react", "next", "webpack", "reactQuery"],
+    ["react", "next", "webpack", "reactQuery", "astro"],
     ["node", "nest", "ec2", "redis"],
     ["docker", "kubernetes", "azure"],
   ];

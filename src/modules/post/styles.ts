@@ -1,5 +1,5 @@
 import { css } from "@emotion/react";
-import { lgScreen } from "@styles/index";
+import { minWidth } from "@styles/index";
 
 export const searchBarWrapperStyles = (scrolled = false) => css`
   background: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(0, 0, 0, 1));
@@ -34,7 +34,7 @@ export const searchBarStyles = (scrolled = false) => css`
   height: 45px;
   padding: 4px 8px;
   font-size: 18px;
-  ${lgScreen} {
+  ${minWidth()} {
     font-size: 22px;
     padding: 10px;
     height: 50px;

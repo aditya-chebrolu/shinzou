@@ -1,5 +1,5 @@
 import { css } from "@emotion/react";
-import { lgScreen, SvgContainer } from "@styles/index";
+import { minWidth, SvgContainer } from "@styles/index";
 import { useTheme } from "src/contexts/theme-provider";
 import SunIcon from "@assets/sun.svg";
 import MoonIcon from "@assets/moon.svg";
@@ -16,7 +16,7 @@ const styles = (rotate = false) => css`
   margin-left:auto;
   margin-bottom: -10px;
 
-  ${lgScreen} {
+  ${minWidth()} {
     position: fixed;
     right: 50px;
     top: 50px;

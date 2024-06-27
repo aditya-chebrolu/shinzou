@@ -1,5 +1,5 @@
 import { css } from "@emotion/react";
-import { darkBackgroundStyles, lgScreen } from "@styles/index";
+import { darkBackgroundStyles, minWidth } from "@styles/index";
 
 export const containerStyles = css`
   ${darkBackgroundStyles}
@@ -31,12 +31,12 @@ export const containerStyles = css`
         }
       }
 
-      ${lgScreen} {
+      ${minWidth()} {
         max-width: 300px;
       }
     }
 
-    ${lgScreen} {
+    ${minWidth()} {
       margin-inline: 20%;
     }
   }
@@ -55,7 +55,7 @@ export const tagsContainerStyles = css`
   justify-content: center;
   gap: 10px;
   row-gap: 5px;
-  ${lgScreen} {
+  ${minWidth()} {
     max-width: 400px;
 
     &:has(> a:hover) > a:not(:hover) {

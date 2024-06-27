@@ -1,6 +1,6 @@
 import { css, keyframes } from "@emotion/react";
 import { black, colors } from "@styles/colors";
-import { center, flex, lgScreen, noScrollbar } from "@styles/index";
+import { center, flex, minWidth, noScrollbar } from "@styles/index";
 
 export const containerStyles = css`
   display: grid;
@@ -61,7 +61,7 @@ export const techStackRowStyles = css`
     color: ${colors.brown};
     font-weight: bold;
     font-size: 14px;
-    ${lgScreen} {
+    ${minWidth()} {
       font-size: 16px;
     }
   }
@@ -77,7 +77,7 @@ export const techStackRowStyles = css`
       padding: 3px 6px;
       /* border-radius: 8px; */
 
-      ${lgScreen} {
+      ${minWidth()} {
         /* border-radius: 8px; */
       }
     }
@@ -140,7 +140,7 @@ export const positionSectionStyles = css`
       color: ${colors.brown};
     }
 
-    ${lgScreen} {
+    ${minWidth()} {
       font-size: 16px;
     }
   }

@@ -1,5 +1,5 @@
 import { css } from "@emotion/react";
-import { darkBackgroundStyles, flex, lgScreen } from "@styles/index";
+import { darkBackgroundStyles, flex, minWidth } from "@styles/index";
 
 const inlineSpacing = { dweb: "20%", mweb: "20px" };
 
@@ -13,7 +13,7 @@ export const headerStyles = css`
   flex-direction: column;
   gap: 10px;
 
-  ${lgScreen} {
+  ${minWidth()} {
     padding-inline: ${inlineSpacing.dweb};
     padding-block: 15px;
     gap: 15px;
@@ -26,7 +26,7 @@ export const menuStyles = css`
   font-weight: normal;
   color: white;
 
-  ${lgScreen} {
+  ${minWidth()} {
     > a:hover {
       color: #fbec5d;
     }
@@ -53,7 +53,7 @@ export const containerStyles = css`
     margin-inline: ${inlineSpacing.mweb};
     margin-block: 20px;
 
-    ${lgScreen} {
+    ${minWidth()} {
       margin-inline: ${inlineSpacing.dweb};
     }
   }

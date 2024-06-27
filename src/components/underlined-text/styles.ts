@@ -1,5 +1,5 @@
 import { css } from "@emotion/react";
-import { lgScreen } from "@styles/index";
+import { minWidth } from "@styles/index";
 
 export type Sizes = "xs" | "sm" | "md" | "lg" | "xl";
 
@@ -65,7 +65,7 @@ export const headingStyles = ({
   "var(--section-title-line)"};
 
   ${sizeStyles("mweb", getSize(size, "mweb"))}
-  ${lgScreen} {
+  ${minWidth()} {
     ${sizeStyles("dweb", getSize(size, "dweb"))};
 
     color: ${getColor({ color, screen: "dweb" }) || "#2A3439"};

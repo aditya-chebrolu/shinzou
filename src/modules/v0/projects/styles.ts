@@ -1,12 +1,12 @@
 import { css } from "@emotion/react";
 import { black, colors, gradients, redGradient } from "@styles/colors";
-import { flex, lgScreen } from "@styles/index";
+import { flex, minWidth } from "@styles/index";
 
 export const containerStyles = css`
   ${flex({ gap: [10], column: true, align: "center", justify: "center" })};
   height: 100%;
 
-  ${lgScreen} {
+  ${minWidth()} {
     flex-direction: row;
   }
 `;
@@ -69,7 +69,7 @@ export const projectCardStyles = css`
     }
   }
 
-  ${lgScreen} {
+  ${minWidth()} {
     width: 350px;
   }
 `;

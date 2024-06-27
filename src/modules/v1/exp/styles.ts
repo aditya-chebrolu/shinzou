@@ -1,5 +1,5 @@
 import { css } from "@emotion/react";
-import { flex, lgScreen } from "@styles/index";
+import { flex, minWidth } from "@styles/index";
 
 export const experienceStripStyles = css`
   ${flex({ gap: [5], column: true })};
@@ -28,7 +28,7 @@ export const experienceStripStyles = css`
     }
   }
 
-  ${lgScreen} {
+  ${minWidth()} {
     > .row {
       font-size: 25px;
     }

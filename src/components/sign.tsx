@@ -1,7 +1,7 @@
 import { css } from "@emotion/react";
 import signImage from "@assets/sign.png";
 import Image from "next/image";
-import { lgScreen } from "@styles/index";
+import { minWidth } from "@styles/index";
 const styles = css`
   align-self: flex-end;
   > div {
@@ -11,7 +11,7 @@ const styles = css`
     margin-right: 10px;
   }
 
-  ${lgScreen} {
+  ${minWidth()} {
     > div {
       margin-right: 50px;
       height: 70px;

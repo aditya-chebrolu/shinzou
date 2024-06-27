@@ -1,6 +1,6 @@
 import { css, SerializedStyles } from "@emotion/react";
 import { colors } from "@styles/colors";
-import { flex, lgScreen } from "@styles/index";
+import { flex, minWidth } from "@styles/index";
 import { ReactNode } from "react";
 
 const styles = css`
@@ -22,7 +22,7 @@ const styles = css`
     }
   }
 
-  ${lgScreen} {
+  ${minWidth()} {
     align-items: start;
     padding: 0;
   }
