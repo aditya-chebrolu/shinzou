@@ -128,7 +128,7 @@ export const SvgContainer = styled.div<{
   ratio?: string;
   w?: { dweb?: number; mweb?: number; default?: number };
   h?: { dweb?: number; mweb?: number; default?: number };
-  fill: { dweb?: string; mweb?: string } | string;
+  fill?: { dweb?: string; mweb?: string } | string;
   stroke?: string;
 }>`
   font-size: 0;
