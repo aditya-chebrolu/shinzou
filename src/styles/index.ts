@@ -5,6 +5,9 @@ import styled from "@emotion/styled";
 export const lgScreen = `@media (min-width: 900px)`;
 export const smScreen = `@media (max-width: 900px)`;
 
+export const maxWidth = (w = 500) => `@media(max-width:${w}px)`;
+export const minWidth = (w = 500) => `@media(min-width:${w}px)`;
+
 export const flex = ({
   column = false,
   gap = [0, 0],
@@ -113,11 +116,19 @@ export const customScrollBar = ({
   }
 `;
 
+const getFill = (
+  fill: { dweb?: string; mweb?: string } | string = "none",
+  screen: "dweb" | "mweb"
+) => {
+  if (typeof fill === "string") return fill;
+  return fill[screen] || "none";
+};
+
 export const SvgContainer = styled.div<{
   ratio?: string;
   w?: { dweb?: number; mweb?: number; default?: number };
   h?: { dweb?: number; mweb?: number; default?: number };
-  fill?: string;
+  fill: { dweb?: string; mweb?: string } | string;
   stroke?: string;
 }>`
   font-size: 0;
@@ -125,14 +136,15 @@ export const SvgContainer = styled.div<{
   > svg {
     ${({ w }) => (w ? `width:${w.mweb || w.default}px` : "")};
     ${({ h }) => (h ? `height:${h.mweb || h.default}px` : "")};
-    ${({ fill }) => (fill ? `fill:${fill}` : "")};
+    fill: ${({ fill }) => getFill(fill, "mweb")};
     ${({ stroke }) => (stroke ? `stroke:${stroke}` : "")};
     aspect-ratio: ${({ ratio = "1" }) => ratio};
   }
-  @media (min-width: 500px) {
+  ${minWidth()} {
     > svg {
       ${({ w }) => (w ? `width:${w.dweb || w.default}px` : "")};
       ${({ h }) => (h ? `height:${h.dweb || h.default}px` : "")};
+      fill: ${({ fill }) => getFill(fill, "dweb")};
     }
   }
 `;

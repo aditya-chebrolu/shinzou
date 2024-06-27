@@ -6,9 +6,10 @@ import { projects } from "@modules/v0/projects/data";
 
 const Projects = () => {
   return (
-    <div css={flex({ gap: [10, 20], column: true })}>
+    <div css={flex({ gap: [10], column: true })}>
       <UnderlinedText text="Projects" type="h2" />
-      <div css={flex({ gap: [10, 20], column: true })}>
+      <div>Coming soon...</div>
+      {/* <div css={flex({ gap: [10, 20], column: true })}>
         {projects.map((project) => (
           <a css={titleStyles} href={project.url} key={project.title}>
             <UnderlinedText
@@ -27,7 +28,7 @@ const Projects = () => {
             </SvgContainer>
           </a>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -13,7 +13,7 @@ export const sourceSansPro = Source_Sans_3({
   variable: "--source-sans-pro-font",
 });
 
-export const newTitleFont = local({
+export const avenirFont = local({
   src: "../assets/fonts/new-title.woff2",
   variable: "--avenir-font",
 });

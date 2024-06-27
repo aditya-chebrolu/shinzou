@@ -48,8 +48,8 @@ const getColor = ({
 
 export const headingStyles = ({
   size,
-  color,
-  lineColor,
+  color = "#2A3439",
+  lineColor = "#FFBF00",
 }: {
   size: Sizes | { mweb: Sizes; dweb: Sizes };
   color?: string | { dweb?: string; mweb?: string };
@@ -68,8 +68,8 @@ export const headingStyles = ({
   ${lgScreen} {
     ${sizeStyles("dweb", getSize(size, "dweb"))};
 
-    color: ${getColor({ color, screen: "dweb" }) || "var(--section-title)"};
+    color: ${getColor({ color, screen: "dweb" }) || "#2A3439"};
     text-decoration-color: ${getColor({ color: lineColor, screen: "dweb" }) ||
-    "var(--section-title-line)"};
+    "#FFBF00"};
   }
 `;

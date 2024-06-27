@@ -11,8 +11,6 @@ export const searchBarWrapperStyles = (scrolled = false) => css`
   margin-top: -20px;
   padding-top: 20px;
 
-  ${lgScreen} {
-  }
   display: grid;
   place-items: center;
 `;
