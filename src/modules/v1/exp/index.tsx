@@ -5,7 +5,7 @@ import { experienceStripStyles } from "./styles";
 
 const Experience = () => {
   return (
-    <div css={flex({ column: true, gap: [10, 20] })}>
+    <div css={flex({ column: true, gap: [20] })}>
       <UnderlinedText text="Experience" type="h2" />
       <div css={flex({ column: true, gap: [5, 10] })}>
         {experiences.map((exp, idx) => (
