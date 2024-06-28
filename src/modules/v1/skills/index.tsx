@@ -8,7 +8,7 @@ const Skills = () => {
     ["java", "javascript", "ts", "bash"],
     ["html", "css", "tailwind"],
     ["react", "next", "webpack", "reactQuery", "astro"],
-    ["node", "nest", "ec2", "redis"],
+    ["node", "nest", "redis", "elk", "mongo"],
     ["docker", "kubernetes", "azure"],
   ];
 
@@ -37,7 +37,7 @@ const Row = ({ row }: { row: SkillsType[] }) => {
 const Skill = ({ skill }: { skill: SkillsType }) => {
   const Icon = icons[skill].Icon;
   return (
-    <SvgContainer h={{ mweb: 25, default: 35 }}>
+    <SvgContainer h={{ mweb: 25, default: 35 }} className="icon">
       <Icon />
     </SvgContainer>
   );

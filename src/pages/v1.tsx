@@ -64,7 +64,7 @@ const Page = () => {
             <Skills />
             <Experience />
             <CheatSheets />
-            <Projects />
+            {/* <Projects /> */}
             <ResumeButton />
           </div>
         </div>
