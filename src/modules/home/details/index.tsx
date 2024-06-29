@@ -1,6 +1,6 @@
 import { containerStyles } from "./styles";
 import { SvgContainer } from "@styles/index";
-import { socials } from "@modules/v0/contact-me/data";
+import { socials } from "@constants/socials";
 import UnderlinedText from "@components/underlined-text";
 
 const Details = () => {
