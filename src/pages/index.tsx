@@ -1,11 +1,11 @@
 import { css } from "@emotion/react";
-import CheatSheets from "@modules/v1/cheatsheets";
-import Details from "@modules/v1/details";
-import Experience from "@modules/v1/exp";
-import ResumeButton from "@modules/v1/resume-button";
-import PortfolioMeta from "@modules/v1/meta";
-import Projects from "@modules/v1/projects";
-import Skills from "@modules/v1/skills";
+import CheatSheets from "@modules/home/cheatsheets";
+import Details from "@modules/home/details";
+import Experience from "@modules/home/exp";
+import ResumeButton from "@modules/home/resume-button";
+import PortfolioMeta from "@modules/home/meta";
+// import Projects from "@modules/home/projects";
+import Skills from "@modules/home/skills";
 import { flex, minWidth, maxWidth } from "@styles/index";
 
 const styles = css`
@@ -64,7 +64,6 @@ const Page = () => {
             <Skills />
             <Experience />
             <CheatSheets />
-            {/* <Projects /> */}
             <ResumeButton />
           </div>
         </div>
