@@ -1,5 +1,5 @@
-import fs from "fs";
-import path from "path";
+const fs = require("fs");
+const path = require("path");
 
 // Define the paths for the posts and the output JSON files
 const dataDirectory = path.join(process.cwd(), "src", "data");

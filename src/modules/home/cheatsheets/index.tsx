@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 
 const CheatSheets = () => {
   const { push } = useRouter();
-  const link = "https://blog.adityachebrolu.com";
+  const link = "/posts";
   const onClick = () => {
     push(link);
   };
