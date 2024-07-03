@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Content } from "@modules/post/section";
 import {
   searchBarStyles,
@@ -19,9 +19,13 @@ import { useRouter } from "next/router";
 const Post = ({ data: initData }: CheatSheetServerSideReturnType) => {
   const [data, setData] = useState<CheatSheetSectionType | null>(initData);
   const isScrolled = useScrolledBy();
+  const audio = useRef<HTMLAudioElement>();
 
   useEffect(() => {
     setData(initData);
+    audio.current = new Audio(
+      "https://www.joshwcomeau.com/sounds/menu-open.mp3"
+    );
   }, [initData]);
 
   const onSearch = (e: any) => {
@@ -67,6 +71,10 @@ const Post = ({ data: initData }: CheatSheetServerSideReturnType) => {
     [initData]
   );
 
+  const playSound = () => {
+    audio.current?.play();
+  };
+
   if (!data) return null;
 
   return (
@@ -81,6 +89,7 @@ const Post = ({ data: initData }: CheatSheetServerSideReturnType) => {
       >
         <div css={searchBarWrapperStyles(isScrolled)}>
           <input
+            onClick={playSound}
             type="text"
             onChange={onSearch}
             css={searchBarStyles(isScrolled)}

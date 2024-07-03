@@ -1,9 +1,15 @@
 import { ReactNode } from "react";
-import { containerStyles, headerStyles, menuStyles } from "./styles";
+import {
+  containerStyles,
+  headerStyles,
+  menuStyles,
+  portfolioButton,
+} from "./styles";
 import UnderlinedText from "@components/underlined-text";
 import Link from "next/link";
 import { Sizes } from "@components/underlined-text/styles";
-
+import { SvgContainer } from "@styles/index";
+import Icon from "@assets/chevron-right-duo.svg";
 const PageWrapper = ({
   headerData,
   children,
@@ -30,12 +36,31 @@ const PageWrapper = ({
           />
         </div>
         <div css={menuStyles}>
-          <Link href="/tags" className="links tags">
+          <Link href="/tags" className="link">
             All Tags
           </Link>
-          <Link href="/posts" className="links posts">
+          <Link href="/posts" className="link">
             All Posts
           </Link>
+          <div css={portfolioButton}>
+            <SvgContainer
+              h={{ default: 20 }}
+              stroke={"white"}
+              className="icon left"
+            >
+              <Icon />
+            </SvgContainer>
+            <Link href="/" className="text">
+              Aditya Chebrolu
+            </Link>
+            <SvgContainer
+              h={{ default: 20 }}
+              stroke={"white"}
+              className="icon right"
+            >
+              <Icon />
+            </SvgContainer>
+          </div>
         </div>
       </div>
       <div className="content">{children}</div>

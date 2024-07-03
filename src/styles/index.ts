@@ -132,7 +132,6 @@ export const SvgContainer = styled.div<{
   stroke?: string;
 }>`
   font-size: 0;
-
   > svg {
     ${({ w }) => (w ? `width:${w.mweb || w.default}px` : "")};
     ${({ h }) => (h ? `height:${h.mweb || h.default}px` : "")};
