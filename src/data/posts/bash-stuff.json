@@ -1,6 +1,7 @@
 {
   "title": "Zsh Commands Cheat Sheet",
   "tags": ["zsh", "terminal", "commands"],
+  "description": "Master Zsh with our comprehensive cheat sheet. Learn essential terminal commands to enhance your productivity and command line efficiency.",
   "language": "shell",
   "sections": [
     {

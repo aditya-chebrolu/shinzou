@@ -1,6 +1,7 @@
 {
   "title": "Java Strings",
   "language": "java",
+  "description": "A complete guide to Java strings. This cheat sheet covers all essential string operations and functions to improve your Java programming efficiency.",
   "tags": ["java", "strings", "cheat sheet"],
   "sections": [
     {

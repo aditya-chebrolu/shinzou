@@ -1,6 +1,7 @@
 {
   "title": "Java Collections Cheat Sheet",
   "language": "java",
+  "description": "An in-depth cheat sheet for Java Collections framework, covering sets, maps, lists, queues, and stacks. Perfect for improving your Java programming skills.",
   "tags": [
     "java",
     "collections",

@@ -2,20 +2,12 @@
   {
     "slug": "bash-stuff",
     "title": "Zsh Commands Cheat Sheet",
-    "tags": [
-      "zsh",
-      "terminal",
-      "commands"
-    ]
+    "tags": ["zsh", "terminal", "commands"]
   },
   {
     "slug": "java-arrays-cheat-sheet",
     "title": "Java Arrays Cheat Sheet",
-    "tags": [
-      "java",
-      "arrays",
-      "cheat sheet"
-    ]
+    "tags": ["java", "arrays", "cheat sheet"]
   },
   {
     "slug": "java-collections-cheat-sheet",
@@ -34,58 +26,26 @@
   {
     "slug": "java-comparator-comparable-cheat-sheet",
     "title": "Java Comparator and Comparison",
-    "tags": [
-      "java",
-      "comparable",
-      "comparator",
-      "sorting"
-    ]
+    "tags": ["java", "comparable", "comparator", "sorting"]
   },
   {
     "slug": "java-strings-cheat-sheet",
     "title": "Java Strings",
-    "tags": [
-      "java",
-      "strings",
-      "cheat sheet"
-    ]
-  },
-  {
-    "slug": "swift-arrays-cheat-sheet",
-    "title": "Swift String Methods Cheat Sheet",
-    "tags": [
-      "swift",
-      "arrays",
-      "cheat sheet"
-    ]
+    "tags": ["java", "strings", "cheat sheet"]
   },
   {
     "slug": "swift-error-handling",
     "title": "SwiftUI Error Handling Cheat Sheet",
-    "tags": [
-      "swift",
-      "error",
-      "handling",
-      "try",
-      "catch"
-    ]
+    "tags": ["swift", "error", "handling", "try", "catch"]
   },
   {
     "slug": "swift-strings-cheat-sheet",
     "title": "Swift String Methods Cheat Sheet",
-    "tags": [
-      "swift",
-      "strings",
-      "cheat sheet"
-    ]
+    "tags": ["swift", "arrays", "cheat sheet"]
   },
   {
     "slug": "swift-structs-cheat-sheet",
     "title": "Swift Structs Cheat Sheet",
-    "tags": [
-      "swift",
-      "structs",
-      "cheat sheet"
-    ]
+    "tags": ["swift", "structs", "cheat sheet"]
   }
 ]

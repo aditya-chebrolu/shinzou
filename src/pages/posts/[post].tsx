@@ -13,6 +13,8 @@ import {
   getPostPageStaticPaths,
   getPostPageStaticProps,
 } from "@modules/post/server";
+import PostMeta from "@modules/post/meta";
+import { useRouter } from "next/router";
 
 const Post = ({ data: initData }: CheatSheetServerSideReturnType) => {
   const [data, setData] = useState<CheatSheetSectionType | null>(initData);
@@ -68,22 +70,31 @@ const Post = ({ data: initData }: CheatSheetServerSideReturnType) => {
   if (!data) return null;
 
   return (
-    <PageWrapper headerData={{ title: data.title, titleLineColor: "#EF9B0F" }}>
-      <div css={searchBarWrapperStyles(isScrolled)}>
-        <input
-          type="text"
-          onChange={onSearch}
-          css={searchBarStyles(isScrolled)}
-          placeholder={`Search ${data.title}`}
-        />
-      </div>
-      <div className="wrapper">
-        <div className="content">
-          <Content data={data} />
-          <div css={welcomeTextStyles}>{"You're welcome 🤗"}</div>
+    <>
+      <PostMeta
+        title={data.title}
+        description={data.description}
+        keywords={data.tags.join(", ")}
+      />
+      <PageWrapper
+        headerData={{ title: data.title, titleLineColor: "#EF9B0F" }}
+      >
+        <div css={searchBarWrapperStyles(isScrolled)}>
+          <input
+            type="text"
+            onChange={onSearch}
+            css={searchBarStyles(isScrolled)}
+            placeholder={`Search ${data.title}`}
+          />
         </div>
-      </div>
-    </PageWrapper>
+        <div className="wrapper">
+          <div className="content">
+            <Content data={data} />
+            <div css={welcomeTextStyles}>{"You're welcome 🤗"}</div>
+          </div>
+        </div>
+      </PageWrapper>
+    </>
   );
 };
 

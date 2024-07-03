@@ -1,7 +1,8 @@
 {
   "title": "Swift String Methods Cheat Sheet",
-  "tags": ["swift", "strings", "cheat sheet"],
   "language": "swift",
+  "description": "A handy cheat sheet for Swift string methods. Learn and apply essential string operations in your Swift projects.",
+  "tags": ["swift", "arrays", "cheat sheet"],
   "sections": [
     {
       "subtitle": "Creating Strings",

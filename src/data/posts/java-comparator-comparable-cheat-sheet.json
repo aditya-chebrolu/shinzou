@@ -1,6 +1,7 @@
 {
   "title": "Java Comparator and Comparison",
   "language": "java",
+  "description": "Learn the differences and uses of Comparator and Comparable in Java with this detailed cheat sheet. Enhance your understanding of sorting and comparison in Java.",
   "tags": ["java", "comparable", "comparator", "sorting"],
   "sections": [
     {

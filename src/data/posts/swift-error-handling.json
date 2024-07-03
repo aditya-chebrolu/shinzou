@@ -1,5 +1,6 @@
 {
   "title": "SwiftUI Error Handling Cheat Sheet",
+  "description": "Detailed cheat sheet for handling errors in SwiftUI. Learn how to effectively use try, catch, and other error handling mechanisms in Swift.",
   "tags": ["swift", "error", "handling", "try", "catch"],
   "language": "swift",
   "sections": [
