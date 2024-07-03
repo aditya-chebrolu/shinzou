@@ -14,11 +14,10 @@ import {
   getPostPageStaticProps,
 } from "@modules/post/server";
 import PostMeta from "@modules/post/meta";
-import { useRouter } from "next/router";
 
 const Post = ({ data: initData }: CheatSheetServerSideReturnType) => {
   const [data, setData] = useState<CheatSheetSectionType | null>(initData);
-  const isScrolled = useScrolledBy();
+  const isScrolled = useScrolledBy(71.5);
   const audio = useRef<HTMLAudioElement>();
 
   useEffect(() => {

@@ -102,7 +102,7 @@ export const containerStyles = css`
     ${flex({ gap: [20], column: true })};
     flex: 1;
     margin-inline: ${inlineSpacing.mweb};
-    margin-bottom: 20px;
+    margin-block: 20px;
 
     ${minWidth()} {
       margin-inline: ${inlineSpacing.dweb};

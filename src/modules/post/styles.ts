@@ -6,10 +6,8 @@ export const searchBarWrapperStyles = (scrolled = false) => css`
   position: sticky;
   top: 40.5px;
   z-index: 2;
-  transition: all 300ms;
-
-  padding-top: 20px;
-
+  transition: all 200ms;
+  ${scrolled ? "padding-top: 20px" : ""};
   display: grid;
   place-items: center;
 `;
@@ -22,9 +20,9 @@ export const searchBarStyles = (scrolled = false) => css`
   outline: none;
   transition: all 300ms;
   width: 100%;
-  ${scrolled ? "width: calc(100% + 20px)" : "calc(100% - 0px)"};
   font-weight: bold;
   border: solid 1.5px #1c1c20;
+  ${scrolled ? "width: calc(100% + 20px)" : ""};
 
   &:focus {
     border-color: #494954;
