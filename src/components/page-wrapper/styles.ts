@@ -9,9 +9,6 @@ export const headerStyles = css`
   display: flex;
   flex-direction: column;
   gap: 10px;
-  position: sticky;
-  top: 0;
-  z-index: 1;
 
   padding-inline: ${inlineSpacing.mweb};
   padding-block: 20px;
@@ -22,7 +19,10 @@ export const headerStyles = css`
 `;
 
 export const menuStyles = css`
-  ${flex({ gap: [25], align: "center" })}
+  ${flex({ gap: [25], align: "center" })};
+  position: sticky;
+  top: 0;
+  z-index: 1;
   border-bottom: solid 1.5px #1c1c20;
   background-color: #0d0d0f;
   padding-inline: ${inlineSpacing.mweb};
@@ -102,7 +102,7 @@ export const containerStyles = css`
     ${flex({ gap: [20], column: true })};
     flex: 1;
     margin-inline: ${inlineSpacing.mweb};
-    margin-block: 20px;
+    margin-bottom: 20px;
 
     ${minWidth()} {
       margin-inline: ${inlineSpacing.dweb};

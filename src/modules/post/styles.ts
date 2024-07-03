@@ -4,11 +4,10 @@ import { minWidth } from "@styles/index";
 export const searchBarWrapperStyles = (scrolled = false) => css`
   background: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(0, 0, 0, 1));
   position: sticky;
-  top: 0;
+  top: 40.5px;
   z-index: 2;
   transition: all 300ms;
 
-  margin-top: -20px;
   padding-top: 20px;
 
   display: grid;
