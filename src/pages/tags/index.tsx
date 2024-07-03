@@ -25,23 +25,16 @@ const Tags = ({ tags }: ReturnType<typeof getServerSideProps>["props"]) => {
 };
 
 export const getServerSideProps = () => {
-  const filePath = path.join(
-    process.cwd(),
-    "src",
-    "constants/data/cheatsheets",
-    `archives.json`
-  );
+  const filePath = path.join(process.cwd(), "src", "data", `tags.json`);
   try {
     const fileContents = fs.readFileSync(filePath, "utf8");
-    const data = JSON.parse(fileContents) as ArchiveType[];
-    const tags = data.flatMap((d) => d.tags);
-
+    const tags = JSON.parse(fileContents) as string[];
     return {
-      props: { tags: Array.from(new Set(tags)) },
+      props: { tags },
     };
   } catch {
     return {
-      props: { tags: ["ok"] },
+      props: { tags: [] },
     };
   }
 };

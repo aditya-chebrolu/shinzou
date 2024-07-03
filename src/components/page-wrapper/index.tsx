@@ -19,25 +19,23 @@ const PageWrapper = ({
 }) => {
   return (
     <div css={containerStyles}>
-      <div css={headerStyles}>
-        <UnderlinedText
-          text={headerData.title}
-          type="h1"
-          size={headerData.size || "md"}
-          color="#FFFFFF"
-          lineColor={headerData.titleLineColor || "#FB607F"}
-        />
+      <div>
+        <div css={headerStyles}>
+          <UnderlinedText
+            text={headerData.title}
+            type="h1"
+            size={headerData.size || "md"}
+            color="#FFFFFF"
+            lineColor={headerData.titleLineColor || "#FB607F"}
+          />
+        </div>
         <div css={menuStyles}>
-          {!!headerData.allTags && (
-            <Link href="/tags" className="links tags">
-              All Tags
-            </Link>
-          )}
-          {!!headerData.allPosts && (
-            <Link href="/posts" className="links posts">
-              All Posts
-            </Link>
-          )}
+          <Link href="/tags" className="links tags">
+            All Tags
+          </Link>
+          <Link href="/posts" className="links posts">
+            All Posts
+          </Link>
         </div>
       </div>
       <div className="content">{children}</div>

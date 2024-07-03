@@ -2,6 +2,7 @@
   "name": "shinzou",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "author": "aditya chebrolu",
   "scripts": {
     "dev": "next dev",
@@ -10,7 +11,8 @@
     "lint": "next lint",
     "typecheck": "tsc --noEmit src",
     "deadcode": "ts-prune",
-    "process-json": "node src/scripts/process-json-files.js"
+    "process-json": "node src/scripts/process-json-files.js",
+    "generate": "node src/scripts/generate-posts-metadata.js"
   },
   "dependencies": {
     "@emotion/react": "^11.11.3",

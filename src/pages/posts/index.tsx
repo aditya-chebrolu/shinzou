@@ -13,14 +13,7 @@ const Archives = ({ data }: ReturnType<typeof getServerSideProps>["props"]) => {
 };
 
 export const getServerSideProps = () => {
-  const filePath = path.join(
-    process.cwd(),
-    "src",
-    "constants",
-    "data",
-    "cheatsheets",
-    `archives.json`
-  );
+  const filePath = path.join(process.cwd(), "src", "data", `posts.json`);
   let data: ArchiveType[] = [];
   try {
     const fileContents = fs.readFileSync(filePath, "utf8");

@@ -7,7 +7,7 @@ const PostsList = ({ data }: { data: ArchiveType[] }) => {
       {data.map((archive, idx) => (
         <div css={archiveBlockStyles} key={idx}>
           <a
-            href={archive.link}
+            href={`/posts/${archive.slug}`}
             dangerouslySetInnerHTML={{
               __html: `<h2>${idx + 1}. ${archive.title}</h2>`,
             }}

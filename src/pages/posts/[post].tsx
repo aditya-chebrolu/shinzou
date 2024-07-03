@@ -6,15 +6,15 @@ import {
   welcomeTextStyles,
 } from "@modules/post/styles";
 import { CheatSheetSectionType } from "@modules/post/types";
-import getCheatSheetServerSideProps, {
-  type CheatSheetServerSideReturnType,
-} from "@modules/post/server";
-import { useRouter } from "next/router";
 import useScrolledBy from "src/hooks/use-scrolled-by";
 import PageWrapper from "@components/page-wrapper";
+import {
+  CheatSheetServerSideReturnType,
+  getPostPageStaticPaths,
+  getPostPageStaticProps,
+} from "@modules/post/server";
 
 const Post = ({ data: initData }: CheatSheetServerSideReturnType) => {
-  const { query } = useRouter();
   const [data, setData] = useState<CheatSheetSectionType | null>(initData);
   const isScrolled = useScrolledBy();
 
@@ -87,5 +87,6 @@ const Post = ({ data: initData }: CheatSheetServerSideReturnType) => {
   );
 };
 
-export const getServerSideProps = getCheatSheetServerSideProps;
+export const getStaticPaths = getPostPageStaticPaths;
+export const getStaticProps = getPostPageStaticProps;
 export default Post;

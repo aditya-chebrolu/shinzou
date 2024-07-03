@@ -26,6 +26,6 @@
       "@configs/*": ["src/configs/*"],
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/image-loader.js", "src/scripts/process-json-files.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/image-loader.js"],
   "exclude": ["node_modules"]
 }
