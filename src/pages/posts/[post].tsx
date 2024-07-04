@@ -72,6 +72,8 @@ const Post = ({ data: initData }: CheatSheetServerSideReturnType) => {
 
   const playSound = () => {
     audio.current?.play();
+    navigator.vibrate(200);
+    navigator.vibrate([200]);
   };
 
   if (!data) return null;
