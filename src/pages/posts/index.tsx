@@ -3,27 +3,37 @@ import fs from "fs";
 import { ArchiveType } from "@modules/posts/types";
 import PostsList from "@components/posts-list";
 import PageWrapper from "@components/page-wrapper";
+import useFilteredPosts from "src/hooks/use-filtered-posts";
+import AllTags from "@components/all-tags";
 
-const Archives = ({ data }: ReturnType<typeof getServerSideProps>["props"]) => {
+const Archives = ({
+  posts: postsFromProps,
+  allTags,
+}: ReturnType<typeof getServerSideProps>["props"]) => {
+  const { posts, tags, onTagClick } = useFilteredPosts(postsFromProps, allTags);
   return (
     <PageWrapper headerData={{ title: "Posts", allTags: true }}>
-      <PostsList data={data} />
+      <AllTags tags={tags} onTagClick={onTagClick} />
+      <PostsList data={posts} />
     </PageWrapper>
   );
 };
 
 export const getServerSideProps = () => {
-  const filePath = path.join(process.cwd(), "src", "data", `posts.json`);
-  let data: ArchiveType[] = [];
+  const dataPath = path.join(process.cwd(), "src/data");
+  let posts: ArchiveType[] = [],
+    allTags: string[] = [];
   try {
-    const fileContents = fs.readFileSync(filePath, "utf8");
-    data = JSON.parse(fileContents);
+    const postsFileContents = fs.readFileSync(`${dataPath}/posts.json`, "utf8");
+    const tagsFileContents = fs.readFileSync(`${dataPath}/tags.json`, "utf8");
+    posts = JSON.parse(postsFileContents);
+    allTags = JSON.parse(tagsFileContents);
     return {
-      props: { data },
+      props: { posts, allTags },
     };
   } catch {
     return {
-      props: { data },
+      props: { posts, allTags },
     };
   }
 };

@@ -13,7 +13,7 @@ const useFilteredPosts = <T extends PostWithTags>(
 
   const getTagsFromURL = () => {
     const tagsParam = query.tags as string;
-    return tagsParam ? new Set(tagsParam.split(",")) : new Set();
+    return tagsParam ? new Set(tagsParam.split(",")) : new Set<string>();
   };
 
   const [tags, setTags] = useState(getTagsFromURL());
@@ -52,10 +52,14 @@ const useFilteredPosts = <T extends PostWithTags>(
       delete updatedQuery.tags;
     }
 
-    push({
-      pathname: pathname,
-      query: updatedQuery,
-    });
+    push(
+      {
+        pathname: pathname,
+        query: updatedQuery,
+      },
+      undefined,
+      { shallow: true }
+    );
   };
 
   const processedTags = allTags.map((tag) => ({

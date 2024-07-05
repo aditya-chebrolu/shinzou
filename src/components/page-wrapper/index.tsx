@@ -41,9 +41,6 @@ const PageWrapper = ({
         <Link href="/resources" className="link">
           Resources
         </Link>
-        <Link href="/tags" className="link">
-          All Tags
-        </Link>
         <Link href="/" className="text" css={portfolioButton}>
           Aditya Chebrolu
         </Link>

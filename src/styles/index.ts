@@ -171,9 +171,12 @@ const anim = keyframes`
 `;
 
 export const tagsRowStyles = css`
-  ${flex({ gap: [15], wrap: "wrap" })};
+  ${flex({ gap: [15], wrap: "no-wrap" })};
+  overflow-x: scroll;
+  ${noScrollbar}
 
   > div {
+    flex-shrink: 0;
     user-select: none;
     cursor: pointer;
     font-size: 18px;

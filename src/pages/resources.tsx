@@ -5,6 +5,7 @@ import path from "path";
 import fs from "fs";
 import { socialIcons } from "@assets/socials";
 import useFilteredPosts from "src/hooks/use-filtered-posts";
+import AllTags from "@components/all-tags";
 
 type Resource = {
   name: string;
@@ -18,40 +19,22 @@ const Resources = ({
   resources,
   allTags,
 }: Awaited<ReturnType<typeof getStaticProps>>["props"]) => {
-  const {
-    posts,
-    tags,
-    onTagClick: handleTagClick,
-    tagSet,
-  } = useFilteredPosts(resources, allTags);
-
-  const onTagClick =
-    (tag: string, unselect = true) =>
-    () => {
-      if (tagSet.has(tag) && !unselect) return;
-      handleTagClick(tag);
-    };
+  const { posts, tags, onTagClick, tagSet } = useFilteredPosts(
+    resources,
+    allTags
+  );
 
   return (
-    <PageWrapper headerData={{ titleLineColor: "#FB607F", title: "Resources" }}>
+    <PageWrapper headerData={{ titleLineColor: "#0D98BA", title: "Resources" }}>
       <div css={containerStyles}>
-        <div css={tagsRowStyles}>
-          {tags.map((tag) => (
-            <div
-              className={tag.applied ? "applied" : ""}
-              onClick={onTagClick(tag.name)}
-              key={tag.name}
-            >
-              #{tag.name}
-            </div>
-          ))}
-        </div>
+        <AllTags tags={tags} onTagClick={onTagClick} />
         {posts.map((resource, idx) => (
           <ResourceStrip
             key={idx + resource.name}
             resource={resource}
             delay={idx * 100}
             onTagClick={onTagClick}
+            tagSet={tagSet}
           />
         ))}
       </div>
@@ -63,13 +46,21 @@ const ResourceStrip = ({
   resource,
   delay,
   onTagClick,
+  tagSet,
 }: {
   resource: Resource;
   delay: number;
-  onTagClick: (v: string, unselect?: boolean) => () => void;
+  tagSet: Set<string>;
+  onTagClick: (v: string) => void;
 }) => {
   const isWebsite = resource.type === "website";
   const Icon = socialIcons[resource.type].Icon;
+
+  const handleTagClick = (tag: string) => () => {
+    if (tagSet.has(tag)) return;
+    onTagClick(tag);
+  };
+
   return (
     <div css={stripStyles(delay)}>
       <SvgContainer h={{ default: 24 }} stroke={isWebsite ? "white" : ""}>
@@ -79,10 +70,10 @@ const ResourceStrip = ({
         <a className="name" href={resource.url}>
           <h2>{resource.name}</h2>
         </a>
-        <div className="desc">{resource.description}</div>
+        <p className="desc">{resource.description}</p>
         <div className="tags">
           {resource.tags.map((tag, idx) => (
-            <div className="tag" key={idx} onClick={onTagClick(tag, false)}>
+            <div className="tag" key={idx} onClick={handleTagClick(tag)}>
               #{tag}
             </div>
           ))}

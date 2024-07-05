@@ -71,10 +71,10 @@ export const portfolioButton = css`
   background-size: 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: ${shine} 3s infinite linear;
+  animation: ${shine} 10s infinite linear;
 
   &:hover {
-    animation-duration: 1s;
+    animation-duration: 2s;
   }
 `;
 
