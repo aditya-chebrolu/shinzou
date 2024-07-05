@@ -73,7 +73,6 @@ const Post = ({ data: initData }: CheatSheetServerSideReturnType) => {
   const playSound = () => {
     audio.current?.play();
     navigator.vibrate(200);
-    navigator.vibrate([200]);
   };
 
   if (!data) return null;
@@ -97,11 +96,9 @@ const Post = ({ data: initData }: CheatSheetServerSideReturnType) => {
             placeholder={`Search ${data.title}`}
           />
         </div>
-        <div className="wrapper">
-          <div className="content">
-            <Content data={data} />
-            <div css={welcomeTextStyles}>{"You're welcome 🤗"}</div>
-          </div>
+        <div>
+          <Content data={data} />
+          <div css={welcomeTextStyles}>{"You're welcome 🤗"}</div>
         </div>
       </PageWrapper>
     </>

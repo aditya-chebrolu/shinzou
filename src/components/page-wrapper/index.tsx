@@ -35,11 +35,14 @@ const PageWrapper = ({
         />
       </div>
       <div css={menuStyles}>
-        <Link href="/tags" className="link">
-          All Tags
-        </Link>
         <Link href="/posts" className="link">
           All Posts
+        </Link>
+        <Link href="/resources" className="link">
+          Resources
+        </Link>
+        <Link href="/tags" className="link">
+          All Tags
         </Link>
         <div css={portfolioButton}>
           <SvgContainer

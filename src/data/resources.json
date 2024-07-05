@@ -1,0 +1,16 @@
+[
+  {
+    "url": "https://www.youtube.com/@KevinPowell",
+    "name": "Kevin Powell",
+    "description": "Kevin Powell’s YouTube channel features practical CSS tutorials, covering modern techniques, responsive design, CSS Grid, and Flexbox, perfect for developers of all levels.",
+    "type": "yt",
+    "tags": ["css", "yt"]
+  },
+  {
+    "url": "https://ishadeed.com/",
+    "name": "Ahmad Shadeed",
+    "description": "Ahmad Shadeed's website offers in-depth articles and tutorials on CSS, front-end development, and web design, providing practical insights and detailed explanations for web professionals.",
+    "type": "website",
+    "tags": ["css", "website"]
+  }
+]

@@ -1,4 +1,4 @@
-import { css } from "@emotion/react";
+import { css, keyframes } from "@emotion/react";
 import { black } from "./colors";
 import styled from "@emotion/styled";
 
@@ -68,12 +68,6 @@ export const Card = styled.div`
   background: ${black[3]};
   padding: 10px;
   border: solid 1px ${black[1]};
-`;
-
-// todo: rename
-export const bgStyles = css`
-  background-size: 17px 17px;
-  background-image: radial-gradient(circle, ${black[2]} 0.5px, black 1px);
 `;
 
 export const darkBackgroundStyles = css`
@@ -165,4 +159,44 @@ export const Divider = styled.div<{
           clip-path: inset(0 -100vmax);
         `
       : ""}
+`;
+
+const anim = keyframes`
+  50% {
+    scale:0.9;
+  }
+  70% {
+    scale:1.1;
+  }
+`;
+
+export const tagsRowStyles = css`
+  ${flex({ gap: [15], wrap: "wrap" })};
+
+  > div {
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 18px;
+    transition: all 150ms;
+    color: #c0c0c0;
+  }
+
+  > div:not(.applied):has(~ div:hover) {
+    scale: 0.9;
+    opacity: 0.5;
+  }
+
+  > div:hover {
+    color: #ffd700;
+
+    & ~ div:not(.applied) {
+      scale: 0.9;
+      opacity: 0.5;
+    }
+  }
+
+  > .applied {
+    animation: ${anim} 150ms linear forwards;
+    color: #ffd700;
+  }
 `;

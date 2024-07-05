@@ -19,7 +19,7 @@ export const headerStyles = css`
 `;
 
 export const menuStyles = css`
-  ${flex({ gap: [25], align: "center" })};
+  ${flex({ align: "center", gap: [12, 25] })};
   position: sticky;
   top: 0;
   z-index: 1;
@@ -29,6 +29,7 @@ export const menuStyles = css`
   padding-block: 8px;
 
   > .link {
+    flex-shrink: 0;
     color: #f5f5f5;
     &:hover {
       color: #ffbf00;
@@ -60,6 +61,7 @@ const shine = keyframes`
 `;
 
 export const portfolioButton = css`
+  flex-shrink: 0;
   margin-left: auto;
   color: white;
   ${flex({ gap: [4], align: "center" })};
