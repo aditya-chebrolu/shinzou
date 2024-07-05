@@ -181,22 +181,24 @@ export const tagsRowStyles = css`
     color: #c0c0c0;
   }
 
-  > div:not(.applied):has(~ div:hover) {
-    scale: 0.9;
-    opacity: 0.5;
-  }
-
-  > div:hover {
-    color: #ffd700;
-
-    & ~ div:not(.applied) {
-      scale: 0.9;
-      opacity: 0.5;
-    }
-  }
-
   > .applied {
     animation: ${anim} 150ms linear forwards;
     color: #ffd700;
+  }
+
+  ${minWidth()} {
+    > div:not(.applied):has(~ div:hover) {
+      scale: 0.9;
+      opacity: 0.5;
+    }
+
+    > div:hover {
+      color: #ffd700;
+
+      & ~ div:not(.applied) {
+        scale: 0.9;
+        opacity: 0.5;
+      }
+    }
   }
 `;

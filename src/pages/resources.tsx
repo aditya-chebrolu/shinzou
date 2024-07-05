@@ -6,6 +6,7 @@ import fs from "fs";
 import { socialIcons } from "@assets/socials";
 import useFilteredPosts from "src/hooks/use-filtered-posts";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 type Resource = {
   name: string;
@@ -18,6 +19,7 @@ type Resource = {
 const Resources = ({
   resources,
 }: Awaited<ReturnType<typeof getStaticProps>>["props"]) => {
+  const { query } = useRouter();
   const {
     posts,
     tags,
@@ -29,7 +31,7 @@ const Resources = ({
   };
 
   return (
-    <PageWrapper headerData={{ titleLineColor: "#FB607F", title: "Blogs" }}>
+    <PageWrapper headerData={{ titleLineColor: "#FB607F", title: "Resources" }}>
       <div css={containerStyles}>
         <div css={tagsRowStyles}>
           {tags.map((tag) => (
@@ -42,18 +44,28 @@ const Resources = ({
           ))}
         </div>
         {posts.map((resource, idx) => (
-          <ResourceStrip key={idx} resource={resource} />
+          <ResourceStrip
+            key={idx + resource.name}
+            resource={resource}
+            delay={idx * 100}
+          />
         ))}
       </div>
     </PageWrapper>
   );
 };
 
-const ResourceStrip = ({ resource }: { resource: Resource }) => {
+const ResourceStrip = ({
+  resource,
+  delay,
+}: {
+  resource: Resource;
+  delay: number;
+}) => {
   const isWebsite = resource.type === "website";
   const Icon = socialIcons[resource.type].Icon;
   return (
-    <div css={stripStyles}>
+    <div css={stripStyles(delay)}>
       <SvgContainer h={{ default: 24 }} stroke={isWebsite ? "white" : ""}>
         <Icon />
       </SvgContainer>

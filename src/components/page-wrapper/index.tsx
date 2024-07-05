@@ -44,25 +44,9 @@ const PageWrapper = ({
         <Link href="/tags" className="link">
           All Tags
         </Link>
-        <div css={portfolioButton}>
-          <SvgContainer
-            h={{ default: 20 }}
-            stroke={"white"}
-            className="icon left"
-          >
-            <Icon />
-          </SvgContainer>
-          <Link href="/" className="text">
-            Aditya Chebrolu
-          </Link>
-          <SvgContainer
-            h={{ default: 20 }}
-            stroke={"white"}
-            className="icon right"
-          >
-            <Icon />
-          </SvgContainer>
-        </div>
+        <Link href="/" className="text" css={portfolioButton}>
+          Aditya Chebrolu
+        </Link>
       </div>
       <div className="content">{children}</div>
     </div>

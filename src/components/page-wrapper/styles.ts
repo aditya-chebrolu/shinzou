@@ -41,22 +41,12 @@ export const menuStyles = css`
   }
 `;
 
-const poke = (flag = false) => keyframes`
-  50% {
-    scale: 0.9;
-    translate: ${flag ? "-" : ""}4px;
-  }
-  100% {
-    translate: ${flag ? "-" : ""}0px;
-  }
-`;
-
 const shine = keyframes`
   0% {
-    background-position: -200%;
+    background-position: 200%;
   }
   100% {
-    background-position: 200%;
+    background-position: -200%;
   }
 `;
 
@@ -65,33 +55,26 @@ export const portfolioButton = css`
   margin-left: auto;
   color: white;
   ${flex({ gap: [4], align: "center" })};
-  .text {
-    line-height: 16px;
-    background: linear-gradient(
-      90deg,
-      #ffb6c1,
-      #ffdab9,
-      #98fb98,
-      #e6e6fa,
-      #ffb6c1
-    );
-    background-size: 200%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: shine 3s linear infinite;
-    animation: ${shine} 2s infinite linear;
+  line-height: 16px;
+  background: linear-gradient(
+    90deg,
+    #ffb6c1,
+    #ff69b4,
+    #c71585,
+    #9370db,
+    #b19cd9,
+    #9370db,
+    #c71585,
+    #ff69b4,
+    #ffb6c1
+  );
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: ${shine} 3s infinite linear;
 
-    &:hover {
-      animation-duration: 500ms;
-    }
-  }
-  .icon > svg {
-    animation: ${poke()} 1s infinite linear;
-  }
-
-  .icon.right > svg {
-    rotate: -180deg;
-    animation: ${poke(true)} 1s infinite linear;
+  &:hover {
+    animation-duration: 1s;
   }
 `;
 

@@ -5,7 +5,7 @@ export const containerStyles = css`
   ${flex({ column: true, gap: [20] })}
 `;
 
-export const stripStyles = css`
+export const stripStyles = (delay: number) => css`
   ${flex({ gap: [10], align: "start" })};
   > .info {
     ${flex({ column: true, gap: [8] })};
@@ -35,5 +35,11 @@ export const stripStyles = css`
   &:not(:last-of-type) {
     border-bottom: solid 1px #232323;
     padding-bottom: 20px;
+  }
+  transition: all 500ms;
+  transition-delay: ${delay}ms;
+  @starting-style {
+    opacity: 0;
+    scale: 0.9;
   }
 `;
