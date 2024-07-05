@@ -45,12 +45,16 @@ const useFilteredPosts = <T extends PostWithTags>(
 
     const newTagsArray = Array.from(currentTags);
 
+    const updatedQuery = { ...query };
+    if (newTagsArray.length > 0) {
+      updatedQuery.tags = newTagsArray.join(",");
+    } else {
+      delete updatedQuery.tags;
+    }
+
     push({
       pathname: pathname,
-      query: {
-        ...query,
-        tags: newTagsArray.length > 0 ? newTagsArray.join(",") : undefined,
-      },
+      query: updatedQuery,
     });
   };
 
