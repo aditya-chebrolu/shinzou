@@ -19,16 +19,19 @@ type Resource = {
 const Resources = ({
   resources,
 }: Awaited<ReturnType<typeof getStaticProps>>["props"]) => {
-  const { query } = useRouter();
   const {
     posts,
     tags,
     onTagClick: handleTagClick,
+    tagSet,
   } = useFilteredPosts(resources, ["yt", "linkedin", "website", "css"]);
 
-  const onTagClick = (tag: string) => () => {
-    handleTagClick(tag);
-  };
+  const onTagClick =
+    (tag: string, unselect = true) =>
+    () => {
+      if (tagSet.has(tag) && !unselect) return;
+      handleTagClick(tag);
+    };
 
   return (
     <PageWrapper headerData={{ titleLineColor: "#FB607F", title: "Resources" }}>
@@ -38,6 +41,7 @@ const Resources = ({
             <div
               className={tag.applied ? "applied" : ""}
               onClick={onTagClick(tag.name)}
+              key={tag.name}
             >
               #{tag.name}
             </div>
@@ -48,6 +52,7 @@ const Resources = ({
             key={idx + resource.name}
             resource={resource}
             delay={idx * 100}
+            onTagClick={onTagClick}
           />
         ))}
       </div>
@@ -58,9 +63,11 @@ const Resources = ({
 const ResourceStrip = ({
   resource,
   delay,
+  onTagClick,
 }: {
   resource: Resource;
   delay: number;
+  onTagClick: (v: string, unselect?: boolean) => () => void;
 }) => {
   const isWebsite = resource.type === "website";
   const Icon = socialIcons[resource.type].Icon;
@@ -76,7 +83,9 @@ const ResourceStrip = ({
         <div className="desc">{resource.description}</div>
         <div className="tags">
           {resource.tags.map((tag, idx) => (
-            <div key={idx}>#{tag}</div>
+            <div className="tag" key={idx} onClick={onTagClick(tag, false)}>
+              #{tag}
+            </div>
           ))}
         </div>
       </div>

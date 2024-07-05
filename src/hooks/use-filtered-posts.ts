@@ -63,7 +63,12 @@ const useFilteredPosts = <T extends PostWithTags>(
     applied: tags.has(tag),
   }));
 
-  return { onTagClick, tags: processedTags, posts: filteredPosts };
+  return {
+    onTagClick,
+    tags: processedTags,
+    posts: filteredPosts,
+    tagSet: tags,
+  };
 };
 
 export default useFilteredPosts;

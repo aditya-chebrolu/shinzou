@@ -30,6 +30,9 @@ export const stripStyles = (delay: number) => css`
       font-size: 18px;
       line-height: 18px;
       color: #ffbf00;
+      > .tag {
+        cursor: pointer;
+      }
     }
   }
   &:not(:last-of-type) {

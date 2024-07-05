@@ -174,6 +174,7 @@ export const tagsRowStyles = css`
   ${flex({ gap: [15], wrap: "wrap" })};
 
   > div {
+    user-select: none;
     cursor: pointer;
     font-size: 18px;
     line-height: 18px;
@@ -193,7 +194,7 @@ export const tagsRowStyles = css`
     }
 
     > div:hover {
-      color: #ffd700;
+      /* color: #ffd700; */
 
       & ~ div:not(.applied) {
         scale: 0.9;
