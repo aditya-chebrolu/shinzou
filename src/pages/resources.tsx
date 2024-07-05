@@ -5,8 +5,6 @@ import path from "path";
 import fs from "fs";
 import { socialIcons } from "@assets/socials";
 import useFilteredPosts from "src/hooks/use-filtered-posts";
-import { useState } from "react";
-import { useRouter } from "next/router";
 
 type Resource = {
   name: string;
@@ -18,13 +16,14 @@ type Resource = {
 
 const Resources = ({
   resources,
+  allTags,
 }: Awaited<ReturnType<typeof getStaticProps>>["props"]) => {
   const {
     posts,
     tags,
     onTagClick: handleTagClick,
     tagSet,
-  } = useFilteredPosts(resources, ["yt", "linkedin", "website", "css"]);
+  } = useFilteredPosts(resources, allTags);
 
   const onTagClick =
     (tag: string, unselect = true) =>
@@ -97,10 +96,14 @@ export async function getStaticProps() {
   const filePath = path.join(process.cwd(), "src/data/resources.json");
   const jsonData = fs.readFileSync(filePath, "utf8");
   const data = JSON.parse(jsonData) as Resource[];
+  const allTags = Array.from(
+    new Set(data.map((obj) => obj.tags).flatMap((arr) => arr))
+  );
 
   return {
     props: {
       resources: data,
+      allTags,
     },
   };
 }
