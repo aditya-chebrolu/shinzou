@@ -14,7 +14,7 @@ const Archives = ({
   return (
     <PageWrapper headerData={{ title: "Posts", allTags: true }}>
       <AllTags tags={tags} onTagClick={onTagClick} />
-      <PostsList data={posts} />
+      <PostsList data={posts} onTagClick={onTagClick} />
     </PageWrapper>
   );
 };

@@ -1,7 +1,7 @@
 import { css } from "@emotion/react";
 import { flex } from "@styles/index";
 
-export const archiveBlockStyles = css`
+export const archiveBlockStyles = (delay = 0) => css`
   ${flex({ column: true, gap: [0] })};
   font-size: 18px;
   font-weight: bold;
@@ -24,12 +24,21 @@ export const archiveBlockStyles = css`
     font-weight: normal;
     color: #ffbf00;
 
-    > a {
+    > div {
+      cursor: pointer;
       transition: all 200ms;
       flex-shrink: 0;
       &:hover {
         color: #fbec5d;
       }
     }
+  }
+
+  transition: all 500ms;
+  transition-delay: ${delay}ms;
+  transform-origin: left center;
+  @starting-style {
+    opacity: 0;
+    scale: 0.9;
   }
 `;

@@ -1,11 +1,17 @@
 import { ArchiveType } from "@modules/posts/types";
 import { archiveBlockStyles } from "./styles";
 
-const PostsList = ({ data }: { data: ArchiveType[] }) => {
+const PostsList = ({
+  data,
+  onTagClick,
+}: {
+  data: ArchiveType[];
+  onTagClick: (inp: string) => void;
+}) => {
   return (
     <>
       {data.map((archive, idx) => (
-        <div css={archiveBlockStyles} key={idx}>
+        <div css={archiveBlockStyles(idx * 100)} key={idx}>
           <a
             href={`/posts/${archive.slug}`}
             dangerouslySetInnerHTML={{
@@ -14,9 +20,9 @@ const PostsList = ({ data }: { data: ArchiveType[] }) => {
           />
           <div className="tags">
             {archive.tags.map((tag, idx) => (
-              <a href={`/tags/${tag}`} key={idx} className="tag">
+              <div onClick={() => onTagClick(tag)} key={idx} className="tag">
                 #{tag}
-              </a>
+              </div>
             ))}
           </div>
         </div>
