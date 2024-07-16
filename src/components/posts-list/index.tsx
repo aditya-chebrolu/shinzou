@@ -11,7 +11,7 @@ const PostsList = ({
   return (
     <>
       {data.map((archive, idx) => (
-        <div css={archiveBlockStyles(idx * 100)} key={idx}>
+        <div css={archiveBlockStyles(idx * 50)} key={`${idx}-${archive.slug}`}>
           <a
             href={`/posts/${archive.slug}`}
             dangerouslySetInnerHTML={{
