@@ -13,7 +13,7 @@ export const sourceSansPro = Source_Sans_3({
   variable: "--source-sans-pro-font",
 });
 
-export const avenirFont = local({
-  src: "../assets/fonts/new-title.woff2",
-  variable: "--avenir-font",
+export const bunnyFont = local({
+  src: "../assets/fonts/bake-bunny-round.otf",
+  variable: "--bunny-font",
 });
