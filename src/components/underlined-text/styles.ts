@@ -3,40 +3,40 @@ import { minWidth } from "@styles/index";
 
 export type Sizes = "xs" | "sm" | "md" | "lg" | "xl";
 
-// const stylesConfig = {
-//   dweb: {
-//     xs: [25, 8, 6],
-//     sm: [30, 9.5, 7],
-//     md: [40, 12, 9],
-//     lg: [50, 15, 11],
-//     xl: [80, 24, 17.5],
-//   },
-//   mweb: {
-//     xs: [18, 6, 4.5],
-//     sm: [25, 8, 6],
-//     md: [30, 9.5, 7],
-//     lg: [40, 12, 9],
-//     xl: [40, 12, 9],
-//   },
-// };
-
-//for bunny font
 const stylesConfig = {
   dweb: {
-    xs: [25, 8, 8],
-    sm: [30, 9.5, 9],
-    md: [40, 12, 12],
-    lg: [50, 15, 15],
-    xl: [80, 24, 25],
+    xs: [25, 8, 6],
+    sm: [30, 9.5, 7],
+    md: [40, 12, 9],
+    lg: [50, 15, 11],
+    xl: [80, 24, 17.5],
   },
   mweb: {
-    xs: [18, 6, 5.5],
-    sm: [25, 8, 8],
-    md: [30, 9.5, 9],
-    lg: [40, 12, 12],
-    xl: [40, 12, 12],
+    xs: [18, 6, 4.5],
+    sm: [25, 8, 6],
+    md: [30, 9.5, 7],
+    lg: [40, 12, 9],
+    xl: [40, 12, 9],
   },
 };
+
+//for bunny font
+// const stylesConfig = {
+//   dweb: {
+//     xs: [25, 8, 8],
+//     sm: [30, 9.5, 9],
+//     md: [40, 12, 12],
+//     lg: [50, 15, 15],
+//     xl: [80, 24, 25],
+//   },
+//   mweb: {
+//     xs: [18, 6, 5.5],
+//     sm: [25, 8, 8],
+//     md: [30, 9.5, 9],
+//     lg: [40, 12, 12],
+//     xl: [40, 12, 12],
+//   },
+// };
 
 const sizeStyles = (screen: "dweb" | "mweb", size: Sizes) => {
   const [fontSize, lineThickness, lineOffset] = stylesConfig[screen][size];
@@ -77,7 +77,6 @@ export const headingStyles = ({
   padding: unset;
   text-decoration: underline;
   text-decoration-skip-ink: none;
-  font-family: var(--bunny-font);
 
   color: ${getColor({ color, screen: "mweb" }) || "var(--section-title)"};
   text-decoration-color: ${getColor({ color: lineColor, screen: "mweb" }) ||

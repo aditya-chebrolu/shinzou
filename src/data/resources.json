@@ -26,5 +26,12 @@
     "description": "Chrome for Developers, managed by the Google Chrome team, offers tutorials, updates, and best practices on web development, performance optimization, and the latest web platform features.",
     "type": "yt",
     "tags": ["chrome", "webdev", "css", "yt"]
+  },
+  {
+    "url": "https://www.linkedin.com/in/mapocock/",
+    "name": "Typescript by Matt Pocock",
+    "description": "Matt Pocock is a TypeScript authority who offers insightful tutorials and resources, making advanced coding techniques accessible to all developers.",
+    "type": "linkedin",
+    "tags": ["chrome", "webdev", "css", "yt"]
   }
 ]
