@@ -73,7 +73,7 @@ const ResourceStrip = ({
         <Icon />
       </SvgContainer>
       <div className="info">
-        <a className="name" href={resource.url}>
+        <a className="name" href={resource.url} title={resource.name}>
           <h2>{resource.name}</h2>
         </a>
         <p className="desc">{resource.description}</p>
