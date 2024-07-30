@@ -6,6 +6,7 @@ import fs from "fs";
 import { socialIcons } from "@assets/socials";
 import useFilteredPosts from "src/hooks/use-filtered-posts";
 import AllTags from "@components/all-tags";
+import ResourcesMeta from "@modules/resources/meta";
 
 type Resource = {
   name: string;
@@ -25,20 +26,25 @@ const Resources = ({
   );
 
   return (
-    <PageWrapper headerData={{ titleLineColor: "#0D98BA", title: "Resources" }}>
-      <div css={containerStyles}>
-        <AllTags tags={tags} onTagClick={onTagClick} />
-        {posts.map((resource, idx) => (
-          <ResourceStrip
-            key={idx + resource.name}
-            resource={resource}
-            delay={idx * 100}
-            onTagClick={onTagClick}
-            tagSet={tagSet}
-          />
-        ))}
-      </div>
-    </PageWrapper>
+    <>
+      <ResourcesMeta />
+      <PageWrapper
+        headerData={{ titleLineColor: "#0D98BA", title: "Resources" }}
+      >
+        <div css={containerStyles}>
+          <AllTags tags={tags} onTagClick={onTagClick} />
+          {posts.map((resource, idx) => (
+            <ResourceStrip
+              key={idx + resource.name}
+              resource={resource}
+              delay={idx * 100}
+              onTagClick={onTagClick}
+              tagSet={tagSet}
+            />
+          ))}
+        </div>
+      </PageWrapper>
+    </>
   );
 };
 
