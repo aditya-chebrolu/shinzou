@@ -33,5 +33,12 @@
     "description": "Matt Pocock is a TypeScript authority who offers insightful tutorials and resources, making advanced coding techniques accessible to all developers.",
     "type": "linkedin",
     "tags": ["ts", "linkedin", "node"]
+  },
+  {
+    "url": "https://www.joshwcomeau.com",
+    "name": "Josh W Comeau",
+    "description": "",
+    "type": "website",
+    "tags": ["react", "website", "js", "nextjs", "css", "animation"]
   }
 ]

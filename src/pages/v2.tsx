@@ -7,7 +7,6 @@ import {
   projectsSectionStyles,
   skillsSectionStyles,
 } from "@modules/v1/styles";
-import React from "react";
 
 const v2 = () => {
   return (
