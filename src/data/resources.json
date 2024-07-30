@@ -4,41 +4,47 @@
     "name": "Kevin Powell",
     "description": "Kevin Powell’s YouTube channel features practical CSS tutorials, covering modern techniques, responsive design, CSS Grid, and Flexbox, perfect for developers of all levels.",
     "type": "yt",
-    "tags": ["css", "yt"]
+    "tags": ["css", "yt"],
+    "linkTitle": "Visit Kevin Powell's YouTube channel for practical CSS tutorials"
   },
   {
     "url": "https://ishadeed.com/",
     "name": "Ahmad Shadeed",
     "description": "Ahmad Shadeed's website offers in-depth articles and tutorials on CSS, front-end development, and web design, providing practical insights and detailed explanations for web professionals.",
     "type": "website",
-    "tags": ["css", "website"]
+    "tags": ["css", "website"],
+    "linkTitle": "Explore Ahmad Shadeed's website for in-depth CSS and front-end development tutorials"
   },
   {
     "url": "https://www.youtube.com/@ByteByteGo",
     "name": "Byte Byte Go",
     "description": "Byte Byte Go, led by Alex Xu and Sahn Lam, offers tutorials and insights on large-scale system design, helping developers enhance their skills and advance their careers.",
     "type": "yt",
-    "tags": ["system-design", "yt"]
+    "tags": ["system-design", "yt"],
+    "linkTitle": "Watch Byte Byte Go for insights on large-scale system design"
   },
   {
     "url": "https://www.youtube.com/@ChromeDevs",
     "name": "Chrome for Developers",
     "description": "Chrome for Developers, managed by the Google Chrome team, offers tutorials, updates, and best practices on web development, performance optimization, and the latest web platform features.",
     "type": "yt",
-    "tags": ["chrome", "webdev", "css", "yt"]
+    "tags": ["chrome", "webdev", "css", "yt"],
+    "linkTitle": "Get the latest web development tips from Chrome for Developers"
   },
   {
     "url": "https://www.linkedin.com/in/mapocock/",
     "name": "Typescript by Matt Pocock",
     "description": "Matt Pocock is a TypeScript authority who offers insightful tutorials and resources, making advanced coding techniques accessible to all developers.",
     "type": "linkedin",
-    "tags": ["ts", "linkedin", "node"]
+    "tags": ["ts", "linkedin", "node"],
+    "linkTitle": "Connect with Matt Pocock on LinkedIn for TypeScript tutorials and resources"
   },
   {
     "url": "https://www.joshwcomeau.com",
     "name": "Josh W Comeau",
-    "description": "",
+    "description": "Josh W Comeau's website offers insightful tutorials and articles on React, JavaScript, web animations, and more, making complex concepts easy to understand for developers.",
     "type": "website",
-    "tags": ["react", "website", "js", "nextjs", "css", "animation"]
+    "tags": ["react", "website", "js", "nextjs", "css", "animation"],
+    "linkTitle": "Explore Josh W Comeau's website for React, JavaScript, and web animation tutorials"
   }
 ]

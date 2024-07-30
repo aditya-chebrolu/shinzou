@@ -14,6 +14,7 @@ type Resource = {
   description: string;
   type: "yt" | "linkedin" | "website";
   tags: string[];
+  linkTitle: string;
 };
 
 const Resources = ({
@@ -73,7 +74,7 @@ const ResourceStrip = ({
         <Icon />
       </SvgContainer>
       <div className="info">
-        <a className="name" href={resource.url} title={resource.name}>
+        <a className="name" href={resource.url} title={resource.linkTitle}>
           <h2>{resource.name}</h2>
         </a>
         <p className="desc">{resource.description}</p>
