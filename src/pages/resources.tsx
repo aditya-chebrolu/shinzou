@@ -43,6 +43,7 @@ const Resources = ({
               tagSet={tagSet}
             />
           ))}
+          <div className="welcome">You're Welcome 🙂</div>
         </div>
       </PageWrapper>
     </>

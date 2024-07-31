@@ -1,5 +1,5 @@
 import { css, keyframes } from "@emotion/react";
-import { minWidth } from "@styles/index";
+import { flex, minWidth } from "@styles/index";
 
 export const pageStyles = css`
   background-color: #000000;
@@ -13,7 +13,7 @@ export const pageStyles = css`
 export const containerStyles = css`
   display: grid;
   grid-template-columns: 1fr 80% 1fr;
-  row-gap: 5rem;
+  row-gap: 2rem;
 
   > div {
     grid-column: 2/3;
@@ -73,12 +73,21 @@ export const nameStyles = css`
   }
 `;
 
-export const experienceSectionStyles = css`
+export const socialsStyles = css`
   grid-row: 2/3;
+  ${flex({ gap: [20] })};
+  margin: auto;
+`;
+
+export const experienceSectionStyles = css`
+  grid-column: 1/-1 !important;
+  grid-row: 3/4;
+  background-color: white;
+
   > .title {
     text-align: center;
     color: white;
-    font-size: 7rem;
+    font-size: 4rem;
     font-weight: bold;
     background: linear-gradient(
       90deg,
@@ -91,11 +100,11 @@ export const experienceSectionStyles = css`
 `;
 
 export const skillsSectionStyles = css`
-  grid-row: 3/4;
+  grid-row: 4/5;
   > .title {
     text-align: center;
     color: white;
-    font-size: 7rem;
+    font-size: 4rem;
     font-weight: bold;
     background: linear-gradient(
       90deg,
@@ -108,11 +117,11 @@ export const skillsSectionStyles = css`
 `;
 
 export const projectsSectionStyles = css`
-  grid-row: 4/5;
+  grid-row: 5/6;
   > .title {
     text-align: center;
     color: white;
-    font-size: 7rem;
+    font-size: 4rem;
     font-weight: bold;
     background: linear-gradient(
       90deg,

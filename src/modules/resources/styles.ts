@@ -3,6 +3,12 @@ import { flex } from "@styles/index";
 
 export const containerStyles = css`
   ${flex({ column: true, gap: [20] })}
+
+  >.welcome {
+    color: white;
+    padding-block: 40px;
+    text-align: center;
+  }
 `;
 
 export const stripStyles = (delay: number) => css`
@@ -26,7 +32,7 @@ export const stripStyles = (delay: number) => css`
     }
 
     > .tags {
-      ${flex({ gap: [10] })};
+      ${flex({ gap: [10], wrap: "wrap" })};
       font-size: 18px;
       line-height: 18px;
       color: #ffbf00;
@@ -35,7 +41,7 @@ export const stripStyles = (delay: number) => css`
       }
     }
   }
-  &:not(:last-of-type) {
+  &:not(:nth-last-of-type(2)) {
     border-bottom: solid 1px #232323;
     padding-bottom: 20px;
   }
