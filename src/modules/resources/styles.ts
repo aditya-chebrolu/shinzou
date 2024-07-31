@@ -38,6 +38,9 @@ export const stripStyles = (delay: number) => css`
       color: #ffbf00;
       > .tag {
         cursor: pointer;
+        &.applied {
+          color: #318ce7;
+        }
       }
     }
   }

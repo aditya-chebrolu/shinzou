@@ -7,6 +7,7 @@ import { socialIcons } from "@assets/socials";
 import useFilteredPosts from "src/hooks/use-filtered-posts";
 import AllTags from "@components/all-tags";
 import ResourcesMeta from "@modules/resources/meta";
+import cn from "classnames";
 
 type Resource = {
   name: string;
@@ -65,7 +66,7 @@ const ResourceStrip = ({
   const Icon = socialIcons[resource.type].Icon;
 
   const handleTagClick = (tag: string) => () => {
-    if (tagSet.has(tag)) return;
+    // if (tagSet.has(tag)) ;
     onTagClick(tag);
   };
 
@@ -81,7 +82,11 @@ const ResourceStrip = ({
         <p className="desc">{resource.description}</p>
         <div className="tags">
           {resource.tags.map((tag, idx) => (
-            <div className="tag" key={idx} onClick={handleTagClick(tag)}>
+            <div
+              className={cn("tag", { applied: tagSet.has(tag) })}
+              key={idx}
+              onClick={handleTagClick(tag)}
+            >
               #{tag}
             </div>
           ))}

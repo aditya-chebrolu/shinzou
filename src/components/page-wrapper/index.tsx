@@ -8,8 +8,6 @@ import {
 import UnderlinedText from "@components/underlined-text";
 import Link from "next/link";
 import { Sizes } from "@components/underlined-text/styles";
-import { SvgContainer } from "@styles/index";
-import Icon from "@assets/chevron-right-duo.svg";
 const PageWrapper = ({
   headerData,
   children,
@@ -42,7 +40,7 @@ const PageWrapper = ({
           Resources
         </Link>
         <Link href="/" className="text" css={portfolioButton}>
-          Aditya Chebrolu
+          Portfolio
         </Link>
       </div>
       <div className="content">{children}</div>
