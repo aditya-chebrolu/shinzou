@@ -24,6 +24,10 @@ export const stripStyles = (delay: number) => css`
         line-height: 24px;
         font-weight: bold;
         color: white;
+        transition: all 150ms;
+        &:hover {
+          color: #ffbf00;
+        }
       }
     }
 

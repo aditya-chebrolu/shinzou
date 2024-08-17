@@ -1,5 +1,5 @@
 import PageWrapper from "@components/page-wrapper";
-import { SvgContainer, tagsRowStyles } from "@styles/index";
+import { SvgContainer } from "@styles/index";
 import { containerStyles, stripStyles } from "@modules/resources/styles";
 import path from "path";
 import fs from "fs";
