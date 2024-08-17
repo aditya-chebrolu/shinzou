@@ -187,7 +187,7 @@ export const tagsRowStyles = css`
 
   > .applied {
     animation: ${anim} 150ms linear forwards;
-    color: #ffd700;
+    color: #ffbf00;
   }
 
   ${minWidth()} {

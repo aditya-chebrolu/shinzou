@@ -35,12 +35,13 @@ export const stripStyles = (delay: number) => css`
       ${flex({ gap: [10], wrap: "wrap" })};
       font-size: 18px;
       line-height: 18px;
-      color: #ffbf00;
       > .tag {
+        color: #318ce7;
         cursor: pointer;
-        &.applied {
-          color: #318ce7;
-        }
+      }
+
+      > .applied {
+        color: #ffbf00;
       }
     }
   }

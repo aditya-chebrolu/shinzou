@@ -3,20 +3,20 @@ import { containerStyles } from "./styles";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-const CheatSheets = () => {
+const DeveloperResourcesCta = () => {
   const { push } = useRouter();
-  const link = "/posts";
+  const link = "/resources";
   const onClick = () => {
     push(link);
   };
   return (
     <div css={containerStyles} onClick={onClick}>
       <Link href={link}>
-        <UnderlinedText text="Cheatsheets🔥" type="h2" />
+        <UnderlinedText text="Developer Resources" type="h2" />
       </Link>
-      <div>Click here to view programming cheat sheets 😃</div>
+      <div>Click here to view developer resources 😃</div>
     </div>
   );
 };
 
-export default CheatSheets;
+export default DeveloperResourcesCta;

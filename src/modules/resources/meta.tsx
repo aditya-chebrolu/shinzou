@@ -4,7 +4,7 @@ const description =
   "Discover the best tech resources including YouTube channels, websites, and LinkedIn profiles for learning and enhancing your skills in computer science and technology.";
 const keywords =
   "tech resources, computer science, technology, YouTube channels, websites, LinkedIn profiles, CSS, web development, system design, JavaScript, React, Next.js";
-const title = "Top Tech Resources for Computer Science and Technology";
+const title = "Tech Resources for Web Developers";
 
 const ResourcesMeta = () => {
   return (

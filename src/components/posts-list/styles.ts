@@ -3,12 +3,12 @@ import { flex } from "@styles/index";
 
 export const archiveBlockStyles = (delay = 0) => css`
   ${flex({ column: true, gap: [0] })};
-  font-size: 18px;
   font-weight: bold;
   color: #f5f5f5;
 
   > a > h2 {
     all: unset;
+    font-size: 24px;
     transition: all 200ms;
     &:hover {
       color: #318ce7;
@@ -20,7 +20,7 @@ export const archiveBlockStyles = (delay = 0) => css`
     flex-wrap: wrap;
     column-gap: 10px;
     row-gap: 0px;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: normal;
     color: #ffbf00;
 

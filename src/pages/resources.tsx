@@ -66,7 +66,6 @@ const ResourceStrip = ({
   const Icon = socialIcons[resource.type].Icon;
 
   const handleTagClick = (tag: string) => () => {
-    // if (tagSet.has(tag)) ;
     onTagClick(tag);
   };
 

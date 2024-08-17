@@ -1,5 +1,5 @@
 import { css } from "@emotion/react";
-import CheatSheets from "@modules/home/cheatsheets";
+import DeveloperResourcesCta from "@modules/home/dev-stuff";
 import Details from "@modules/home/details";
 import Experience from "@modules/home/exp";
 import ResumeButton from "@modules/home/resume-button";
@@ -63,7 +63,7 @@ const Page = () => {
           <div className="row2">
             <Skills />
             <Experience />
-            <CheatSheets />
+            <DeveloperResourcesCta />
             <ResumeButton />
           </div>
         </div>

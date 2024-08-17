@@ -31,9 +31,14 @@ export const menuStyles = css`
   > .link {
     flex-shrink: 0;
     color: #f5f5f5;
+
     &:hover {
       color: #ffbf00;
     }
+  }
+
+  .active {
+    color: #ffbf00;
   }
 
   ${minWidth()} {

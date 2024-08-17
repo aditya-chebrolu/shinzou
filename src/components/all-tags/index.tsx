@@ -1,5 +1,5 @@
 import { tagsRowStyles } from "@styles/index";
-import React from "react";
+import cn from "classnames";
 
 type Props = {
   tags: { applied: boolean; name: string }[];
@@ -11,7 +11,7 @@ const AllTags = ({ tags, onTagClick }: Props) => {
     <div css={tagsRowStyles}>
       {tags.map((tag) => (
         <div
-          className={tag.applied ? "applied" : ""}
+          className={cn({ applied: tag.applied })}
           onClick={() => onTagClick(tag.name)}
           key={tag.name}
         >
