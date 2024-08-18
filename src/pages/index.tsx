@@ -49,7 +49,6 @@ const Page = () => {
     skills: Skills,
     experience: Experience,
     resources: DeveloperResourcesCta,
-    resume: ResumeButton,
   };
   return (
     <>

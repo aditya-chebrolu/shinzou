@@ -5,6 +5,6 @@ import { flex, minWidth, maxWidth } from "@styles/index";
 export const containerStyles = css`
   ${flex({ column: true, gap: [20] })};
   > .icons {
-    ${flex({ gap: [20] })}
+    ${flex({ gap: [20], align: "center" })};
   }
 `;

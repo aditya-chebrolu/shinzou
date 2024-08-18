@@ -1,11 +1,12 @@
-import { useRouter } from "next/router";
 import { resumeButton } from "./styles";
 
 const ResumeButton = () => {
   return (
-    <a href="resume.pdf" target="_blank">
-      <div css={resumeButton}>RESUME</div>
-    </a>
+    <div css={resumeButton}>
+      <a href="resume.pdf" target="_blank">
+        RESUME
+      </a>
+    </div>
   );
 };
 
