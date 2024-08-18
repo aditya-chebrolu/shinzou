@@ -17,10 +17,7 @@ const Details = () => {
       <div className="icons">
         {socials.map(({ href, Icon }, idx) => (
           <a href={href} key={idx}>
-            <SvgContainer
-              h={{ default: 30 }}
-              fill={{ dweb: "#2A3439", mweb: "#00416A" }}
-            >
+            <SvgContainer h={30} fill={{ dweb: "#2A3439", mweb: "#00416A" }}>
               <Icon />
             </SvgContainer>
           </a>

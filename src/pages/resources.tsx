@@ -44,7 +44,7 @@ const Resources = ({
               tagSet={tagSet}
             />
           ))}
-          <div className="welcome">You're Welcome 🙂</div>
+          <div className="welcome">{"You're Welcome 🙂"}</div>
         </div>
       </PageWrapper>
     </>
@@ -71,7 +71,7 @@ const ResourceStrip = ({
 
   return (
     <div css={stripStyles(delay)}>
-      <SvgContainer h={{ default: 24 }} stroke={isWebsite ? "white" : ""}>
+      <SvgContainer h={24} stroke={isWebsite ? "white" : ""}>
         <Icon />
       </SvgContainer>
       <div className="info">

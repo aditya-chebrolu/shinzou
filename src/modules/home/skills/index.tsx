@@ -37,7 +37,7 @@ const Row = ({ row }: { row: SkillsType[] }) => {
 const Skill = ({ skill }: { skill: SkillsType }) => {
   const Icon = icons[skill].Icon;
   return (
-    <SvgContainer h={{ mweb: 25, default: 35 }} className="icon">
+    <SvgContainer h={{ mweb: 25, dweb: 35 }} className="icon">
       <Icon />
     </SvgContainer>
   );

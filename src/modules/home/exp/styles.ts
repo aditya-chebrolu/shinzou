@@ -1,27 +1,44 @@
 import { css } from "@emotion/react";
 import { flex, minWidth } from "@styles/index";
 
-export const experienceStyles = css`
-  ${flex({ column: true, gap: [5], align: "center", justify: "center" })};
-  border: 1px solid #e5e4e2;
-  aspect-ratio: 1;
-  width: 150px;
-  padding: 10px;
-  background-color: #fff;
-  cursor: pointer;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
-    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-  font-size: 14px;
+export const experienceSectionStyles = css`
+  ${flex({ column: true, gap: [20] })};
+`;
 
-  > .name {
-    text-align: center;
-    user-select: none;
+export const experienceStyles = css`
+  display: grid;
+  grid-template-columns: auto 1fr;
+  border: solid 1px #e5e4e2;
+  background-color: white;
+  padding: 10px;
+  column-gap: 10px;
+
+  > .icon {
+    grid-area: 1 / 1 / 3 / 2;
+    border-right: solid 1px #e5e4e2;
+    padding-right: 10px;
   }
 
-  > .role {
-    background-color: #ffbf00;
-    color: #000;
-    border: solid 1px black;
-    padding-inline: 10px;
+  > .name {
+    grid-area: 1 / 2 / 2 / 3;
+    font-size: 16px;
+  }
+
+  > .row2 {
+    grid-area: 2 / 2 / 3 / 3;
+    font-size: 16px;
+    align-self: end;
+    justify-self: start;
+    color: #6d6d6d;
+  }
+
+  ${minWidth()} {
+    > .name {
+      font-size: 18px;
+    }
+
+    > .row2 {
+      font-size: 16px;
+    }
   }
 `;

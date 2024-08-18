@@ -19,7 +19,7 @@ const v2 = () => {
         <div css={socialsStyles}>
           {socials.map(({ href, Icon }, idx) => (
             <a href={href} key={idx}>
-              <SvgContainer h={{ default: 40 }} fill="white">
+              <SvgContainer h={40} fill="white">
                 <Icon />
               </SvgContainer>
             </a>

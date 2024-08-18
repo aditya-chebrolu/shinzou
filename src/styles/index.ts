@@ -109,7 +109,6 @@ export const customScrollBar = ({
     scrollbar-color: #888 #f1f1f1;
   }
 `;
-
 const getFill = (
   fill: { dweb?: string; mweb?: string } | string = "none",
   screen: "dweb" | "mweb"
@@ -118,25 +117,33 @@ const getFill = (
   return fill[screen] || "none";
 };
 
+const getDimension = (
+  dimension: { dweb?: number; mweb?: number } | number | undefined,
+  screen: "dweb" | "mweb"
+) => {
+  if (typeof dimension === "number") return `${dimension}px`;
+  return dimension ? `${dimension[screen]}px` : "4";
+};
+
 export const SvgContainer = styled.div<{
   ratio?: string;
-  w?: { dweb?: number; mweb?: number; default?: number };
-  h?: { dweb?: number; mweb?: number; default?: number };
+  w?: { dweb?: number; mweb?: number } | number;
+  h?: { dweb?: number; mweb?: number } | number;
   fill?: { dweb?: string; mweb?: string } | string;
   stroke?: string;
 }>`
   font-size: 0;
   > svg {
-    ${({ w }) => (w ? `width:${w.mweb || w.default}px` : "")};
-    ${({ h }) => (h ? `height:${h.mweb || h.default}px` : "")};
+    width: ${({ w }) => getDimension(w, "mweb")};
+    height: ${({ h }) => getDimension(h, "mweb")};
     fill: ${({ fill }) => getFill(fill, "mweb")};
     ${({ stroke }) => (stroke ? `stroke:${stroke}` : "")};
     aspect-ratio: ${({ ratio = "1" }) => ratio};
   }
   ${minWidth()} {
     > svg {
-      ${({ w }) => (w ? `width:${w.dweb || w.default}px` : "")};
-      ${({ h }) => (h ? `height:${h.dweb || h.default}px` : "")};
+      width: ${({ w }) => getDimension(w, "dweb")};
+      height: ${({ h }) => getDimension(h, "dweb")};
       fill: ${({ fill }) => getFill(fill, "dweb")};
     }
   }

@@ -24,7 +24,7 @@ const ProjectCard = ({ project }: { project: (typeof projects)[number] }) => {
       <div className="header">
         <div className="title">{title}</div>
         <a href={url}>
-          <SvgContainer h={{ default: 18 }} stroke={colors.brown}>
+          <SvgContainer h={18} stroke={colors.brown}>
             <LinkIcon />
           </SvgContainer>
         </a>
@@ -34,7 +34,7 @@ const ProjectCard = ({ project }: { project: (typeof projects)[number] }) => {
           if (typeof e === "string") return e;
           return (
             <div key={idx} className="chip">
-              <SvgContainer h={{ default: 13 }} stroke={colors.brown}>
+              <SvgContainer h={13} stroke={colors.brown}>
                 <e.Icon />
               </SvgContainer>
               <div className="label">{e.text}</div>

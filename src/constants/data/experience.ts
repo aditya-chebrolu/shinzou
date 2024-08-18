@@ -1,29 +1,56 @@
 import BajajIcon from "@assets/bajaj.svg";
-import NextIcon from "@assets/tech/nextjs2.svg";
-import NestIcon from "@assets/tech/nestjs.svg";
-import JSIcon from "@assets/tech/js.svg";
-import TSIcon from "@assets/tech/typescript.svg";
-import ReactIcon from "@assets/tech/reactjs.svg";
-import HTMLIcon from "@assets/tech/html5.svg";
-import CSSIcon from "@assets/tech/css3.svg";
-import NodeIcon from "@assets/tech/nodejs.svg";
+import { icons } from "@constants/icons";
+import { pick } from "lodash-es";
+
+const calculateWorkExperience = (startDate: Date, endDate: Date): string => {
+  const startYear = startDate.getFullYear();
+  const startMonth = startDate.getMonth();
+  const endYear = endDate.getFullYear();
+  const endMonth = endDate.getMonth();
+
+  let years = endYear - startYear;
+  let months = endMonth - startMonth;
+
+  if (months < 0) {
+    years -= 1;
+    months += 12;
+  }
+
+  if (months === 0) {
+    return `${years}`;
+  }
+
+  return `${years}.${months}`;
+};
 
 export const experiences = [
   {
     company: "Bajaj Finserv Health Limited",
     companyURL: "https://www.bajajfinservhealth.in",
     designation: "SOFTWARE ENGINEER II",
+    shortDesignation: "SDE II",
     duration: "Jan 2022 - Present",
+    startDate: new Date("2022-01-01"),
+    endDate: new Date(),
+    workExperience: calculateWorkExperience(new Date("2022-01-01"), new Date()),
     Icon: BajajIcon,
     techStack: [
-      { Icon: JSIcon, text: "JS" },
-      { Icon: TSIcon, text: "TS" },
-      { Icon: ReactIcon, text: "React" },
-      { Icon: NextIcon, text: "Next.js" },
-      { Icon: NestIcon, text: "NestJS" },
-      { Icon: NodeIcon, text: "Node.js" },
-      { Icon: HTMLIcon, text: "HTML" },
-      { Icon: CSSIcon, text: "CSS" },
+      pick(icons, [
+        "azure",
+        "react",
+        "ts",
+        "node",
+        "html",
+        "css",
+        "javascript",
+        "next",
+        "nest",
+        "docker",
+        "kubernetes",
+        "elk",
+        "redis",
+        "mongo",
+      ]),
     ],
     positions: [
       {
