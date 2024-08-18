@@ -7,6 +7,12 @@ import Skills from "@modules/home/skills";
 import { minWidth } from "@styles/index";
 import { ReactNode } from "react";
 
+const anim = keyframes` 
+  to {
+    background-position: 100% 0;
+  }
+`;
+
 const styles = css`
   min-height: 100dvh;
   background-image: var(--dotted-bg);
@@ -25,10 +31,11 @@ const styles = css`
     .resources {
       grid-column: 1 / -1;
       padding: 25px 20px;
-      background: url("bg.png");
+      background: url("pattern.png");
       background-position: center;
       background-repeat: repeat;
       background-size: contain;
+      animation: ${anim} 10s linear infinite;
     }
 
     ${minWidth()} {
