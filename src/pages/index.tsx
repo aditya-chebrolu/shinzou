@@ -1,4 +1,4 @@
-import { css } from "@emotion/react";
+import { css, keyframes } from "@emotion/react";
 import DeveloperResourcesCta from "@modules/home/dev-stuff";
 import Details from "@modules/home/details";
 import Experience from "@modules/home/exp";
@@ -32,7 +32,6 @@ const styles = css`
     }
 
     ${minWidth()} {
-      /* grid-template-columns: 1fr 50% 1fr; */
       grid-template-columns: 27% 1fr 27%;
       padding-block: 50px;
       row-gap: 50px;
