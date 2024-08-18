@@ -12,7 +12,13 @@ const DeveloperResourcesCta = () => {
   return (
     <div css={containerStyles} onClick={onClick}>
       <Link href={link}>
-        <UnderlinedText text="Developer Resources" type="h2" />
+        <UnderlinedText
+          text="Developer Resources"
+          type="h2"
+          size="md"
+          color="white"
+          showLine={false}
+        />
       </Link>
       <div>Click here to view developer resources 😃</div>
     </div>

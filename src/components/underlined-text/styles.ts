@@ -67,27 +67,39 @@ const getColor = ({
 export const headingStyles = ({
   size,
   color = "#2A3439",
-  lineColor = "#FFBF00",
+  showLine,
+  lineColor,
 }: {
   size: Sizes | { mweb: Sizes; dweb: Sizes };
   color?: string | { dweb?: string; mweb?: string };
   lineColor?: string | { dweb?: string; mweb?: string };
+  showLine?: boolean;
 }) => css`
   margin: unset;
   padding: unset;
-  text-decoration: underline;
-  text-decoration-skip-ink: none;
   user-select: none;
+  ${showLine && underlineStyles({ lineColor })};
 
-  color: ${getColor({ color, screen: "mweb" }) || "var(--section-title)"};
-  text-decoration-color: ${getColor({ color: lineColor, screen: "mweb" }) ||
-  "var(--section-title-line)"};
-
+  color: ${getColor({ color, screen: "mweb" }) || "#2A3439"};
   ${sizeStyles("mweb", getSize(size, "mweb"))}
+
   ${minWidth()} {
     ${sizeStyles("dweb", getSize(size, "dweb"))};
-
     color: ${getColor({ color, screen: "dweb" }) || "#2A3439"};
+  }
+`;
+
+export const underlineStyles = ({
+  lineColor = "#FFBF00",
+}: {
+  lineColor?: string | { dweb?: string; mweb?: string };
+}) => css`
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  text-decoration-color: ${getColor({ color: lineColor, screen: "mweb" }) ||
+  "#FFBF00"};
+
+  ${minWidth()} {
     text-decoration-color: ${getColor({ color: lineColor, screen: "dweb" }) ||
     "#FFBF00"};
   }

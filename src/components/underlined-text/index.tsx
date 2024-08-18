@@ -1,4 +1,6 @@
-import { headingStyles, Sizes } from "./styles";
+import cn from "classnames";
+import { css } from "@emotion/react";
+import { headingStyles, Sizes, underlineStyles } from "./styles";
 
 type Props = {
   text: string;
@@ -7,6 +9,7 @@ type Props = {
   lineColor?: string | { dweb?: string; mweb?: string };
   customStyles?: any;
   type: "h1" | "h2" | "h3" | "h4";
+  showLine?: boolean;
 };
 
 const UnderlinedText = ({
@@ -15,9 +18,12 @@ const UnderlinedText = ({
   color,
   size = "lg",
   lineColor,
+  showLine = true,
 }: Props) => {
   const Tag = type;
-  return <Tag css={headingStyles({ size, color, lineColor })}>{text}</Tag>;
+  return (
+    <Tag css={headingStyles({ size, color, lineColor, showLine })}>{text}</Tag>
+  );
 };
 
 export default UnderlinedText;

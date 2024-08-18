@@ -3,8 +3,8 @@ import { resumeButton } from "./styles";
 
 const ResumeButton = () => {
   return (
-    <a href="resume.pdf" target="_blank" css={resumeButton}>
-      RESUME
+    <a href="resume.pdf" target="_blank">
+      <div css={resumeButton}>RESUME</div>
     </a>
   );
 };
