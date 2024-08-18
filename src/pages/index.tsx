@@ -2,11 +2,9 @@ import { css } from "@emotion/react";
 import DeveloperResourcesCta from "@modules/home/dev-stuff";
 import Details from "@modules/home/details";
 import Experience from "@modules/home/exp";
-import ResumeButton from "@modules/home/resume-button";
 import PortfolioMeta from "@modules/home/meta";
-// import Projects from "@modules/home/projects";
 import Skills from "@modules/home/skills";
-import { flex, minWidth, maxWidth } from "@styles/index";
+import { minWidth } from "@styles/index";
 import { ReactNode } from "react";
 
 const styles = css`
@@ -26,8 +24,11 @@ const styles = css`
 
     .resources {
       grid-column: 1 / -1;
-      background: #003262;
       padding: 25px 20px;
+      background: url("bg.png");
+      background-position: center;
+      background-repeat: repeat;
+      background-size: contain;
     }
 
     ${minWidth()} {

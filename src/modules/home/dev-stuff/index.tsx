@@ -2,6 +2,8 @@ import UnderlinedText from "@components/underlined-text";
 import { containerStyles } from "./styles";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Image from "next/image";
+import bgImage from "@assets/images/bg.png";
 
 const DeveloperResourcesCta = () => {
   const { push } = useRouter();

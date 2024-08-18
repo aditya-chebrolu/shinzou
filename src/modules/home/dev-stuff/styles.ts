@@ -6,4 +6,6 @@ export const containerStyles = css`
   cursor: pointer;
   color: white;
   transition: all 150ms;
+  isolation: isolate;
+  z-index: 1;
 `;

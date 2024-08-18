@@ -2,7 +2,6 @@ import { containerStyles } from "./styles";
 import { SvgContainer } from "@styles/index";
 import { socials } from "@constants/socials";
 import UnderlinedText from "@components/underlined-text";
-import { css } from "@emotion/react";
 import ResumeButton from "../resume-button";
 
 const Details = () => {
