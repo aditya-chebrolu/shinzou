@@ -10,7 +10,7 @@ import NodeIcon from "@assets/tech/nodejs.svg";
 
 export const experiences = [
   {
-    company: "Bajaj Finserv Health",
+    company: "Bajaj Finserv Health Limited",
     companyURL: "https://www.bajajfinservhealth.in",
     designation: "SOFTWARE ENGINEER II",
     duration: "Jan 2022 - Present",

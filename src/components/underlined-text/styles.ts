@@ -77,6 +77,7 @@ export const headingStyles = ({
   padding: unset;
   text-decoration: underline;
   text-decoration-skip-ink: none;
+  user-select: none;
 
   color: ${getColor({ color, screen: "mweb" }) || "var(--section-title)"};
   text-decoration-color: ${getColor({ color: lineColor, screen: "mweb" }) ||
