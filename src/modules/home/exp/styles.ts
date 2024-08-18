@@ -12,7 +12,7 @@ export const experienceStyles = css`
   background-color: white;
   padding: 10px;
   column-gap: 10px;
-
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   > .icon {
     grid-area: 1 / 1 / 3 / 2;
     border-right: solid 1px #e5e4e2;
