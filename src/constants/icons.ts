@@ -44,7 +44,7 @@ export const icons = {
   springBoot: { Icon: SpringIcon, text: "Spring Boot", slug: "springBoot" },
   swift: { Icon: SwiftIcon, text: "Swift", slug: "swift" },
   tailwind: { Icon: TailwindIcon, text: "Tailwind CSS", slug: "tailwind" },
-  ts: { Icon: TSIcon, text: "TypeScript", slug: "typescript" },
+  typescript: { Icon: TSIcon, text: "TypeScript", slug: "typescript" },
   webpack: { Icon: WebpackIcon, text: "Webpack", slug: "webpack" },
 };
 

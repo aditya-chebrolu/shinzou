@@ -48,12 +48,13 @@ import { flex, minWidth } from "@styles/index";
 export const experienceSectionStyles = css`
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 
   > .title {
     all: unset;
     font-weight: bold;
     font-size: 40px;
+    line-height: 40px;
     color: var(--gunmetal);
   }
 

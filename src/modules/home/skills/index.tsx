@@ -5,7 +5,7 @@ import UnderlinedText from "@components/underlined-text";
 
 const Skills = () => {
   const rows: SkillsType[][] = [
-    ["java", "javascript", "ts", "bash"],
+    ["java", "javascript", "typescript", "bash"],
     ["html", "css", "tailwind"],
     ["react", "next", "webpack", "reactQuery", "astro"],
     ["node", "nest", "redis", "elk", "mongo"],

@@ -22,6 +22,10 @@
   --section-title-line: #ef9b0f;
 
   --gunmetal: #2a3439;
+  --card-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12);
+
+  --text-lg: 50px;
+  --border-color: #e5e4e2;
 }
 
 * {

@@ -4,27 +4,6 @@ import { get } from "http";
 import { pick } from "lodash-es";
 import { start } from "repl";
 
-const calculateWorkExperience = (startDate: Date, endDate: Date): string => {
-  const startYear = startDate.getFullYear();
-  const startMonth = startDate.getMonth();
-  const endYear = endDate.getFullYear();
-  const endMonth = endDate.getMonth();
-
-  let years = endYear - startYear;
-  let months = endMonth - startMonth;
-
-  if (months < 0) {
-    years -= 1;
-    months += 12;
-  }
-
-  if (months === 0) {
-    return `${years}`;
-  }
-
-  return `${years}.${months}`;
-};
-
 const getMonthYear = (date: Date): string => {
   const month = date.toLocaleString("default", { month: "short" });
   const year = date.getFullYear().toString().slice(2);

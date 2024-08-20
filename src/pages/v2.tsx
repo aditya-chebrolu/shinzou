@@ -20,7 +20,7 @@ const styles = css`
   .wrapper {
     display: grid;
     grid-template-columns: 20px 1fr 20px;
-    row-gap: 20px;
+    row-gap: 30px;
     overflow-x: hidden;
 
     > div {
@@ -78,7 +78,7 @@ const styles = css`
         padding: 25px 27%;
       }
 
-      .content {
+      > .content {
         grid-row: 2/3;
         grid-column: 2/4;
         display: flex;
@@ -108,8 +108,8 @@ const Page = () => {
               showLine={false}
             />
           </div>
-          <SkillsSection id="skills" />
           <ExperienceSection id="exp" />
+          <SkillsSection id="skills" />
           <div className="resources">
             <DeveloperResourcesCta />
           </div>
