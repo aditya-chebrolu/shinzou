@@ -1,6 +1,8 @@
 import BajajIcon from "@assets/bajaj.svg";
 import { icons } from "@constants/icons";
+import { get } from "http";
 import { pick } from "lodash-es";
+import { start } from "repl";
 
 const calculateWorkExperience = (startDate: Date, endDate: Date): string => {
   const startYear = startDate.getFullYear();
@@ -23,58 +25,57 @@ const calculateWorkExperience = (startDate: Date, endDate: Date): string => {
   return `${years}.${months}`;
 };
 
+const getMonthYear = (date: Date): string => {
+  const month = date.toLocaleString("default", { month: "short" });
+  const year = date.getFullYear().toString().slice(2);
+  return `${month}'${year}`;
+};
+
 export const experiences = [
   {
-    company: "Bajaj Finserv Health Limited",
+    company: "BAJAJ FINSERV HEALTH LIMITED",
     companyURL: "https://www.bajajfinservhealth.in",
-    designation: "SOFTWARE ENGINEER II",
-    shortDesignation: "SDE II",
-    duration: "Jan 2022 - Present",
-    startDate: new Date("2022-01-01"),
-    endDate: new Date(),
-    workExperience: calculateWorkExperience(new Date("2022-01-01"), new Date()),
     Icon: BajajIcon,
     techStack: [
-      pick(icons, [
-        "azure",
-        "react",
-        "ts",
-        "node",
-        "html",
-        "css",
-        "javascript",
-        "next",
-        "nest",
-        "docker",
-        "kubernetes",
-        "elk",
-        "redis",
-        "mongo",
-      ]),
+      "azure",
+      "react",
+      "ts",
+      "node",
+      "html",
+      "css",
+      "javascript",
+      "next",
+      "nest",
+      "docker",
+      "kubernetes",
+      "elk",
+      "redis",
+      "mongo",
     ],
     positions: [
       {
-        designation: "SOFTWARE ENGINEER II",
-        duration: "Oct 23 - Present",
-        points: [
-          "Led the seamless migration of our module from a mono repo architecture to a micro frontend architecture, liberating development releases from dependencies on other modules.",
-          "Implemented branch validation, SonarQube integration, and tailored development pipelines, enhancing efficiency across UAT, Beta, and Production stages using YAML files.",
-          "Reduced bugs through the creation of ELK dashboards, streamlining the identification of API failures for swift and efficient resolution.",
-          "Mentored junior team members,providing guidance on development,fostering a collaborative and knowledge-sharing environment within the team.",
-        ],
+        designation: {
+          long: "Software Development Engineer II",
+          short: "SDE II",
+          startDate: getMonthYear(new Date("2023-10-01")),
+        },
       },
       {
-        designation: "SOFTWARE ENGINEER I",
-        duration: "July 22 - Oct 23",
-        points: [
-          "Proficiently worked with React and Next.js frameworks to enhance website functionality and performance.",
-          "Achieved a 45% reduction in Lines of Code by creating reusable components and logic, while significantly improving cognitive complexity and adhering to coding standards.",
-          "Optimized UI/UX design, overhauled web pages, and enhanced overall accessibility for a more user-friendly online experience.",
-          "Significantly enhanced SEO, propelling the website to a prominent position on the first page of Google search results.",
-          "Developed multiple API endpoints, implementing robust business logic to enhance functionality and efficiency.",
-          "Authored comprehensive test cases for each component, ensuring thorough evaluation and validation of system functionality.",
-        ],
+        designation: {
+          long: "Software Development Engineer I",
+          short: "SDE I",
+          startDate: getMonthYear(new Date("2022-06-01")),
+        },
+      },
+      {
+        designation: {
+          long: "Frontend Intern",
+          short: "Frontend Intern",
+          startDate: getMonthYear(new Date("2022-01-01")),
+        },
       },
     ],
   },
 ];
+
+export type ExperienceType = (typeof experiences)[number];
