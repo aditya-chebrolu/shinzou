@@ -51,7 +51,7 @@ const styles = css`
 `;
 
 const Page = () => {
-  const sections: { [key: string]: () => ReactNode } = {
+  const sections: any = {
     details: Details,
     skills: Skills,
     experience: Experience,
