@@ -56,6 +56,7 @@ export const experienceSectionStyles = css`
     font-size: 40px;
     line-height: 40px;
     color: var(--gunmetal);
+    filter: drop-shadow(-2.5px 2.5px 0px #ffbf00);
   }
 
   > .content {
