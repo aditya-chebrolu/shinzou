@@ -1,11 +1,12 @@
 import { css, keyframes } from "@emotion/react";
 import DeveloperResourcesCta from "@modules/home/dev-stuff";
-import Details from "@modules/home/details";
-import Experience from "@modules/home/exp";
 import PortfolioMeta from "@modules/home/meta";
-import Skills from "@modules/home/skills";
-import { minWidth } from "@styles/index";
-import { ReactNode } from "react";
+import { minWidth, SvgContainer } from "@styles/index";
+import UnderlinedText from "@components/underlined-text";
+import ExperienceSection from "@modules/home/exp";
+import SkillsSection from "@modules/home/skills-section";
+import { socials } from "@constants/socials";
+import ResumeButton from "@modules/home/resume-button";
 
 const anim = keyframes` 
   to {
@@ -21,11 +22,19 @@ const styles = css`
   .wrapper {
     display: grid;
     grid-template-columns: 20px 1fr 20px;
-    padding-block: 20px;
-    row-gap: 40px;
+    row-gap: 30px;
+    overflow-x: hidden;
 
     > div {
-      grid-column: 2;
+      grid-column: 2/3;
+    }
+
+    #exp {
+      grid-row: 2/3;
+    }
+
+    #skills {
+      grid-row: 3/4;
     }
 
     .resources {
@@ -36,40 +45,96 @@ const styles = css`
       background-repeat: repeat;
       background-size: contain;
       animation: ${anim} 10s linear infinite;
+
+      box-shadow: 0 20px 10px -20px rgba(0, 0, 0, 1) inset,
+        0 -20px 10px -20px rgba(0, 0, 0, 1) inset,
+        20px 0 10px -20px rgba(0, 0, 0, 1) inset;
+    }
+
+    .details {
+      grid-column: 2/3;
+      grid-row: 1/2;
+      font-size: 48px;
+      font-weight: bold;
+      text-align: center;
+
+      grid-column: 1/-1;
+      padding-block: 50px;
+      background: url("pattern.png");
+      background-position: center;
+      background-repeat: repeat;
+      background-size: contain;
+      animation: ${anim} 10s linear infinite;
+      box-shadow: 0 20px 10px -20px rgba(0, 0, 0, 0.7) inset,
+        0 -20px 10px -20px rgba(0, 0, 0, 0.7) inset;
+      border-radius: 0 0 90% 90%;
+      margin-inline: -100px;
+    }
+
+    > .icons {
+      display: flex;
+      margin-bottom: 30px;
+      gap: 30px;
     }
 
     ${minWidth()} {
       grid-template-columns: 27% 1fr 27%;
-      padding-block: 50px;
       row-gap: 50px;
+      padding-top: 0px;
 
       .resources {
         padding: 25px 27%;
+      }
+
+      > .content {
+        grid-row: 2/3;
+        grid-column: 2/4;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .details {
+        grid-column: 1/-1;
+      }
+
+      > .icons {
+        gap: 40px;
       }
     }
   }
 `;
 
 const Page = () => {
-  const sections: any = {
-    details: Details,
-    skills: Skills,
-    experience: Experience,
-    resources: DeveloperResourcesCta,
-  };
   return (
     <>
       <PortfolioMeta />
       <div css={styles}>
         <div className="wrapper">
-          {Object.keys(sections).map((section) => {
-            const Section = sections[section];
-            return (
-              <div className={section} key={section}>
-                <Section />
-              </div>
-            );
-          })}
+          <div className="details">
+            <UnderlinedText
+              text="Aditya Chebrolu"
+              type="h1"
+              size="xl"
+              color="white"
+              showLine={false}
+            />
+          </div>
+          <ExperienceSection id="exp" />
+          <SkillsSection id="skills" />
+          <div className="resources">
+            <DeveloperResourcesCta />
+          </div>
+          <div className="icons">
+            {socials.map(({ href, Icon }, idx) => (
+              <a href={href} key={idx}>
+                <SvgContainer h={30} fill="#2A3439">
+                  <Icon />
+                </SvgContainer>
+              </a>
+            ))}
+            <ResumeButton />
+          </div>
         </div>
       </div>
     </>
