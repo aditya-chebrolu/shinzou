@@ -1,5 +1,5 @@
 import { RefObject, useRef } from 'react';
-import { containerStyles, h1Styles } from './styles';
+import { containerStyles, h1Styles, outerContainerStyles } from './styles';
 import { useScreenSize } from 'src/hooks/use-screen-size';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
@@ -31,6 +31,7 @@ const Header = ({ id, containerRef }: Props) => {
       id={id}
       css={containerStyles}
     >
+      {/* <div css={outerContainerStyles} /> */}
       <motion.h1
         css={h1Styles}
         style={{
