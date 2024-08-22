@@ -8,7 +8,7 @@ import { socials } from "@constants/socials";
 import ResumeButton from "@modules/home/resume-button";
 import Header from "@modules/home/header";
 import { useRef } from "react";
-import { useScroll } from "framer-motion";
+import { useScroll, useSpring } from "framer-motion";
 
 const anim = keyframes` 
   to {
@@ -21,7 +21,6 @@ const styles = css`
   background-size: 17px 17px;
   min-height: 100dvh;
 
-  border: solid 1px red;
   display: grid;
   grid-template-columns: 20px 1fr 20px;
   grid-template-rows: repeat(4, max-content);
@@ -107,6 +106,7 @@ const styles = css`
 const Page = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollY } = useScroll();
+
   return (
     <>
       <PortfolioMeta />
