@@ -10,7 +10,7 @@ type Props = {
 };
 
 const Modal = ({ children, onClose, open }: Props) => {
-  const screenSize = useScreenSize();
+  const { screenSize } = useScreenSize();
   const isSmallDevice = ["xs", "sm"].includes(screenSize);
 
   const Wrapper = isSmallDevice ? Drawer : Dialog;

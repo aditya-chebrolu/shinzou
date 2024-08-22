@@ -24,5 +24,5 @@ export const useScreenSize = () => {
     };
   }, []);
 
-  return screenSize;
+  return { screenSize, isMobile: ["xs", "sm"].includes(screenSize) };
 };

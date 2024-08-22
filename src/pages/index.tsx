@@ -16,7 +16,7 @@ const anim = keyframes`
 `;
 
 const styles = css`
-  min-height: 100dvh;
+  /* min-height: 100dvh; */
   background-image: var(--dotted-bg);
   background-size: 17px 17px;
   overflow: hidden;
@@ -33,8 +33,8 @@ const styles = css`
     row-gap: 30px;
 
     overflow-x: hidden;
-    /* height: 100vh; */
-    /* ${noScrollbar} */
+    height: 100vh;
+    ${noScrollbar}
 
     > div {
       grid-column: 2/3;
