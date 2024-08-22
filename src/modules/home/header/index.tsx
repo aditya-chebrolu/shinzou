@@ -10,11 +10,15 @@ type Props = {
 const Header = ({ id, scrollY }: Props) => {
   const { isMobile } = useScreenSize();
   const fromSize = isMobile ? "40px" : "80px";
-  const toSize = isMobile ? "35px" : "40px";
+  const toSize = isMobile ? "30px" : "40px";
   const scrolledValue = isMobile ? 100 : 180;
 
   const size = useTransform(scrollY, [0, scrolledValue], [fromSize, toSize]);
-  const padding = useTransform(scrollY, [0, scrolledValue], ["50px", "15px"]);
+  const padding = useTransform(
+    scrollY,
+    [0, scrolledValue],
+    ["50px", isMobile ? "10px" : "15px"]
+  );
 
   const radius = useTransform(
     scrollY,
