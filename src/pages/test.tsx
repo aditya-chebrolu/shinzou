@@ -6,9 +6,9 @@ import ExperienceSection from "@modules/home/exp";
 import SkillsSection from "@modules/home/skills-section";
 import { socials } from "@constants/socials";
 import ResumeButton from "@modules/home/resume-button";
-import Header from "@modules/home/header";
-import { useRef } from "react";
-import { useScroll } from "framer-motion";
+import Header from "@modules/home/header-copy";
+import { forwardRef, useEffect, useRef } from "react";
+import { motion, useScroll } from "framer-motion";
 
 const anim = keyframes` 
   to {
@@ -21,22 +21,23 @@ const styles = css`
   background-image: var(--dotted-bg);
   background-size: 17px 17px;
   overflow: hidden;
+  /* overflow-y: scroll; */
+  /* height: 100dvh; */
 
   .wrapper {
     display: grid;
     grid-template-columns: 20px 1fr 20px;
-    grid-template-rows: repeat(5, max-content);
+    grid-template-rows: repeat(4, auto);
+
     grid-template-areas:
       "head head head"
       ". exp ."
       ". skills ."
-      "dev dev dev"
-      ". icons .";
+      "dev dev dev";
     row-gap: 30px;
 
     overflow-x: hidden;
     height: 100vh;
-
     ${noScrollbar}
 
     > div {
@@ -58,32 +59,18 @@ const styles = css`
     .resources {
       grid-area: dev;
       padding: 25px 20px;
-      position: relative;
-      overflow: hidden;
+      background: url("pattern.png");
+      background-position: center;
+      background-repeat: repeat;
+      background-size: contain;
+      animation: ${anim} 10s linear infinite;
 
-      > .bg {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 200px;
-        background: url("pattern.png");
-        background-position: center;
-        background-repeat: repeat;
-        background-size: contain;
-        animation: ${anim} 10s linear infinite;
-
-        box-shadow: 0 20px 10px -20px rgba(0, 0, 0, 1) inset,
-          0 -20px 10px -20px rgba(0, 0, 0, 1) inset,
-          20px 0 10px -20px rgba(0, 0, 0, 1) inset;
-      }
-
-      > .bg + div {
-        isolation: isolate;
-      }
+      box-shadow: 0 20px 10px -20px rgba(0, 0, 0, 1) inset,
+        0 -20px 10px -20px rgba(0, 0, 0, 1) inset,
+        20px 0 10px -20px rgba(0, 0, 0, 1) inset;
     }
 
-    #icons {
+    > .icons {
       display: flex;
       margin-bottom: 30px;
       gap: 30px;
@@ -116,31 +103,41 @@ const styles = css`
 const Page = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollY } = useScroll({ container: containerRef });
+  console.log(scrollY);
   return (
     <>
       <PortfolioMeta />
       <div css={styles}>
         <div className="wrapper" ref={containerRef}>
           <Header id="header" scrollY={scrollY} />
-          <ExperienceSection id="exp" />
-          <SkillsSection id="skills" />
-          <div className="resources">
-            <div className="bg" />
-            <DeveloperResourcesCta />
-          </div>
-          <div id="icons">
-            {socials.map(({ href, Icon }, idx) => (
-              <a href={href} key={idx}>
-                <SvgContainer h={30} fill="#2A3439">
-                  <Icon />
-                </SvgContainer>
-              </a>
-            ))}
-            <ResumeButton />
-          </div>
+          <CompX xref={containerRef} />
+          <motion.div
+            style={{
+              height: 200,
+              width: scrollY,
+              background: "blue",
+            }}
+          />
+          <div style={{ height: 200, background: "blue" }} />
+          <div style={{ height: 200, background: "blue" }} />
+          <div style={{ height: 200, background: "blue" }} />
+          <div style={{ height: 200, background: "blue" }} />
+          <div style={{ height: 200, background: "blue" }} />
+          <div style={{ height: 200, background: "blue" }} />
         </div>
       </div>
     </>
+  );
+};
+
+const CompX = (p: any) => {
+  const { scrollY } = useScroll({ container: p.xref });
+  console.log(p.xref);
+
+  return (
+    <motion.div
+      style={{ height: 200, width: scrollY.get(), background: "blue" }}
+    />
   );
 };
 

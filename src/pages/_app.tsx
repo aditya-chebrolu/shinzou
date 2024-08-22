@@ -13,9 +13,9 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.png" />
       </Head>
       <main className={`${sourceSansPro.className} ${codeFont.variable}`}>
-        <MuiThemeProvider>
-          <Component {...pageProps} />
-        </MuiThemeProvider>
+        {/* <MuiThemeProvider> */}
+        <Component {...pageProps} />
+        {/* </MuiThemeProvider> */}
       </main>
     </>
   );

@@ -1,6 +1,13 @@
-import { bgStyles, containerStyles, h1Styles } from "./styles";
+import { RefObject, useEffect, useRef, useState } from "react";
+import { containerStyles, h1Styles } from "./styles";
 import { useScreenSize } from "src/hooks/use-screen-size";
-import { motion, MotionValue, useTransform } from "framer-motion";
+import {
+  motion,
+  MotionValue,
+  useMotionValueEvent,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 
 type Props = {
   id: string;
@@ -13,13 +20,16 @@ const Header = ({ id, scrollY }: Props) => {
   const toSize = isMobile ? "35px" : "40px";
   const scrolledValue = isMobile ? 100 : 180;
 
+  // const fromSize = "80px";
+  // const toSize = "40px";
+  // const scrolledValue = 180;
   const size = useTransform(scrollY, [0, scrolledValue], [fromSize, toSize]);
   const padding = useTransform(scrollY, [0, scrolledValue], ["50px", "15px"]);
 
   const radius = useTransform(
     scrollY,
     [0, scrolledValue],
-    ["0 0 90% 90%", "0 0 0% 0%"]
+    ["0 0 0% 0%", "0 0 0% 0%"]
   );
 
   return (
@@ -31,7 +41,6 @@ const Header = ({ id, scrollY }: Props) => {
       id={id}
       css={containerStyles}
     >
-      <div css={bgStyles} />
       <motion.h1
         css={h1Styles}
         style={{
