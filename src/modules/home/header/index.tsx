@@ -1,7 +1,7 @@
-import { RefObject, useRef } from "react";
-import { containerStyles, h1Styles } from "./styles";
-import { useScreenSize } from "src/hooks/use-screen-size";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { RefObject, useRef } from 'react';
+import { containerStyles, h1Styles } from './styles';
+import { useScreenSize } from 'src/hooks/use-screen-size';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 type Props = {
   id: string;
@@ -11,23 +11,15 @@ type Props = {
 const Header = ({ id, containerRef }: Props) => {
   const { isMobile } = useScreenSize();
   const { scrollY: scrollY } = useScroll({ container: containerRef });
-  const fromSize = useRef(isMobile ? "40px" : "80px");
-  const toSize = useRef(isMobile ? "20px" : "40px");
-  const scrolledValue = useRef(isMobile ? 120 : 180);
-  const size = useTransform(
-    scrollY,
-    [0, scrolledValue.current],
-    [fromSize.current, toSize.current]
-  );
-  const padding = useTransform(
-    scrollY,
-    [0, scrolledValue.current],
-    ["50px", "15px"]
-  );
+  const fromSize = isMobile ? '40px' : '80px';
+  const toSize = isMobile ? '35px' : '40px';
+  const scrolledValue = isMobile ? 100 : 180;
+  const size = useTransform(scrollY, [0, scrolledValue], [fromSize, toSize]);
+  const padding = useTransform(scrollY, [0, scrolledValue], ['50px', '15px']);
   const radius = useTransform(
     scrollY,
-    [0, scrolledValue.current],
-    ["0 0 90% 90%", "0 0 0% 0%"]
+    [0, scrolledValue],
+    ['0 0 90% 90%', '0 0 0% 0%']
   );
 
   return (
