@@ -22,6 +22,7 @@ export const bgStyles = css`
   left: 0px;
   width: 100%;
   height: 200px;
+  background-color: #003262;
   background: url("pattern.png");
   animation: ${anim} 10s linear infinite;
   background-position: center;
