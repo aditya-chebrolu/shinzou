@@ -1,7 +1,6 @@
 import "@styles/globals.css";
 import type { AppProps } from "next/app";
-import { codeFont, sourceSansPro } from "@styles/fonts";
-import ThemeProvider from "src/contexts/theme-provider";
+import { playFont, sourceSansPro } from "@styles/fonts";
 import Head from "next/head";
 import { MuiThemeProvider } from "src/contexts/mui-theme-provider";
 
@@ -12,7 +11,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <Head>
         <link rel="icon" href="/favicon.png" />
       </Head>
-      <main className={`${sourceSansPro.className} ${codeFont.variable}`}>
+      <main className={`${sourceSansPro.className} ${playFont.variable}`}>
         <MuiThemeProvider>
           <Component {...pageProps} />
         </MuiThemeProvider>

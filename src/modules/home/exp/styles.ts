@@ -53,8 +53,9 @@ export const experienceSectionStyles = css`
   > .title {
     all: unset;
     font-weight: bold;
-    font-size: 40px;
-    line-height: 40px;
+    font-size: 50px;
+    line-height: 50px;
+    font-family: var(--play-font);
     color: var(--gunmetal);
     filter: drop-shadow(-2.5px 2.5px 0px #ffbf00);
   }
@@ -63,5 +64,12 @@ export const experienceSectionStyles = css`
     display: flex;
     flex-direction: column;
     gap: 10px;
+  }
+
+  ${minWidth()} {
+    > .title {
+      font-size: 70px;
+      line-height: 70px;
+    }
   }
 `;

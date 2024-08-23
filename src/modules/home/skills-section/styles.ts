@@ -1,4 +1,5 @@
 import { css } from "@emotion/react";
+import { minWidth } from "@styles/index";
 
 export const skillsSectionStyles = css`
   display: flex;
@@ -8,8 +9,9 @@ export const skillsSectionStyles = css`
   > .title {
     all: unset;
     font-weight: bold;
-    font-size: 40px;
-    line-height: 40px;
+    font-size: 50px;
+    line-height: 50px;
+    font-family: var(--play-font);
     color: var(--gunmetal);
     filter: drop-shadow(-2.5px 2.5px 0px #6cb4ee);
   }
@@ -18,6 +20,13 @@ export const skillsSectionStyles = css`
     display: flex;
     flex-direction: column;
     gap: 15px;
+  }
+
+  ${minWidth()} {
+    > .title {
+      font-size: 70px;
+      line-height: 70px;
+    }
   }
 `;
 
