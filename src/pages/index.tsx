@@ -8,7 +8,7 @@ import { socials } from "@constants/socials";
 import ResumeButton from "@modules/home/resume-button";
 import Header from "@modules/home/header";
 import { useRef } from "react";
-import { useScroll, useSpring } from "framer-motion";
+import { useScroll } from "framer-motion";
 
 const anim = keyframes` 
   to {
@@ -20,6 +20,7 @@ const styles = css`
   background: var(--dotted-bg);
   background-size: 17px 17px;
   min-height: 100dvh;
+  contain: paint;
 
   display: grid;
   grid-template-columns: 20px 1fr 20px;

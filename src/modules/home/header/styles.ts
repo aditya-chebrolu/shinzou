@@ -8,7 +8,7 @@ const anim = keyframes`
 
 export const containerStyles = css`
   position: sticky;
-  top: 0;
+  top: 0px;
   z-index: 100;
   margin-inline: -100px;
   overflow: hidden;
