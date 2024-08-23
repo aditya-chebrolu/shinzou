@@ -53,8 +53,8 @@ export const experienceSectionStyles = css`
   > .title {
     all: unset;
     font-weight: bold;
-    font-size: 50px;
-    line-height: 50px;
+    font-size: 45px;
+    line-height: 45px;
     font-family: var(--play-font);
     color: var(--gunmetal);
     filter: drop-shadow(-2.5px 2.5px 0px #ffbf00);
