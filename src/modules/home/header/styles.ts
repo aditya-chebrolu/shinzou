@@ -11,9 +11,8 @@ export const containerStyles = css`
   top: 0px;
   z-index: 100;
   margin-inline: -100px;
+  background-color: #003262;
   overflow: hidden;
-  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.24);
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 `;
 
 export const bgStyles = css`
@@ -22,7 +21,6 @@ export const bgStyles = css`
   left: 0px;
   width: 100%;
   height: 200px;
-  background-color: #003262;
   background: url("pattern.png");
   animation: ${anim} 10s linear infinite;
   background-position: center;
