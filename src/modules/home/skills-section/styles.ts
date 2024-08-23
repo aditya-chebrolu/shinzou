@@ -9,8 +9,8 @@ export const skillsSectionStyles = css`
   > .title {
     all: unset;
     font-weight: bold;
-    font-size: 45px;
-    line-height: 45px;
+    font-size: 55px;
+    line-height: 55px;
     font-family: var(--play-font);
     color: var(--gunmetal);
     filter: drop-shadow(-2.5px 2.5px 0px #6cb4ee);

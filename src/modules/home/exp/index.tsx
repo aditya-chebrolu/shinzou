@@ -9,7 +9,7 @@ type Props = {
 const ExperienceSection = ({ id }: Props) => {
   return (
     <div css={experienceSectionStyles} id={id}>
-      <h2 className="title">Work Experience</h2>
+      <h2 className="title">WorkEx</h2>
       <div className="content">
         {experiences.map((exp, idx) => (
           <ExperienceStrip key={idx} experience={exp} />
