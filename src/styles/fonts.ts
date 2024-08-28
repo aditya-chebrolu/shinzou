@@ -1,4 +1,4 @@
-import { Fira_Code, Source_Sans_3 } from "@next/font/google";
+import { Source_Sans_3 } from "@next/font/google";
 import localFont from "next/font/local";
 
 export const playFont = localFont({
