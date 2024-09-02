@@ -1,14 +1,9 @@
 import { icons, SkillsType } from "@constants/icons";
 import { rowStyles, skillsSectionStyles } from "./styles";
-import { pick } from "lodash-es";
 import { SvgContainer } from "@styles/index";
-import { languages } from "prismjs";
-import { frame } from "framer-motion";
 type Props = {
   id: string;
 };
-
-const getIcons = (arr: (keyof typeof icons)[]) => arr.map((e) => icons[e]);
 
 const SkillsSection = ({ id }: Props) => {
   const data: { title: string; skills: SkillsType[] }[] = [
