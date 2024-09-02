@@ -8,4 +8,8 @@ export const containerStyles = css`
   transition: all 150ms;
   isolation: isolate;
   z-index: 1;
+
+  .desc > span {
+    color: #ffbf00;
+  }
 `;

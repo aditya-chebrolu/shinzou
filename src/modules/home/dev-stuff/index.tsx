@@ -22,7 +22,9 @@ const DeveloperResourcesCta = () => {
           showLine={false}
         />
       </Link>
-      <div>Click here to view developer resources 😃</div>
+      <div className="desc">
+        <span>Click here</span> to view developer resources 😃
+      </div>
     </div>
   );
 };
