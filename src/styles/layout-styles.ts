@@ -17,6 +17,7 @@ export const PageWrapper = styled.div<Props>`
           background: var(--dotted-bg);
           color: black;
         `};
+
   background-size: 17px 17px;
   min-height: 100dvh;
   position: relative;
@@ -24,8 +25,8 @@ export const PageWrapper = styled.div<Props>`
 
   display: grid;
   grid-template-columns: 20px 1fr 20px;
-  /* grid-template-rows: repeat(4, max-content); */
   row-gap: 30px;
+  padding-block: 50px;
 
   > *:not(.full) {
     grid-column: 2/3;

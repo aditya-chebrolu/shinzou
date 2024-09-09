@@ -1,4 +1,4 @@
-import { css, keyframes } from "@emotion/react";
+import { css } from "@emotion/react";
 import DeveloperResourcesCta from "@modules/home/dev-stuff";
 import PortfolioMeta from "@modules/home/meta";
 import { minWidth, SvgContainer } from "@styles/index";
@@ -9,13 +9,6 @@ import ResumeButton from "@modules/home/resume-button";
 import Header from "@modules/home/header";
 import { useRef } from "react";
 import { useScroll } from "framer-motion";
-import Skills from "@components/skills";
-
-const anim = keyframes` 
-  to {
-    background-position: 100% 0;
-  }
-`;
 
 const styles = css`
   background: var(--dotted-bg);
@@ -50,38 +43,15 @@ const styles = css`
     grid-area: skills;
   }
 
-  .resources {
+  #dev {
     grid-area: dev;
-    padding: 25px 20px;
-    position: relative;
-    overflow: hidden;
-
-    > .bg {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 200px;
-      background: url("pattern.png");
-      background-position: center;
-      background-repeat: repeat;
-      background-size: contain;
-      animation: ${anim} 10s linear infinite;
-
-      box-shadow: 0 20px 10px -20px rgba(0, 0, 0, 1) inset,
-        0 -20px 10px -20px rgba(0, 0, 0, 1) inset,
-        20px 0 10px -20px rgba(0, 0, 0, 1) inset;
-    }
-
-    > .bg + div {
-      isolation: isolate;
-    }
   }
 
   #icons {
     display: flex;
     margin-bottom: 30px;
     gap: 30px;
+    align-items: center;
   }
 
   ${minWidth()} {
@@ -116,10 +86,7 @@ const Page = () => {
         <Header id="header" scrollY={scrollY} />
         <ExperienceSection id="exp" />
         <SkillsSection id="skills" />
-        <div className="resources">
-          <div className="bg" />
-          <DeveloperResourcesCta />
-        </div>
+        <DeveloperResourcesCta id="dev" />
         <div id="icons">
           {socials.map(({ href, Icon }, idx) => (
             <a href={href} key={idx}>

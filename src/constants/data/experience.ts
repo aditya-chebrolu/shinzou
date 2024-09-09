@@ -12,30 +12,15 @@ const getMonthYear = (date: Date): string => {
 
 export const experiences = [
   {
-    company: "BAJAJ FINSERV HEALTH LIMITED",
+    company: "BAJAJ FINSERV HEALTH",
     companyURL: "https://www.bajajfinservhealth.in",
+    url: "/experience/bajaj-finserv-health",
     Icon: BajajIcon,
-    techStack: [
-      "azure",
-      "react",
-      "ts",
-      "node",
-      "html",
-      "css",
-      "javascript",
-      "next",
-      "nest",
-      "docker",
-      "kubernetes",
-      "elk",
-      "redis",
-      "mongo",
-    ],
     positions: [
       {
         designation: {
           long: "Software Development Engineer II",
-          short: "SDE II",
+          short: "SDE 2",
           startDate: getMonthYear(new Date("2023-10-01")),
         },
       },
