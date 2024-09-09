@@ -33,10 +33,13 @@ export const titleStyles = css`
   display: flex;
   gap: 10px;
   font-weight: bold;
-  font-size: 20px;
-  line-height: 20px;
+
   color: var(--black);
   margin-right: auto;
+
+  > * {
+    flex-shrink: 0;
+  }
 
   > .divider {
     width: 4px;
@@ -45,6 +48,9 @@ export const titleStyles = css`
     transform: skewX(-15deg);
     transition: all 300ms;
   }
+
+  font-size: 18px;
+  line-height: 18px;
 
   ${minWidth()} {
     font-size: 20px;

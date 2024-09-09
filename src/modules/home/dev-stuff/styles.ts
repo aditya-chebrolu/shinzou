@@ -1,5 +1,5 @@
 import { css, keyframes } from "@emotion/react";
-import { flex } from "@styles/index";
+import { flex, minWidth } from "@styles/index";
 
 const anim = keyframes` 
   to {
@@ -31,6 +31,10 @@ export const containerStyles = css`
 
   > .bg + div {
     isolation: isolate;
+  }
+
+  ${minWidth()} {
+    padding: 25px 27%;
   }
 `;
 

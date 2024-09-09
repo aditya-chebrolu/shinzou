@@ -9,6 +9,7 @@ import ResumeButton from "@modules/home/resume-button";
 import Header from "@modules/home/header";
 import { useRef } from "react";
 import { useScroll } from "framer-motion";
+import Art from "@modules/character/art";
 
 const styles = css`
   background: var(--dotted-bg);
@@ -24,7 +25,8 @@ const styles = css`
     ". exp ."
     ". skills ."
     "dev dev dev"
-    ". icons .";
+    ". icons ."
+    "art art art";
   row-gap: 30px;
 
   > div {
@@ -47,6 +49,10 @@ const styles = css`
     grid-area: dev;
   }
 
+  #art {
+    grid-area: art;
+  }
+
   #icons {
     display: flex;
     margin-bottom: 30px;
@@ -58,10 +64,6 @@ const styles = css`
     grid-template-columns: 27% 1fr 27%;
     row-gap: 50px;
     padding-top: 0px;
-
-    .resources {
-      padding: 25px 27%;
-    }
 
     > .content {
       display: flex;
@@ -97,6 +99,7 @@ const Page = () => {
           ))}
           <ResumeButton />
         </div>
+        <Art id="art" />
       </div>
     </>
   );
