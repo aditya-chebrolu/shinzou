@@ -5,7 +5,7 @@ import { flex, minWidth } from "@styles/index";
 export const containerStyles = css`
   ${flex({ gap: [10], column: true, align: "center", justify: "center" })};
   height: 100%;
-
+  color: white;
   ${minWidth()} {
     flex-direction: row;
   }
@@ -70,6 +70,6 @@ export const projectCardStyles = css`
   }
 
   ${minWidth()} {
-    width: 350px;
+    width: 600px;
   }
 `;

@@ -1,6 +1,4 @@
-import cn from "classnames";
-import { css } from "@emotion/react";
-import { headingStyles, Sizes, underlineStyles } from "./styles";
+import { headingStyles, Sizes } from "./styles";
 
 type Props = {
   text: string;

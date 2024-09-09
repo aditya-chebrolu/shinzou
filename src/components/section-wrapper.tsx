@@ -10,7 +10,6 @@ const styles = css`
     font-weight: bold;
     font-size: 44px;
     letter-spacing: 1px;
-    font-family: var(--oswald-font);
     color: ${colors.yellow};
 
     &::first-letter {

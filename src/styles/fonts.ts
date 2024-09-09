@@ -6,8 +6,8 @@ export const playFont = localFont({
   variable: "--play-font",
 });
 
-export const sourceSansPro = Source_Sans_3({
+export const sourceSans = Source_Sans_3({
   subsets: ["latin"],
   weight: ["400", "700", "900"],
-  variable: "--source-sans-pro-font",
+  variable: "--source-sans-font",
 });

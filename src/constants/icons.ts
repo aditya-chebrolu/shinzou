@@ -23,29 +23,39 @@ import AzureIcon from "@assets/tech/azure.svg";
 import AstroIcon from "@assets/tech/astro.svg";
 
 export const icons = {
-  astro: { Icon: AstroIcon, text: "Astro", slug: "astro" },
-  azure: { Icon: AzureIcon, text: "Azure", slug: "azure" },
-  bash: { Icon: BashIcon, text: "React", slug: "bash" },
-  css: { Icon: CSSIcon, text: "CSS", slug: "css" },
-  docker: { Icon: DockerIcon, text: "Docker", slug: "docker" },
-  ec2: { Icon: Ec2Icon, text: "Amazon EC2", slug: "ec2" },
-  elk: { Icon: ElkIcon, text: "ELK", slug: "elk" },
-  html: { Icon: HTMLIcon, text: "HTML", slug: "html" },
-  java: { Icon: JavaIcon, text: "Java", slug: "java" },
   javascript: { Icon: JSIcon, text: "JavaScript", slug: "javascript" },
-  kubernetes: { Icon: KubernetesIcon, text: "Kubernetes", slug: "kubernetes" },
-  mongo: { Icon: MongoIcon, text: "MongoDB", slug: "mongo" },
-  nest: { Icon: NestIcon, text: "Nest", slug: "nest" },
-  next: { Icon: NextIcon, text: "Next JS", slug: "next" },
-  node: { Icon: NodeIcon, text: "Node.js", slug: "node" },
-  react: { Icon: ReactIcon, text: "React", slug: "react" },
-  reactQuery: { Icon: RQIcon, text: "Reqct Query", slug: "reactQuery" },
-  redis: { Icon: RedisIcon, text: "React", slug: "redis" },
-  springBoot: { Icon: SpringIcon, text: "Spring Boot", slug: "springBoot" },
-  swift: { Icon: SwiftIcon, text: "Swift", slug: "swift" },
-  tailwind: { Icon: TailwindIcon, text: "Tailwind CSS", slug: "tailwind" },
   typescript: { Icon: TSIcon, text: "TypeScript", slug: "typescript" },
-  webpack: { Icon: WebpackIcon, text: "Webpack", slug: "webpack" },
+  java: { Icon: JavaIcon, text: "Java", slug: "java" },
+  html: { Icon: HTMLIcon, text: "HTML", slug: "html" },
+  css: { Icon: CSSIcon, text: "CSS", slug: "css" },
+  react: { Icon: ReactIcon, text: "React", slug: "react" },
+  next: { Icon: NextIcon, text: "Next.JS", slug: "next" },
+  astro: { Icon: AstroIcon, text: "Astro", slug: "astro" },
+  tailwind: { Icon: TailwindIcon, text: "Tailwind CSS", slug: "tailwind" },
+  reactQuery: { Icon: RQIcon, text: "React Query", slug: "reactQuery" },
+  // swift: { Icon: SwiftIcon, text: "Swift", slug: "swift" },
+  node: { Icon: NodeIcon, text: "Node.js", slug: "node" },
+  nest: { Icon: NestIcon, text: "NestJS", slug: "nest" },
+  bash: { Icon: BashIcon, text: "Bash", slug: "bash" },
+  docker: { Icon: DockerIcon, text: "Docker", slug: "docker" },
+  // ec2: { Icon: Ec2Icon, text: "Amazon EC2", slug: "ec2" },
+  kubernetes: { Icon: KubernetesIcon, text: "Kubernetes", slug: "kubernetes" },
+  azure: { Icon: AzureIcon, text: "Azure", slug: "azure" },
+  mongo: { Icon: MongoIcon, text: "MongoDB", slug: "mongo" },
+  elk: { Icon: ElkIcon, text: "ELK", slug: "elk" },
+  redis: { Icon: RedisIcon, text: "Redis", slug: "redis" },
+  springBoot: { Icon: SpringIcon, text: "Spring Boot", slug: "springBoot" },
+  // webpack: { Icon: WebpackIcon, text: "Webpack", slug: "webpack" },
 };
+
+export const technologies = Object.keys(icons) as (keyof typeof icons)[];
+
+export type IconObject = {
+  Icon: any;
+  text: string;
+  slug: string;
+};
+
+export type IconKeys = keyof typeof icons;
 
 export type SkillsType = keyof typeof icons;

@@ -9,6 +9,7 @@ import ResumeButton from "@modules/home/resume-button";
 import Header from "@modules/home/header";
 import { useRef } from "react";
 import { useScroll } from "framer-motion";
+import Skills from "@components/skills";
 
 const anim = keyframes` 
   to {
