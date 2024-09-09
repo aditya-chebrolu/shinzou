@@ -3,7 +3,6 @@ import DeveloperResourcesCta from "@modules/home/dev-stuff";
 import Details from "@modules/home/details";
 import Experience from "@modules/home/exp";
 import PortfolioMeta from "@modules/home/meta";
-import Skills from "@modules/home/skills";
 import { minWidth } from "@styles/index";
 import { ReactNode } from "react";
 
@@ -53,7 +52,6 @@ const styles = css`
 const Page = () => {
   const sections: any = {
     details: Details,
-    skills: Skills,
     experience: Experience,
     resources: DeveloperResourcesCta,
   };
