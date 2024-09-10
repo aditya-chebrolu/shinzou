@@ -1,4 +1,4 @@
-import { css } from "@emotion/react";
+import { css, keyframes } from "@emotion/react";
 import { minWidth } from "@styles/index";
 
 export const sectionContainerStyles = css`
@@ -66,6 +66,12 @@ export const technologiesContainer = css`
   }
 `;
 
+const anim = keyframes`
+to {
+width:100%
+}
+`;
+
 export const pointStyles = css`
   font-size: 18px;
   > .highlight {
@@ -80,13 +86,17 @@ export const pointStyles = css`
     &:after {
       content: "";
       height: 6px;
-      width: 100%;
+      width: 0%;
       position: absolute;
+      display: inline-block;
       left: 0;
       bottom: 3px;
       background-color: #ffdb58;
       z-index: -1;
       transition: all 500ms;
+      animation: ${anim} forwards ease-in-out;
+      animation-timeline: view();
+      animation-range: 0px 150px; //  start when top is 100px from bottom
     }
 
     &:hover {

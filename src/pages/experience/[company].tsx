@@ -11,7 +11,8 @@ import UnderlinedText from "@components/underlined-text";
 import { SvgContainer } from "@styles/index";
 import { icons } from "@constants/icons";
 import LinkIcon from "@assets/link.svg";
-
+import { Spacer } from "@styles/spacer";
+// todo: make data dynamic
 const { technologies, stuffDone } = experience.bajaj;
 
 const ExperiencePage = () => {
@@ -40,6 +41,7 @@ const ExperiencePage = () => {
           ))}
         </div>
       </div>
+      <Spacer h="50px" />
     </PageWrapper>
   );
 };

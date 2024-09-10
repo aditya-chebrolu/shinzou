@@ -25,7 +25,7 @@ const ExperienceStrip = ({ experience }: Props) => {
         <SvgContainer
           h={{ dweb: 20, mweb: 20 }}
           stroke="var(--black)"
-          className="icon"
+          className="icon link"
         >
           <LinkIcon />
         </SvgContainer>

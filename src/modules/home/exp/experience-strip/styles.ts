@@ -15,16 +15,18 @@ export const experienceStripStyles = css`
   cursor: pointer;
 
   &:hover {
-    .divider {
-      rotate: 1 0 0 180deg;
-    }
-
-    .icon {
+    .link {
+      rotate: 0 0 1 180deg;
+      scale: 1.1;
     }
   }
 
   > .icon {
     flex-shrink: 0;
+  }
+
+  .link {
+    transition: all 300ms;
   }
 `;
 
@@ -46,7 +48,6 @@ export const titleStyles = css`
     background: #c0c0c0;
     border-radius: 7px 10px 7px 10px;
     transform: skewX(-15deg);
-    transition: all 300ms;
   }
 
   font-size: 18px;

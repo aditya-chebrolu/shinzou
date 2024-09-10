@@ -55,10 +55,6 @@ export const pageStyles = css`
   }
 `;
 
-export const Spacer = styled.div<{ gap: number }>`
-  min-height: ${(p) => p.gap || 0}px;
-`;
-
 export const center = css`
   display: grid;
   place-items: center;
