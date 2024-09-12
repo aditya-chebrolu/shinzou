@@ -163,3 +163,29 @@ export const pointsContainerStyles = css`
 
   ${pointStyles};
 `;
+
+const imageAnim = keyframes`
+to {
+  translate: 0 0;
+}
+`;
+
+export const imageContainerStyles = css`
+  font-size: 0;
+  margin-inline: auto;
+  animation: ${imageAnim} forwards ease-in-out;
+  animation-timeline: view();
+
+  filter: drop-shadow(0 0 5px #00000050);
+  translate: 0 40px;
+  animation-range: 0px 50px; //  start when top is 100px from bottom
+
+  position: relative;
+  height: 80px;
+  width: 100px;
+
+  ${minWidth()} {
+    animation-range: 0px 100px; //  start when top is 100px from bottom
+    height: 100px;
+  }
+`;

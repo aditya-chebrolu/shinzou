@@ -2,6 +2,7 @@ import { PageWrapper } from "@styles/layout-styles";
 import experience from "@data/experience.json";
 import {
   headerStyles,
+  imageContainerStyles,
   pointsContainerStyles,
   pointStyles,
   sectionContainerStyles,
@@ -12,6 +13,8 @@ import { SvgContainer } from "@styles/index";
 import { icons } from "@constants/icons";
 import LinkIcon from "@assets/link.svg";
 import { Spacer } from "@styles/spacer";
+import Image from "next/image";
+import pp from "@assets/pp.png";
 // todo: make data dynamic
 const { technologies, stuffDone } = experience.bajaj;
 
@@ -41,7 +44,9 @@ const ExperiencePage = () => {
           ))}
         </div>
       </div>
-      <Spacer h="50px" />
+      <div css={imageContainerStyles}>
+        <Image src={pp} alt="dp" objectFit="contain" layout="fill" />
+      </div>
     </PageWrapper>
   );
 };

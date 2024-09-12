@@ -21,12 +21,11 @@ export const PageWrapper = styled.div<Props>`
   background-size: 17px 17px;
   min-height: 100dvh;
   position: relative;
-  /* contain: paint; */
+  contain: paint;
 
   display: grid;
   grid-template-columns: 20px 1fr 20px;
   row-gap: 30px;
-  padding-block: 50px;
 
   > *:not(.full) {
     grid-column: 2/3;
@@ -43,6 +42,5 @@ export const PageWrapper = styled.div<Props>`
   ${minWidth()} {
     grid-template-columns: 27% 1fr 27%;
     row-gap: 50px;
-    padding-block: 50px;
   }
 `;
