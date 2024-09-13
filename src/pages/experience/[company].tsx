@@ -33,7 +33,12 @@ const ExperiencePage = () => {
       <TechnologyRow type="advance" />
       <TechnologyRow type="basic" />
       <div css={sectionContainerStyles}>
-        <UnderlinedText text="At Bajaj, I have ..." type="h2" size="sm" />
+        <UnderlinedText
+          text="At Bajaj, I have"
+          type="h2"
+          size="sm"
+          lineColor="#90D6D3"
+        />
         <div css={pointsContainerStyles}>
           {stuffDone.map((stuff, idx) => (
             <div
@@ -45,7 +50,7 @@ const ExperiencePage = () => {
         </div>
       </div>
       <div css={imageContainerStyles}>
-        <Image src={pp} alt="dp" objectFit="contain" layout="fill" />
+        <Image src={pp} alt="pp" objectFit="contain" layout="fill" />
       </div>
     </PageWrapper>
   );
@@ -54,13 +59,12 @@ const ExperiencePage = () => {
 const TechnologyRow = ({ type }: { type: "advance" | "basic" }) => {
   const isBasic = type === "basic";
   const title = isBasic
-    ? "Technologies I'm familiar with..."
-    : "Technologies I'm proficient in...";
+    ? "Technologies I Have Been Exposed To"
+    : "Technologies I Have Extensive Experience With";
 
-  const lineColor = isBasic ? "#87CEEB" : "#FC99AD";
   return (
     <div css={sectionContainerStyles}>
-      <UnderlinedText text={title} type="h2" size="sm" lineColor={lineColor} />
+      <UnderlinedText text={title} type="h2" size="sm" lineColor="#90D6D3" />
       <div css={technologiesContainer}>
         {technologies[type].map((tech, idx) => {
           const { Icon, text } = icons[tech as keyof typeof icons];
