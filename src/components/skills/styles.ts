@@ -7,6 +7,7 @@ export const containerStyles = css`
   gap: 5px;
   row-gap: 15px;
   font-size: 16px;
+  user-select: none;
 
   ${minWidth()} {
     font-size: 18px;

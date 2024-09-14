@@ -15,6 +15,8 @@ export const containerStyles = css`
   border: solid 2px var(--white);
   box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.3);
   transition: all 400ms;
+  user-select: none;
+
   &:hover {
     scale: 0.99;
     > .bg {
