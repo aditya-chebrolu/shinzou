@@ -3,11 +3,10 @@ import { useScreenSize } from "src/hooks/use-screen-size";
 import { motion, MotionValue, useTransform } from "framer-motion";
 
 type Props = {
-  id: string;
   scrollY: MotionValue<number>;
 };
 
-const Header = ({ id, scrollY }: Props) => {
+const Header = ({ scrollY }: Props) => {
   const { isMobile } = useScreenSize();
   const fromSize = isMobile ? "40px" : "80px";
   const toSize = isMobile ? "30px" : "40px";
@@ -32,7 +31,6 @@ const Header = ({ id, scrollY }: Props) => {
         paddingBlock: padding,
         borderRadius: radius,
       }}
-      id={id}
       css={containerStyles}
     >
       <div css={bgStyles} />

@@ -3,14 +3,14 @@ import { containerStyles, ctaStyles } from "./styles";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-const DeveloperResourcesCta = ({ id }: { id: string }) => {
+const DeveloperResourcesCta = () => {
   const { push } = useRouter();
   const link = "/resources";
   const onClick = () => {
     push(link);
   };
   return (
-    <div id={id} css={containerStyles}>
+    <div css={containerStyles}>
       <div className="bg" />
       <div css={ctaStyles} onClick={onClick}>
         <Link href={link}>
@@ -19,7 +19,7 @@ const DeveloperResourcesCta = ({ id }: { id: string }) => {
             type="h2"
             size="md"
             color="white"
-            showLine={false}
+            hideLine
           />
         </Link>
         <div className="desc">

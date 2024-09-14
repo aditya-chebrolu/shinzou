@@ -11,8 +11,20 @@ export const containerStyles = css`
   padding: 25px 20px;
   position: relative;
   overflow: hidden;
+  border-radius: 10px;
+  border: solid 2px var(--white);
+  box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.3);
+  transition: all 400ms;
+  &:hover {
+    scale: 0.99;
+    > .bg {
+      height: 250px;
+      animation-play-state: paused;
+    }
+  }
 
   > .bg {
+    transition: all 400ms;
     position: absolute;
     left: 0;
     top: 0;
@@ -23,10 +35,6 @@ export const containerStyles = css`
     background-repeat: repeat;
     background-size: contain;
     animation: ${anim} 10s linear infinite;
-
-    box-shadow: 0 20px 10px -20px rgba(0, 0, 0, 1) inset,
-      0 -20px 10px -20px rgba(0, 0, 0, 1) inset,
-      20px 0 10px -20px rgba(0, 0, 0, 1) inset;
   }
 
   > .bg + div {
@@ -34,7 +42,7 @@ export const containerStyles = css`
   }
 
   ${minWidth()} {
-    padding: 25px 27%;
+    /* padding: 25px 27%; */
   }
 `;
 

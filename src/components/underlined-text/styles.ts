@@ -67,18 +67,18 @@ const getColor = ({
 export const headingStyles = ({
   size,
   color = "#2A3439",
-  showLine,
+  hideLine,
   lineColor,
 }: {
   size: Sizes | { mweb: Sizes; dweb: Sizes };
   color?: string | { dweb?: string; mweb?: string };
   lineColor?: string | { dweb?: string; mweb?: string };
-  showLine?: boolean;
+  hideLine?: boolean;
 }) => css`
   margin: unset;
   padding: unset;
   user-select: none;
-  ${showLine && underlineStyles({ lineColor })};
+  ${!hideLine && underlineStyles({ lineColor })};
 
   color: ${getColor({ color, screen: "mweb" }) || "#2A3439"};
   ${sizeStyles("mweb", getSize(size, "mweb"))}

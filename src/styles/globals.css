@@ -29,7 +29,7 @@ a {
 }
 
 body {
-  color: black;
+  color: var(--black);
   background-color: white;
 
   &::-webkit-scrollbar {

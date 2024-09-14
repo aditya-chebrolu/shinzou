@@ -1,15 +1,18 @@
 import { css } from "@emotion/react";
 import DeveloperResourcesCta from "@modules/home/dev-stuff";
 import PortfolioMeta from "@modules/home/meta";
-import { minWidth, SvgContainer } from "@styles/index";
+import { minWidth } from "@styles/index";
 import ExperienceSection from "@modules/home/exp";
 import SkillsSection from "@modules/home/skills-section";
-import { socials } from "@constants/socials";
-import ResumeButton from "@modules/home/resume-button";
 import Header from "@modules/home/header";
 import { useRef } from "react";
 import { useScroll } from "framer-motion";
-import Art from "@modules/character/art";
+import Art from "@modules/home/art";
+import { Spacer } from "@styles/spacer";
+import { PageWrapper } from "@styles/layout-styles";
+import cx from "classnames";
+import Contact from "@modules/home/contact";
+import Quote from "@modules/home/quote";
 
 const styles = css`
   background: var(--dotted-bg);
@@ -19,14 +22,14 @@ const styles = css`
 
   display: grid;
   grid-template-columns: 20px 1fr 20px;
-  grid-template-rows: repeat(4, max-content);
   grid-template-areas:
     "head head head"
     ". exp ."
     ". skills ."
     "dev dev dev"
     ". icons ."
-    "art art art";
+    "x x x"
+    "q q q";
   row-gap: 30px;
 
   > div {
@@ -54,10 +57,15 @@ const styles = css`
   }
 
   #icons {
+    grid-area: icons;
     display: flex;
     margin-bottom: 30px;
     gap: 30px;
     align-items: center;
+  }
+
+  #q {
+    grid-area: q;
   }
 
   ${minWidth()} {
@@ -77,6 +85,22 @@ const styles = css`
   }
 `;
 
+const stickyStyles = css`
+  position: sticky;
+  top: 0;
+  z-index: 100;
+`;
+
+const components = [
+  { Component: Header, isFull: true, unWrap: true, id: "header" },
+  { Component: ExperienceSection },
+  { Component: SkillsSection },
+  { Component: DeveloperResourcesCta, isFull: true },
+  { Component: Contact },
+  { Component: () => <Spacer h="100px" /> },
+  { Component: Art },
+];
+
 const Page = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollY } = useScroll();
@@ -84,23 +108,18 @@ const Page = () => {
   return (
     <>
       <PortfolioMeta />
-      <div css={styles} ref={containerRef}>
-        <Header id="header" scrollY={scrollY} />
-        <ExperienceSection id="exp" />
-        <SkillsSection id="skills" />
-        <DeveloperResourcesCta id="dev" />
-        <div id="icons">
-          {socials.map(({ href, Icon }, idx) => (
-            <a href={href} key={idx}>
-              <SvgContainer h={30} fill="#2A3439">
-                <Icon />
-              </SvgContainer>
-            </a>
-          ))}
-          <ResumeButton />
+      <PageWrapper ref={containerRef}>
+        <div css={stickyStyles} className="full">
+          <Header scrollY={scrollY} />
         </div>
-        <Art id="art" />
-      </div>
+        <ExperienceSection />
+        <SkillsSection />
+        <DeveloperResourcesCta />
+        <Contact />
+        <Spacer h="100px" />
+        <Quote />
+        <Art />
+      </PageWrapper>
     </>
   );
 };

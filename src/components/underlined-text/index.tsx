@@ -7,7 +7,7 @@ type Props = {
   lineColor?: string | { dweb?: string; mweb?: string };
   customStyles?: any;
   type: "h1" | "h2" | "h3" | "h4";
-  showLine?: boolean;
+  hideLine?: boolean;
 };
 
 const UnderlinedText = ({
@@ -16,11 +16,11 @@ const UnderlinedText = ({
   color,
   size = "lg",
   lineColor,
-  showLine = true,
+  hideLine = false,
 }: Props) => {
   const Tag = type;
   return (
-    <Tag css={headingStyles({ size, color, lineColor, showLine })}>{text}</Tag>
+    <Tag css={headingStyles({ size, color, lineColor, hideLine })}>{text}</Tag>
   );
 };
 

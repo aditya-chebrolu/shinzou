@@ -1,15 +1,12 @@
 import { experiences } from "@constants/data/experience";
 import ExperienceStrip from "./experience-strip";
 import { experienceSectionStyles } from "./styles";
+import UnderlinedText from "@components/underlined-text";
 
-type Props = {
-  id: string;
-};
-
-const ExperienceSection = ({ id }: Props) => {
+const ExperienceSection = () => {
   return (
-    <div css={experienceSectionStyles} id={id}>
-      <h2 className="title">WorkEx</h2>
+    <div css={experienceSectionStyles}>
+      <UnderlinedText text="Work Experience" type="h2" size="md" hideLine />
       <div className="content">
         {experiences.map((exp, idx) => (
           <ExperienceStrip key={idx} experience={exp} />

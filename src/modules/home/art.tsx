@@ -3,11 +3,10 @@ import panda from "@assets/panda.png";
 import { css } from "@emotion/react";
 
 const styles = css`
-  margin-top: 400px;
-  margin-inline: auto;
+  text-align: center;
 `;
 
-const Art = ({ id }: { id: string }) => {
+const Art = ({ id = "art" }: { id?: string }) => {
   return (
     <div css={styles} id={id}>
       <Image src={panda} alt="dp" height={100} />

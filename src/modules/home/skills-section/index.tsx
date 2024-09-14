@@ -1,13 +1,12 @@
+import UnderlinedText from "@components/underlined-text";
 import { skillsSectionStyles } from "./styles";
 import Skills from "@components/skills";
-type Props = {
-  id: string;
-};
 
-const SkillsSection = ({ id }: Props) => {
+const SkillsSection = () => {
   return (
-    <div css={skillsSectionStyles} id={id}>
-      <h2 className="title">Skills</h2>
+    <div css={skillsSectionStyles}>
+      {/* <h2 className="title">Skills</h2> */}
+      <UnderlinedText text="Skills" type="h2" size="md" hideLine />
       <Skills id="skills" />
     </div>
   );
