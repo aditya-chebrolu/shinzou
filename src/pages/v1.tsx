@@ -4,7 +4,6 @@ import Details from "@modules/home/details";
 import Experience from "@modules/home/exp";
 import PortfolioMeta from "@modules/home/meta";
 import { minWidth } from "@styles/index";
-import { ReactNode } from "react";
 
 const anim = keyframes` 
   to {

@@ -1,8 +1,4 @@
 import BajajIcon from "@assets/bajaj.svg";
-import { icons } from "@constants/icons";
-import { get } from "http";
-import { pick } from "lodash-es";
-import { start } from "repl";
 
 const getMonthYear = (date: Date): string => {
   const month = date.toLocaleString("default", { month: "short" });

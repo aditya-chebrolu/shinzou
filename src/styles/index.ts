@@ -200,8 +200,6 @@ export const tagsRowStyles = css`
     }
 
     > div:hover {
-      /* color: #ffd700; */
-
       & ~ div:not(.applied) {
         scale: 0.9;
         opacity: 0.5;
